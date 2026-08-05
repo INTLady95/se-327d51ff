@@ -405,6 +405,10 @@ tr:last-child td{border-bottom:none}
 .dblock.sol .lab{color:var(--sodium)}
 .dblock.gain .lab{color:var(--ok)}
 
+.ticks li .tag{display:inline-block;font-family:var(--mono);font-size:.55rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ice);border:1px solid rgba(156,199,255,.42);border-radius:100px;
+  padding:2px 9px;margin:0 8px 4px 0;white-space:nowrap;vertical-align:1px}
+
 /* ═══ droga projektu ═══ */
 .chain-t{color:var(--soft);margin:30px 0 16px;max-width:66ch}
 .chain{list-style:none;counter-reset:c;padding:0;margin:0;display:grid;gap:12px;
@@ -512,7 +516,7 @@ tr:last-child td{border-bottom:none}
     <ul class="ticks">
       <li><b>To dokument z propozycją, a nie projekt Waszej strony.</b> Wasza strona będzie wyglądać inaczej — jej kierunek wybierzemy wspólnie, zanim powstanie pierwsza podstrona. Tę zrobiłam po to, żeby wszystko było w jednym miejscu i żeby dobrze się czytało, także z telefonu</li>
       <li><b>Powstała wyłącznie dla Was.</b> Adres jest przypadkowy i wyłączony z wyszukiwarek, więc nikt nie trafi tu przypadkiem — i nikomu poza Wami go nie wysyłałam</li>
-      <li><b>W środku są trzy krótkie ankiety.</b> Możecie do nich zajrzeć już teraz, żeby zobaczyć, o co będę pytać. Wypełniamy je dopiero po podpisaniu umowy — dziś nie ma tu dla Was żadnej pracy do odrobienia</li>
+      <li><b>W środku są cztery krótkie ankiety.</b> Możecie do nich zajrzeć już teraz, żeby zobaczyć, o co będę pytać. Wypełniamy je dopiero po podpisaniu umowy — dziś nie ma tu dla Was żadnej pracy do odrobienia</li>
       <li><b>Jak to czytać.</b> Najlepiej po kolei: najpierw decyzje wynikające z Waszych odpowiedzi, potem co dokładnie powstanie, ile to kosztuje i co będzie potrzebne od Was. Spis treści macie cały czas pod ręką — przycisk w prawym dolnym rogu. Karty rozwijają się po kliknięciu</li>
     </ul>
   </div>
@@ -797,11 +801,23 @@ tr:last-child td{border-bottom:none}
   </div>
 
   <div class="glass" style="margin-top:22px">
+    <h3>Jak będziecie z tego korzystać</h3>
+    <ol class="path">
+      <li>Firma pyta, na czym polega współpraca — <b>wysyłacie jeden link</b> zamiast tłumaczyć wszystko od nowa</li>
+      <li>Po pierwszej rozmowie <b>wysyłacie gotowy dokument</b>: liczby, zdjęcia i trzy poziomy do wyboru</li>
+      <li>Rozmowa przestaje być o tym, kim jesteście, a zaczyna być o tym, <b>który poziom i za ile</b></li>
+    </ol>
+    <p style="color:var(--soft);font-size:.95rem;margin:14px 0 0">Do każdego poziomu podpowiem też, ile realnie warto brać — na podstawie tego, ilu ludzi przychodzi i co sponsor faktycznie dostaje w zamian. Cenę ustalacie Wy, ale macie z czego ją policzyć.</p>
+  </div>
+
+  <div class="glass" style="margin-top:18px">
     <h3>Dlaczego liczby są tu kluczowe</h3>
     <p style="color:var(--soft);margin:0 0 12px">Sponsor nie kupuje banera na płocie — kupuje dostęp do ludzi, których zgromadziliście. I tu jest najważniejsze: <strong>tę wartość już macie</strong>. Tysiąc osób na jednym zlocie, dziesięć tysięcy obserwujących, pięć lat regularnej pracy — to są liczby, o jakich niejedna firma marzy.</p>
     <p style="color:var(--soft);margin:0 0 12px">Do kompletu brakuje tylko jednego: te liczby nie są jeszcze nigdzie spisane. A człowiek po drugiej stronie musi przekonać kogoś u siebie — szefa albo dział marketingu. Zapyta więc o jedno: <strong>ile osób to zobaczy?</strong></p>
     <p style="color:var(--soft);margin:0">Pakiet bez liczb zostawia go bez odpowiedzi. Pakiet z liczbami broni się sam — także wtedy, gdy Was nie ma w pokoju. Dlatego zebranie tych danych wpisuję w zakres pracy. Nie po to, żebyście oglądali wykresy, tylko po to, żeby <strong>przestać pytać, czy ktoś zechce zostać sponsorem, i zacząć mówić, ile to kosztuje</strong>.</p>
   </div>
+
+  <p class="note" style="margin-top:22px"><b style="color:var(--ink)">Cała ta część wchodzi w wariant <span class="hi">Pełny + Sponsorzy</span>.</b> Można ją też zamówić osobno — kosztuje wtedy 4 500 zł, a razem z wariantem Pełnym dopłacacie za nią 2 000 zł, bo część pracy wykonuję już przy samej stronie.</p>
 </section>
 
 <section id="strona" class="rv">
@@ -819,7 +835,9 @@ tr:last-child td{border-bottom:none}
     <div class="glass"><h4>Dla firm</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Sekcja sponsorska ma swoje stałe miejsce, bo to cel numer jeden.</p></div>
     <div class="glass"><h4>Kontakt</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Jedna droga — i nic Wam nie ucieka.</p></div>
   </div>
-  <p class="note" style="margin-top:26px">Styl ustalamy wspólnie <span class="hi">przed startem</span> — „surowy, coś na luzie” to kierunek, który pokażę w konkretnych propozycjach do wyboru, zanim powstanie pierwsza podstrona.</p>
+  <p class="note" style="margin-top:26px"><b style="color:var(--ink)">Wszystkie osiem sekcji jest w cenie.</b> W wariantach <span class="hi">Pełny</span> i <span class="hi">Pełny + Sponsorzy</span> powstają wszystkie, w obu językach — za żadną nie dopłacacie osobno. W wariancie <span class="hi">Start</span> to samo mieści się na jednej rozbudowanej stronie przewijanej w dół, po polsku.</p>
+
+  <p class="note" style="margin-top:16px">Styl ustalamy wspólnie <span class="hi">przed startem</span> — „surowy, coś na luzie” to kierunek, który pokażę w konkretnych propozycjach do wyboru, zanim powstanie pierwsza podstrona.</p>
 </section>
 
 <section id="zapisy" class="rv">
@@ -830,20 +848,25 @@ tr:last-child td{border-bottom:none}
     <div class="glass">
       <h3>Ścieżka uczestnika</h3>
       <ol class="path">
-        <li>Zapisuje się <b>bez opuszczania Waszej strony</b> — imię, telefon, model auta</li>
-        <li>Dostaje maila z biletem: <b>kod QR prosto w telefonie</b></li>
-        <li>Przed zlotem dostaje <b>przypomnienie</b></li>
+        <li>Widzi na stronie <b>najbliższy zlot</b> — datę, miejsce i ile miejsc jeszcze zostało</li>
+        <li>Zapisuje się <b>bez opuszczania Waszej strony</b> — imię, telefon, auto i zgoda na zdjęcia</li>
+        <li>Od razu widzi potwierdzenie na ekranie, a <b>bilet z kodem QR</b> przychodzi mailem w kilka sekund</li>
+        <li>Przed zlotem dostaje <b>przypomnienie</b> z datą, adresem i mapą dojazdu</li>
+        <li>Na bramie pokazuje kod z telefonu — <b>skan trwa sekundę</b>, płaci na miejscu i wjeżdża</li>
         <li>Nie może przyjechać? Odwołuje zapis, a <b>miejsce wraca do puli</b></li>
+        <li>Po zlocie znajduje <b>zdjęcia w archiwum</b> — i wie, gdzie szukać kolejnego</li>
       </ol>
     </div>
     <div class="glass">
       <h3>Ścieżka organizatora</h3>
       <ol class="path">
-        <li><b>Ustawiacie limit</b> osobno pod każde wydarzenie</li>
-        <li>Widzicie na bieżąco <b>licznik zapisanych</b></li>
-        <li>Gdy miejsca się skończą — kolejni trafiają na <b>listę rezerwową</b></li>
+        <li><b>Dodajecie nowy zlot</b> — data, miejsce, zdjęcie — i otwieracie zapisy</li>
+        <li><b>Ustawiacie limit miejsc</b> osobno pod to wydarzenie</li>
+        <li>Widzicie na bieżąco <b>licznik zapisanych</b> i całą listę</li>
+        <li>Gdy miejsca się skończą — kolejni trafiają na <b>listę rezerwową</b> i awansują sami, gdy ktoś odwoła</li>
+        <li>Przed zlotem <b>jednym kliknięciem wysyłacie przypomnienie</b> do wszystkich zapisanych</li>
         <li>Na bramie <b>skanujecie kody telefonem</b>, kilka osób jednocześnie</li>
-        <li><b>Pełną listę pobieracie jednym kliknięciem</b> jako plik, np. do Excela</li>
+        <li>Po zlocie <b>pobieracie pełną listę</b> jako plik, np. do Excela, a zlot przenosi się do archiwum</li>
       </ol>
     </div>
   </div>
@@ -858,6 +881,8 @@ tr:last-child td{border-bottom:none}
     <h3 style="color:var(--sodium)">Zero abonamentu · konto w 100% Wasze</h3>
     <p style="color:var(--soft);margin:0;max-width:56ch;margin-inline:auto">System zapisów działa bez abonamentu i bez prowizji, a wszystkie konta i dostępy są Wasze — pełna niezależność.</p>
   </div>
+
+  <p class="note" style="margin-top:22px"><b style="color:var(--ink)">Cały ten system jest w cenie</b> wariantów <span class="hi">Pełny</span> i <span class="hi">Pełny + Sponsorzy</span> — bilety QR, lista rezerwowa i skanowanie na bramie wliczone. W wariancie <span class="hi">Start</span> działa prosty formularz zapisu, a listę prowadzicie po swojemu.</p>
 </section>
 
 <section id="zakres" class="rv">
@@ -885,15 +910,15 @@ tr:last-child td{border-bottom:none}
 
     <div class="glass">
       <h3 style="color:var(--ice)">Zostawiamy na później</h3>
-      <p class="small" style="color:var(--dim);font-size:.85rem;margin:-4px 0 14px">Nie dlatego, że są mniej ważne — po prostu mają swój lepszy moment, już po starcie strony.</p>
+      <p class="small" style="color:var(--dim);font-size:.85rem;margin:-4px 0 14px">Wszystkie są dobre — mają po prostu swój lepszy moment. Część z nich mogę dorzucić później za osobną opłatą, część zostaje po Waszej stronie, a część to sposób, w jaki pracujemy. Przy każdej piszę wprost, która to.</p>
       <ul class="ticks later">
-        <li><b>Sklep z merchem.</b> Dobry pomysł na kolejny krok. Zostawiam go na osobny etap, żeby pierwszy rachunek obejmował to, co potrzebne na start — a strona będzie na sklep przygotowana</li>
-        <li><b>Płatności online za bilety.</b> Na start same zapisy w zupełności wystarczą. System projektuję tak, żeby płatności dało się dołożyć bez przebudowy, kiedy uznacie, że to dobry moment</li>
-        <li><b>Kampanie reklamowe.</b> To osobna specjalizacja i osobny zawód. Moją częścią jest przygotować stronę tak, żeby była gotowa przyjąć ruch z reklam, kiedy zechcecie je uruchomić</li>
-        <li><b>Prowadzenie profilu.</b> Robicie to świetnie we trójkę, codziennie. Strona ma Wasz profil wzmacniać, a nie zastępować — i tak ją zaprojektuję</li>
-        <li><b>Wysyłka do starej bazy kontaktów.</b> Nową bazę strona zbiera od pierwszego dnia zgodnie z przepisami. Ze starych kontaktów też da się skorzystać — pokażę Wam bezpieczną drogę: zaproszenie na Waszym profilu, odpowiedzi w rozmowach, które ludzie sami zaczęli, i zapis przez stronę</li>
-        <li><b>Zdjęcia i filmy.</b> Materiały macie własne i naprawdę dobre — moją rolą jest pokazać je tak, żeby robiły wrażenie</li>
-        <li><b>Spotkania na żywo.</b> Pracujemy pisemnie: umowa, ustalenia, odbiory. Dzięki temu wszystko zostaje czarno na białym i nic się nie gubi. Na spotkanie jestem otwarta zawsze, kiedy będziecie mieli ochotę</li>
+        <li><span class="tag">opcja dodatkowa · 4 000–6 000 zł</span><b>Sklep z merchem.</b> Dobry pomysł na kolejny krok. Zostawiam go na osobny etap, żeby pierwszy rachunek obejmował to, co potrzebne na start — a strona będzie na sklep przygotowana</li>
+        <li><span class="tag">opcja dodatkowa · 2 000–3 000 zł</span><b>Płatności online za bilety.</b> Na start same zapisy w zupełności wystarczą. System projektuję tak, żeby płatności dało się dołożyć bez przebudowy, kiedy uznacie, że to dobry moment</li>
+        <li><span class="tag">osobna specjalizacja</span><b>Kampanie reklamowe.</b> To osobna specjalizacja i osobny zawód. Moją częścią jest przygotować stronę tak, żeby była gotowa przyjąć ruch z reklam, kiedy zechcecie je uruchomić</li>
+        <li><span class="tag">zostaje u Was</span><b>Prowadzenie profilu.</b> Robicie to świetnie we trójkę, codziennie. Strona ma Wasz profil wzmacniać, a nie zastępować — i tak ją zaprojektuję</li>
+        <li><span class="tag">podpowiem, jak to zrobić</span><b>Wysyłka do starej bazy kontaktów.</b> Nową bazę strona zbiera od pierwszego dnia zgodnie z przepisami. Ze starych kontaktów też da się skorzystać — pokażę Wam bezpieczną drogę: zaproszenie na Waszym profilu, odpowiedzi w rozmowach, które ludzie sami zaczęli, i zapis przez stronę</li>
+        <li><span class="tag">materiały macie swoje</span><b>Zdjęcia i filmy.</b> Materiały macie własne i naprawdę dobre — moją rolą jest pokazać je tak, żeby robiły wrażenie</li>
+        <li><span class="tag">tak pracujemy</span><b>Spotkania na żywo.</b> Pracujemy pisemnie: umowa, ustalenia, odbiory. Dzięki temu wszystko zostaje czarno na białym i nic się nie gubi. Na spotkanie jestem otwarta zawsze, kiedy będziecie mieli ochotę</li>
       </ul>
     </div>
   </div>
@@ -917,7 +942,7 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody" style="padding-left:22px">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Potwierdzenie sekcji, które już zaplanowałam — i miejsce, żeby powiedzieć, czego z nich nie potrzebujecie</li><li>Drobiazgi, które dorzucam bez dopłaty: dojazd, nocleg, program, regulamin, częste pytania, mapa terenu</li><li>Logika zapisów: kto się zapisuje, co zbieramy w formularzu, kategorie aut, zgłoszenia całych ekip</li><li>Co widać na bilecie QR i co widzi osoba na bramie po zeskanowaniu</li><li>Co realnie możecie dać sponsorowi na zlocie i w mediach — z tego powstają trzy poziomy pakietów</li></ul><a class="goform" href="ankieta-struktury.html">Zajrzyj do środka →</a></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Potwierdzenie sekcji, które już zaplanowałam — i miejsce, żeby powiedzieć, czego z nich nie potrzebujecie</li><li>Praktyczne sekcje do wyboru: dojazd, nocleg, program, regulamin, częste pytania, mapa terenu</li><li>Logika zapisów: kto się zapisuje, co zbieramy w formularzu, kategorie aut, zgłoszenia całych ekip</li><li>Co widać na bilecie QR i co widzi osoba na bramie po zeskanowaniu</li><li>Drobiazgi, które dorzucam bez dopłaty — zaznaczacie te, które się Wam przydadzą</li></ul><a class="goform" href="ankieta-struktury.html">Zajrzyj do środka →</a></div>
       </div>
     </details>
     <details class="dcard">
@@ -946,6 +971,20 @@ tr:last-child td{border-bottom:none}
       <div class="dbody" style="padding-left:22px">
         <div class="dsep"></div>
         <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Jak się zaczęło i co się zmieniło przez pięć lat</li><li>Kto jest kim w zespole — imiona, role, po co kto tam jest</li><li>Trzy do pięciu zlotów, które pamiętacie najlepiej, i dlaczego akurat te</li><li>Liczby dla sponsorów: ilu ludzi i aut na ostatnich zlotach, cena wejścia, kto przyjeżdża</li><li>Z kim już współpracowaliście i co im dawaliście</li><li>Kilka Waszych postów, żebym złapała sposób, w jaki mówicie</li></ul><a class="goform" href="ankieta-faktow.html">Zajrzyj do środka →</a></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab">ok. 25 minut · wariant ze sponsorami</span>
+          <h4>Ankieta sponsorska</h4>
+          <p class="plain">Wasz cel numer jeden dostaje osobną ankietę. Z niej powstają trzy poziomy pakietów i propozycja cen.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Kto już u Was był, co dostawał i dlaczego wrócił albo nie wrócił</li><li>O co firmy pytają najczęściej i co najtrudniej im wytłumaczyć</li><li>Branże, które chcecie pozyskać — i te, z którymi nie chcecie pracować</li><li>Co realnie możecie dać sponsorowi na zlocie, w mediach i po evencie</li><li>Ile chcecie zebrać, ilu sponsorów naraz i czy dajecie wyłączność w branży</li></ul><a class="goform" href="ankieta-sponsorska.html">Zajrzyj do środka →</a></div>
       </div>
     </details>
     <details class="dcard">
@@ -1015,7 +1054,7 @@ tr:last-child td{border-bottom:none}
 
     <div class="glass" style="padding:8px 26px 12px">
     <div class="tl">
-      <div class="tl-row"><div class="tl-w">Etap 1</div><div class="tl-t">Start — ankiety, struktura strony, dostępy</div><div class="tl-c">wypełniacie trzy krótkie ankiety, przesyłacie logo, zdjęcia i filmy</div></div>
+      <div class="tl-row"><div class="tl-w">Etap 1</div><div class="tl-t">Start — ankiety, struktura strony, dostępy</div><div class="tl-c">wypełniacie krótkie ankiety, przesyłacie logo, zdjęcia i filmy</div></div>
       <div class="tl-row"><div class="tl-w">Etap 2</div><div class="tl-t">Projekt graficzny strony głównej</div><div class="tl-c">pokazuję pierwszą wersję — macie 2 tygodnie na spokojne obejrzenie</div></div>
       <div class="tl-row"><div class="tl-w">Etap 3</div><div class="tl-t">Pierwsza runda poprawek</div><div class="tl-c">przysyłacie uwagi jedną listą, ja wdrażam je w ciągu 2 tygodni</div></div>
       <div class="tl-row"><div class="tl-w">Etap 4</div><div class="tl-t">Teksty w obu językach i budowa sekcji</div><div class="tl-c">odpowiadacie na pytania uzupełniające, gdy coś wymaga doprecyzowania</div></div>
@@ -1333,7 +1372,7 @@ tr:last-child td{border-bottom:none}
     <ol class="path next3">
       <li><b>Odpisuję do 72 godzin</b> — potwierdzam, że wiadomość dotarła, i odpowiadam na pytania, jeśli jakieś zostały</li>
       <li><b>Umowę przygotowuję do dwóch tygodni</b> — wtedy poproszę o nazwę firmy, NIP i adres, i nic więcej. Dostajecie ją do spokojnego przeczytania, bez terminu na odpowiedź. Instrukcję do zgłoszenia w urzędzie wysyłam od razu, więc oba tory idą równolegle</li>
-      <li><b>Po podpisaniu ruszamy z Etapem 1</b> — dostajecie linki do trzech ankiet i listę materiałów, wszystko rozłożone na drobne kroki</li>
+      <li><b>Po podpisaniu ruszamy z Etapem 1</b> — dostajecie linki do ankiet i listę materiałów, wszystko rozłożone na drobne kroki</li>
     </ol>
 
     <form class="cform" action="https://formsubmit.co/marcin.tatsiana@gmail.com" method="POST">
