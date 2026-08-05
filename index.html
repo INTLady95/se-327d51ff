@@ -380,7 +380,7 @@ tr:last-child td{border-bottom:none}
 /* ═══ formularz decyzji ═══ */
 .cform{max-width:640px;margin:0 auto;text-align:left}
 .cq{margin:0 0 16px}
-.cq label,.clab{display:block;font-weight:650;font-size:.95rem;margin-bottom:7px}
+.cq > label,.clab{display:block;font-weight:650;font-size:.95rem;margin-bottom:7px}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
 .cform input[type=text],.cform input[type=email],.cform textarea{width:100%;background:rgba(0,0,0,.32);
   border:1px solid var(--edge);border-radius:10px;color:var(--ink);font-family:var(--body);
@@ -410,7 +410,7 @@ tr:last-child td{border-bottom:none}
 .chain{list-style:none;counter-reset:c;padding:0;margin:0;display:grid;gap:12px;
   grid-template-columns:repeat(5,minmax(0,1fr))}
 .chain li{position:relative;display:flex;flex-direction:column;gap:6px;
-  background:var(--panel);border:1px solid var(--edge);border-radius:13px;padding:17px 16px 18px;
+  background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:17px 16px 18px;
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:.35s}
 .chain li:hover{border-color:rgba(255,186,110,.5);transform:translateY(-2px)}
 .chain .cn{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;color:var(--dim)}
@@ -530,7 +530,7 @@ tr:last-child td{border-bottom:none}
     <li>
       <span class="cn">05</span>
       <b>Odbiór i opieka</b>
-      <span class="cd">Przekazanie wszystkich dostępów, instrukcja obsługi i gwarancja na wykonanie</span>
+      <span class="cd">Przekazanie wszystkich dostępów, instrukcja obsługi i gwarancja wykonania</span>
       <span class="cw">+ 90 dni</span>
     </li>
   </ol>
@@ -1287,7 +1287,7 @@ tr:last-child td{border-bottom:none}
 
   <div class="glass">
     <p style="color:var(--soft);margin:0 0 14px">Jestem obywatelką Białorusi i mieszkam w Polsce na stałe — wniosek o pobyt stały jest już złożony. Współpracuję na <strong>umowie o dzieło</strong> — dla Was to najprostsza forma rozliczenia: kwota wchodzi w koszty, bez VAT i bez składek ZUS.</p>
-    <p style="color:var(--soft);margin:0 0 14px">Żeby to uruchomić, Wasza firma rejestruje jednorazowe zgłoszenie online — oświadczenie o powierzeniu wykonywania pracy cudzoziemcowi. Opłata urzędowa <strong>400 zł</strong>, urząd rozpatruje je <strong>standardowo w ciągu 7 dni roboczych</strong>, wszystko przez praca.gov.pl. Przygotuję dla Was instrukcję krok po kroku — po Waszej stronie to <strong>około 15 minut</strong> przy komputerze.</p>
+    <p style="color:var(--soft);margin:0 0 14px">Żeby to uruchomić, Wasza firma rejestruje jednorazowe zgłoszenie online — oświadczenie o powierzeniu wykonywania pracy cudzoziemcowi. Opłata urzędowa <strong>400 zł</strong>, urząd rozpatruje je <strong>do 7 dni roboczych</strong>, wszystko przez praca.gov.pl. Przygotuję dla Was instrukcję krok po kroku — po Waszej stronie to <strong>około 15 minut</strong> przy komputerze.</p>
     <p style="color:var(--soft);margin:0">Do przygotowania umowy poproszę tylko o dane firmy: <strong>nazwę, NIP i adres</strong>.</p>
   </div>
 </section>
@@ -1297,23 +1297,23 @@ tr:last-child td{border-bottom:none}
   <div class="cta">
     <div class="kicker" style="justify-content:center">Następny krok</div>
     <h2>Wystarczy<br>jedna wiadomość</h2>
-    <p class="lead" style="margin-inline:auto;text-align:center;margin-bottom:28px">Zaznaczcie wariant, zostawcie dane firmy — i to wszystko. Resztą zajmuję się ja.</p>
+    <p class="lead" style="margin-inline:auto;text-align:center;margin-bottom:28px">Zaznaczcie, który wariant jest Wam najbliżej, zostawcie kontakt — i to wszystko. Resztą zajmuję się ja.</p>
 
     <ol class="path next3">
-      <li><b>Odpisuję w ciągu 24 godzin</b> — potwierdzam, że wiadomość dotarła, i odpowiadam na pytania, jeśli jakieś zostały</li>
-      <li><b>Umowę przygotowuję do dwóch tygodni</b> — dostajecie ją do spokojnego przeczytania, bez terminu na odpowiedź. Instrukcję do zgłoszenia w urzędzie wysyłam od razu, więc oba tory idą równolegle i nic na siebie nie czeka</li>
-      <li><b>Po podpisaniu ruszamy Etapem 1</b> — dostajecie linki do dwóch ankiet i listę materiałów, wszystko rozłożone na drobne kroki</li>
+      <li><b>Odpisuję do 72 godzin</b> — potwierdzam, że wiadomość dotarła, i odpowiadam na pytania, jeśli jakieś zostały</li>
+      <li><b>Umowę przygotowuję do dwóch tygodni</b> — wtedy poproszę o nazwę firmy, NIP i adres, i nic więcej. Dostajecie ją do spokojnego przeczytania, bez terminu na odpowiedź. Instrukcję do zgłoszenia w urzędzie wysyłam od razu, więc oba tory idą równolegle</li>
+      <li><b>Po podpisaniu ruszamy z Etapem 1</b> — dostajecie linki do dwóch ankiet i listę materiałów, wszystko rozłożone na drobne kroki</li>
     </ol>
 
     <form class="cform" action="https://formsubmit.co/marcin.tatsiana@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="🔥 Street-Elite — decyzja o współpracy">
+      <input type="hidden" name="_subject" value="🔥 Street-Elite — odpowiedź z oferty">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="https://intlady95.github.io/se-327d51ff/dziekuje.html">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
 
       <div class="cq">
-        <span class="clab">Który wariant wybieracie?</span>
+        <span class="clab">Który wariant jest Wam najbliżej?</span>
         <div class="copts">
           <label class="copt"><input type="radio" name="Wariant" value="Start — 5 500 zł" required><span><b>Start</b>5 500 zł</span></label>
           <label class="copt"><input type="radio" name="Wariant" value="Pełny — 11 900 zł"><span><b>Pełny</b>11 900 zł</span></label>
@@ -1321,12 +1321,6 @@ tr:last-child td{border-bottom:none}
           <label class="copt"><input type="radio" name="Wariant" value="Jeszcze nie wiem — porozmawiajmy"><span><b>Jeszcze nie wiem</b>Porozmawiajmy</span></label>
         </div>
       </div>
-
-      <div class="cgrid">
-        <div class="cq"><label for="cf1">Nazwa firmy</label><input id="cf1" type="text" name="Nazwa firmy" placeholder="Do umowy"></div>
-        <div class="cq"><label for="cf2">NIP</label><input id="cf2" type="text" name="NIP" placeholder="Jeśli macie pod ręką"></div>
-      </div>
-      <div class="cq"><label for="cf3">Adres firmy</label><input id="cf3" type="text" name="Adres firmy" placeholder="Ulica, kod, miasto"></div>
 
       <div class="cgrid">
         <div class="cq"><label for="cf4">Osoba do kontaktu</label><input id="cf4" type="text" name="Osoba do kontaktu" placeholder="Imię i nazwisko" required></div>
@@ -1348,6 +1342,7 @@ tr:last-child td{border-bottom:none}
 
       <div class="cq"><label for="cf6">Chcecie coś dopisać?</label><textarea id="cf6" name="Wiadomość" placeholder="Pytania, uwagi, opcje dodatkowe, które Was interesują — cokolwiek"></textarea></div>
 
+      <p class="hintx" style="display:block;color:var(--dim);font-size:.87rem;text-align:center;margin:18px 0 2px;font-weight:400">Wysłanie formularza niczego jeszcze nie przesądza — to początek rozmowy, nie zamówienie.</p>
       <button class="btn cbtn" type="submit">Wyślij →</button>
     </form>
 
