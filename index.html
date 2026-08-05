@@ -435,6 +435,13 @@ tr:last-child td{border-bottom:none}
   .chain li:last-child:nth-child(odd){grid-column:auto}
   .chain li{padding:15px 15px 16px}}
 
+/* ═══ koszty na wąskim ekranie ═══ */
+@media(max-width:560px){
+  .cost{flex-direction:column;align-items:flex-start;gap:4px}
+  .cost .v{order:-1;font-size:.95rem}
+  .cost .d{margin-top:4px}
+}
+
 /* ═══ trzy kroki w CTA ═══ */
 .next3{max-width:600px;margin:0 auto 34px;text-align:left}
 .next3 li{padding:14px 0 14px 50px}
@@ -1211,14 +1218,15 @@ tr:last-child td{border-bottom:none}
 <section id="koszty" class="rv">
   <div class="kicker">Poza wynagrodzeniem</div>
   <h2>Koszty<br>po Waszej stronie</h2>
+  <p class="sub">Poniżej widełki orientacyjne — sprawdzone u dostawców w sierpniu 2026. Dokładna kwota zależy od tego, którego dostawcę wybierzecie; podpowiem, na co patrzeć, żeby nie przepłacić.</p>
 
   <div class="glass">
-    <div class="cost"><div><span class="n">Domena</span><span class="d">Adres Waszej strony w internecie — jak szyld z nazwą nad bramą</span></div><div class="v">60–100 zł / rok</div></div>
-    <div class="cost"><div><span class="n">Hosting z firmową pocztą</span><span class="d">Miejsce, gdzie strona fizycznie mieszka, plus adresy typu kontakt@wasza-domena.pl</span></div><div class="v">250–400 zł / rok</div></div>
+    <div class="cost"><div><span class="n">Domena</span><span class="d">Adres Waszej strony w internecie — jak szyld z nazwą nad bramą. Uwaga na promocje: pierwszy rok bywa za kilka złotych, a od drugiego wraca pełna cena — to na nią warto patrzeć</span></div><div class="v">ok. 60–100 zł / rok</div></div>
+    <div class="cost"><div><span class="n">Hosting</span><span class="d">Miejsce, gdzie strona fizycznie mieszka. Firmowa poczta — adresy typu kontakt@wasza-domena.pl — oraz certyfikat bezpieczeństwa są wliczone w tę cenę, nie płacicie za nie osobno</span></div><div class="v">ok. 250–400 zł / rok</div></div>
     <div class="cost"><div><span class="n">System zapisów</span><span class="d">Bez abonamentu, bez prowizji od zapisów</span></div><div class="v">0 zł</div></div>
   </div>
 
-  <p class="note" style="margin-top:22px">Razem około <span class="hi">310–500 zł rocznie</span>, płacone bezpośrednio dostawcom — te opłaty w całości trafiają do nich.<br>
+  <p class="note" style="margin-top:22px">Razem to zwykle <span class="hi">około 310–500 zł rocznie</span>, płacone bezpośrednio dostawcom — te opłaty w całości trafiają do nich, nie do mnie. Nie są to ceny, które ustalam ja, więc traktujcie je jako rząd wielkości; przed zakupem sprawdzimy razem aktualny cennik.<br>
   Wszystko rejestrujemy na Wasze konta i Waszą kartę — <span class="hi">od pierwszego dnia domena, poczta i strona są Waszą własnością</span>.<br>
   Na przyszłość: gdybyście chcieli wysyłać maile do swojej bazy — na przykład zaproszenia na kolejny zlot — narzędzie do tego jest bezpłatne do 500 adresów, a powyżej tego progu kosztuje około 49 zł miesięcznie. Wysyłkę uruchamia człowiek, kiedy uzna, że czas — nic nie wychodzi automatycznie.</p>
 </section>
