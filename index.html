@@ -384,7 +384,7 @@ tr:last-child td{border-bottom:none}
 .cgrid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
 .cform input[type=text],.cform input[type=email],.cform textarea{width:100%;background:rgba(0,0,0,.32);
   border:1px solid var(--edge);border-radius:10px;color:var(--ink);font-family:var(--body);
-  font-size:.97rem;padding:13px 15px;transition:.22s}
+  font-size:max(16px,.97rem);padding:13px 15px;transition:.22s}
 .cform textarea{min-height:92px;resize:vertical;line-height:1.6}
 .cform input:hover,.cform textarea:hover{border-color:var(--edge-2)}
 .cform input:focus,.cform textarea:focus{border-color:var(--sodium);background:rgba(0,0,0,.45)}
@@ -1082,7 +1082,7 @@ tr:last-child td{border-bottom:none}
     <div class="plan">
       <h3>Start</h3>
       <div class="price">5 500 zł</div>
-      <div class="price-n">bez VAT</div>
+      <div class="price-n">cena końcowa</div>
       <ul class="ticks">
         <li>Jedna rozbudowana strona typu wizytówka — wszystko na jednym ekranie przewijanym w dół, po polsku</li>
         <li>Prosty formularz zapisu — zgłoszenia trafiają na jedną listę, którą prowadzicie po swojemu; bilety QR, lista rezerwowa i skanowanie na bramie są w wariancie Pełnym</li>
@@ -1097,7 +1097,7 @@ tr:last-child td{border-bottom:none}
     <div class="plan">
       <h3>Pełny</h3>
       <div class="price">11 900 zł</div>
-      <div class="price-n">bez VAT</div>
+      <div class="price-n">cena końcowa</div>
       <ul class="ticks">
         <li>Pełna strona — wszystkie sekcje opisane wyżej, PL + EN</li>
         <li>Wszystkie teksty</li>
@@ -1112,7 +1112,7 @@ tr:last-child td{border-bottom:none}
       <div class="flag">Rekomendowany</div>
       <h3>Pełny + Sponsorzy</h3>
       <div class="price">13 900 zł</div>
-      <div class="price-n">bez VAT</div>
+      <div class="price-n">cena końcowa</div>
       <ul class="ticks">
         <li><b>Wszystko z wariantu Pełny</b></li>
         <li>Podstrona „Dla firm” dla zainteresowanych współpracą</li>
@@ -1124,7 +1124,13 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 
-  <div class="glass" style="margin-top:26px;border-color:rgba(255,175,80,.5)">
+  <div class="glass" style="margin-top:22px;border-color:rgba(255,186,110,.34)">
+    <h3>Ile to jest razem</h3>
+    <p style="color:var(--soft);font-size:.95rem;margin:0 0 10px"><b style="color:var(--ink)">Kwoty w tabeli są ostateczne.</b> Nie jestem płatnikiem VAT, więc nic się do nich nie dolicza — ile widzicie, tyle płacicie.</p>
+    <p style="color:var(--soft);font-size:.95rem;margin:0">Poza moim wynagrodzeniem są jeszcze dwie pozycje, obie płacone nie mnie: jednorazowa <b>opłata urzędowa 400 zł</b> przy zgłoszeniu oraz <b>310–500 zł rocznie</b> dla dostawcy domeny i hostingu. To wszystko — innych obowiązkowych kosztów w tym projekcie nie ma.</p>
+  </div>
+
+  <div class="glass" style="margin-top:18px;border-color:rgba(255,175,80,.5)">
     <span class="lab" style="color:var(--sodium);font-family:var(--mono);font-size:.6rem;letter-spacing:.19em;text-transform:uppercase;display:block;margin-bottom:8px">Moduł sponsorski · 4 500 zł osobno · 2 000 zł razem z wariantem Pełnym</span>
     <h3>Za co dokładnie płacicie w części sponsorskiej</h3>
     <p style="color:var(--soft);font-size:.95rem;margin:0 0 14px">To jedyna rzecz, o którą sami poprosiliście w briefie. Powstaje w całości od zera — bo dziś cała ta wartość żyje na zlotach i w Waszych głowach, a jej miejsce jest przed oczami sponsora, czarno na białym. Ta część składa się z sześciu rzeczy:</p>
