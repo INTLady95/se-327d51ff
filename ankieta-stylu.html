@@ -23,7 +23,7 @@
 <div class="head">
   <div class="kicker">Ankieta stylu</div>
   <h1>Jak ma wyglądać<br>Wasza strona</h1>
-  <p class="lead">Głównie klikanie — pokazuję gotowe kierunki, Wy wybieracie. Trzy pola na własne słowa są na końcu i wszystkie są nieobowiązkowe. Nie ma tu złych odpowiedzi, a każdą decyzję można później zmienić.</p>
+  <p class="lead">Głównie klikanie — pokazuję gotowe kierunki, Wy wybieracie. Pola na własne słowa są nieobowiązkowe: wypełnijcie te, na które macie ochotę. Nie ma tu złych odpowiedzi.</p>
 </div>
 
 <form action="https://formsubmit.co/marcin.tatsiana@gmail.com" method="POST" enctype="multipart/form-data">
@@ -43,7 +43,7 @@
         <label class="opt"><input type="radio" name="Kierunek wizualny" value="Surowy i mocny" required><span><b>Surowy i mocny</b>Ciemne tło, duże zdjęcia, mocne napisy. Asfalt, noc, światła.</span></label>
         <label class="opt"><input type="radio" name="Kierunek wizualny" value="Czysty i nowoczesny"><span><b>Czysty i nowoczesny</b>Dużo powietrza, spokojne kolory, wszystko poukładane.</span></label>
         <label class="opt"><input type="radio" name="Kierunek wizualny" value="Klubowy i energetyczny"><span><b>Klubowy i energetyczny</b>Żywe akcenty, ruch, dużo zdjęć ludzi i aut.</span></label>
-        <label class="opt"><input type="radio" name="Kierunek wizualny" value="Nie wiem — pokaż propozycje"><span><b>Nie wiemy — pokaż propozycje</b>Przygotuję kilka wersji do obejrzenia.</span></label>
+        <label class="opt"><input type="radio" name="Kierunek wizualny" value="Nie wiemy — pokaż propozycje"><span><b>Nie wiemy — pokaż propozycje</b>Przygotuję kilka wersji do obejrzenia.</span></label>
       </div>
     </div>
 
@@ -59,8 +59,17 @@
 
     <div class="q">
       <label for="k1">Macie swoje kolory firmowe?</label>
-      <span class="hintx">Jeśli tak — wpiszcie, jakie. Jeśli nie, po prostu zostawcie puste.</span>
+      <span class="hintx">Jeśli tak — wpiszcie, jakie; wtedy one mają pierwszeństwo przed wyborem powyżej. Jeśli nie, po prostu zostawcie puste.</span>
       <input id="k1" type="text" name="Kolory firmowe" placeholder="np. czarny i pomarańczowy">
+    </div>
+    <div class="q">
+      <span class="qlab">Wasze logo</span>
+      <span class="hintx">Od tego zaczyna się cała reszta — kolory i napisy dobieram tak, żeby z nim grały.</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Logo" value="Zostaje dokładnie takie, jakie jest" required><span><b>Zostaje jak jest</b>Buduję wszystko wokół niego</span></label>
+        <label class="opt"><input type="radio" name="Logo" value="Można je delikatnie odświeżyć"><span><b>Można je delikatnie odświeżyć</b>Jeśli zaproponuję coś lepszego — jesteśmy otwarci</span></label>
+        <label class="opt"><input type="radio" name="Logo" value="Nie mamy logo"><span><b>Nie mamy logo</b>Ustalimy na starcie, jak to rozwiązać</span></label>
+      </div>
     </div>
   </fieldset>
 
@@ -75,6 +84,7 @@
         <label class="opt"><input type="radio" name="Ton" value="Na luzie, ale z klasą"><span>Na luzie, ale z klasą</span></label>
         <label class="opt"><input type="radio" name="Ton" value="Raczej oficjalnie"><span>Raczej oficjalnie — sponsorzy czytają poważnie</span></label>
         <label class="opt"><input type="radio" name="Ton" value="Inaczej dla uczestników, inaczej dla firm"><span>Inaczej dla uczestników, inaczej dla firm</span></label>
+        <label class="opt"><input type="radio" name="Ton" value="Jeszcze nie wiemy — zaproponuj"><span>Jeszcze nie wiemy — zaproponuj</span></label>
       </div>
     </div>
 
@@ -93,7 +103,7 @@
 
     <div class="q">
       <label for="p1">Strony albo profile, które Wam się podobają</label>
-      <span class="hintx">Cokolwiek — nie musi być z motoryzacji. Wystarczy link i słowo, co się podoba.</span>
+      <span class="hintx">Cokolwiek — nie musi być z motoryzacji. Wystarczy link i dwa słowa o tym, co się w nich podoba.</span>
       <textarea id="p1" name="Co nam się podoba" placeholder="np. jakiś zlot z zagranicy — podoba się nam, jak pokazują zdjęcia"></textarea>
     </div>
 
@@ -123,6 +133,19 @@
     </div>
 
     <div class="q">
+      <span class="qlab">Co ma pomyśleć ktoś, kto pierwszy raz trafi na Waszą stronę?</span>
+      <span class="hintx">Można zaznaczyć kilka. To pytanie mówi mi więcej niż kolory — od niego zależy, co postawię na pierwszym ekranie.</span>
+      <div class="opts grid2">
+        <label class="opt"><input type="checkbox" name="Pierwsze wrażenie" value="Chcę tam pojechać"><span>„Chcę tam pojechać”</span></label>
+        <label class="opt"><input type="checkbox" name="Pierwsze wrażenie" value="To poważna, ogarnięta ekipa"><span>„To poważna, ogarnięta ekipa”</span></label>
+        <label class="opt"><input type="checkbox" name="Pierwsze wrażenie" value="To moje miejsce, moi ludzie"><span>„To moi ludzie”</span></label>
+        <label class="opt"><input type="checkbox" name="Pierwsze wrażenie" value="Ale jakość zdjęć i filmów"><span>„Ale jakość zdjęć”</span></label>
+        <label class="opt"><input type="checkbox" name="Pierwsze wrażenie" value="Tu się naprawdę dzieje"><span>„Tu się naprawdę dzieje”</span></label>
+        <label class="opt"><input type="checkbox" name="Pierwsze wrażenie" value="Warto się z nimi reklamować"><span>„Warto się z nimi reklamować”</span></label>
+      </div>
+    </div>
+
+    <div class="q">
       <label for="p3">Coś jeszcze, co powinnam wiedzieć?</label>
       <textarea id="p3" name="Uwagi dodatkowe" placeholder="Cokolwiek przyjdzie Wam do głowy"></textarea>
     </div>
@@ -134,7 +157,7 @@
   </fieldset>
 
   <button class="send" type="submit">Wyślij ankietę →</button>
-  <p class="foot">Odpowiedzi trafiają prosto do mnie. Nic tu nie jest ostateczne — wszystko omówimy przed startem prac.</p>
+  <p class="foot">Odpowiedzi trafiają prosto do mnie. Wszystko można później zmienić — ta ankieta ustala kierunek, a nie zamyka temat.</p>
 </form>
 </div>
 </body>
