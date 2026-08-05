@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ankieta stylu — Street-Elite</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Manrope:wght@300;400;500;650;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_ankieta.css">
+</head>
+<body>
+<div class="atmo"><div class="beam b1"></div><div class="beam b2"></div></div>
+<div class="noise"></div>
+
+<header class="bar"><div class="bar-in">
+  <a class="back" href="index.html#odwas">← Wróć do propozycji</a>
+  <span class="step">Ankieta 1 z 2 · ok. 20 minut</span>
+</div></header>
+
+<div class="wrap">
+<div class="head">
+  <div class="kicker">Ankieta stylu</div>
+  <h1>Jak ma wyglądać<br>Wasza strona</h1>
+  <p class="lead">Żadnego opisywania słowami — pokazuję gotowe kierunki, Wy wybieracie. Nie ma złych odpowiedzi, a każdą decyzję można później zmienić.</p>
+</div>
+
+<form action="https://formsubmit.co/marcin.tatsiana@gmail.com" method="POST">
+  <input type="hidden" name="_subject" value="🎨 Ankieta stylu — Street-Elite">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+
+  <fieldset>
+    <legend>Kierunek</legend>
+
+    <div class="q">
+      <span class="qlab">Który klimat jest najbardziej Wasz?</span>
+      <span class="hintx">Wybierzcie jeden — to punkt wyjścia, nie wyrok.</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Kierunek wizualny" value="Surowy i mocny" required><span><b>Surowy i mocny</b>Ciemne tło, duże zdjęcia, mocne napisy. Asfalt, noc, światła.</span></label>
+        <label class="opt"><input type="radio" name="Kierunek wizualny" value="Czysty i nowoczesny"><span><b>Czysty i nowoczesny</b>Dużo powietrza, spokojne kolory, wszystko poukładane.</span></label>
+        <label class="opt"><input type="radio" name="Kierunek wizualny" value="Klubowy i energetyczny"><span><b>Klubowy i energetyczny</b>Żywe akcenty, ruch, dużo zdjęć ludzi i aut.</span></label>
+        <label class="opt"><input type="radio" name="Kierunek wizualny" value="Nie wiem — pokaż propozycje"><span><b>Nie wiem — pokaż mi propozycje</b>Przygotuję kilka wersji do obejrzenia.</span></label>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="qlab">Kolory</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Kolorystyka" value="Ciemna" required><span>Ciemna — czerń, grafit, mocny akcent</span></label>
+        <label class="opt"><input type="radio" name="Kolorystyka" value="Jasna"><span>Jasna — biel, szarości, spokojnie</span></label>
+        <label class="opt"><input type="radio" name="Kolorystyka" value="Kontrastowa"><span>Kontrastowa — mocne zestawienia, dużo charakteru</span></label>
+        <label class="opt"><input type="radio" name="Kolorystyka" value="Zdecydujcie za nas"><span>Zdecyduj za nas</span></label>
+      </div>
+    </div>
+
+    <div class="q">
+      <label for="k1">Macie swoje kolory firmowe?</label>
+      <span class="hintx">Jeśli tak — wpiszcie jakie. Jeśli nie, po prostu zostawcie puste.</span>
+      <input id="k1" type="text" name="Kolory firmowe" placeholder="np. czarny i pomarańczowy">
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Ton</legend>
+
+    <div class="q">
+      <span class="qlab">Bliżej Wam do luzu czy do biznesu?</span>
+      <span class="hintx">Chodzi o sposób mówienia na stronie.</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Ton" value="Zdecydowanie na luzie" required><span>Zdecydowanie na luzie — jak między swoimi</span></label>
+        <label class="opt"><input type="radio" name="Ton" value="Na luzie, ale z klasą"><span>Na luzie, ale z klasą</span></label>
+        <label class="opt"><input type="radio" name="Ton" value="Raczej oficjalnie"><span>Raczej oficjalnie — sponsorzy czytają poważnie</span></label>
+        <label class="opt"><input type="radio" name="Ton" value="Inaczej dla uczestników, inaczej dla firm"><span>Inaczej dla uczestników, inaczej dla firm</span></label>
+      </div>
+    </div>
+
+    <div class="q">
+      <span class="qlab">Napisy na stronie</span>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="Typografia" value="Mocne, szerokie, wyraziste" required><span>Mocne i wyraziste — jak na plakacie</span></label>
+        <label class="opt"><input type="radio" name="Typografia" value="Spokojne i czytelne"><span>Spokojne i czytelne — bez krzyku</span></label>
+        <label class="opt"><input type="radio" name="Typografia" value="Nie mam zdania"><span>Nie mam zdania — wybierz najlepsze</span></label>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Wasze przykłady</legend>
+
+    <div class="q">
+      <label for="p1">Strony albo profile, które Wam się podobają</label>
+      <span class="hintx">Cokolwiek — nie musi być z motoryzacji. Wystarczy link i słowo, co się podoba.</span>
+      <textarea id="p1" name="Co nam się podoba" placeholder="np. jakiś zlot z zagranicy — podoba się nam, jak pokazują zdjęcia"></textarea>
+    </div>
+
+    <div class="q">
+      <label for="p2">A czego zdecydowanie nie chcecie?</label>
+      <span class="hintx">To najcenniejsza odpowiedź w całej ankiecie — dzięki niej nie trafię obok.</span>
+      <textarea id="p2" name="Czego nie chcemy" placeholder="np. nie chcemy, żeby wyglądało jak salon sprzedaży aut"></textarea>
+    </div>
+
+    <div class="q">
+      <span class="qlab">Jakie zdjęcia mają rządzić na stronie?</span>
+      <span class="hintx">Można zaznaczyć kilka.</span>
+      <div class="opts grid2">
+        <label class="opt"><input type="checkbox" name="Zdjęcia" value="Auta z bliska"><span>Auta z bliska</span></label>
+        <label class="opt"><input type="checkbox" name="Zdjęcia" value="Tłum i atmosfera"><span>Tłum i atmosfera</span></label>
+        <label class="opt"><input type="checkbox" name="Zdjęcia" value="Ludzie i ekipa"><span>Ludzie i ekipa</span></label>
+        <label class="opt"><input type="checkbox" name="Zdjęcia" value="Ujęcia nocne"><span>Ujęcia nocne</span></label>
+        <label class="opt"><input type="checkbox" name="Zdjęcia" value="Kadry z drona"><span>Kadry z drona</span></label>
+        <label class="opt"><input type="checkbox" name="Zdjęcia" value="Sesje z modelkami"><span>Sesje z modelkami</span></label>
+      </div>
+    </div>
+
+    <div class="q">
+      <label for="p3">Coś jeszcze, co powinnam wiedzieć?</label>
+      <textarea id="p3" name="Uwagi dodatkowe" placeholder="Cokolwiek przyjdzie Wam do głowy"></textarea>
+    </div>
+
+    <div class="q">
+      <label for="who">Kto wypełnia</label>
+      <input id="who" type="text" name="Kto wypełnia" placeholder="Imię" required>
+    </div>
+  </fieldset>
+
+  <button class="send" type="submit">Wyślij ankietę →</button>
+  <p class="foot">Odpowiedzi trafiają prosto do mnie. Nic tu nie jest ostateczne — wszystko omówimy przed startem prac.</p>
+</form>
+</div>
+</body>
+</html>

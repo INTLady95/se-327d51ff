@@ -1,0 +1,1399 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propozycja współpracy — Street-Elite</title>
+<meta name="description" content="Strona internetowa, system zapisów na zloty i pakiety sponsorskie dla Street-Elite / MyVision_video.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#06070A;
+  --deep:#0A0C11;
+  --panel:rgba(255,255,255,.055);
+  --panel-2:rgba(255,255,255,.082);
+  --edge:rgba(255,186,110,.20);
+  --edge-2:rgba(255,186,110,.38);
+  --ink:#F2F4F7;
+  --soft:#9BA5B2;
+  --dim:#69727E;
+  --sodium:#FF9E3D;
+  --sodium-2:#FFC178;
+  --ice:#9CC7FF;
+  --ok:#7BD8A4;
+  --display:"Saira Condensed",'Arial Narrow',sans-serif;
+  --body:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",monospace;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--void);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.7;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+:where(a,button):focus-visible{outline:2px solid var(--sodium);outline-offset:4px;border-radius:4px}
+
+/* ═══ atmosfera ═══ */
+.atmo{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.beam{position:absolute;border-radius:50%;filter:blur(88px);opacity:.72;will-change:transform}
+.b1{width:60vw;height:60vw;max-width:760px;max-height:760px;top:-22vh;right:-14vw;
+  background:radial-gradient(circle,rgba(255,158,61,.34),transparent 64%);
+  animation:drift1 32s ease-in-out infinite alternate}
+.b2{width:52vw;height:52vw;max-width:640px;max-height:640px;top:38vh;left:-18vw;
+  background:radial-gradient(circle,rgba(156,199,255,.22),transparent 66%);
+  animation:drift2 40s ease-in-out infinite alternate}
+.b3{width:44vw;height:44vw;max-width:520px;max-height:520px;bottom:-14vh;right:8vw;
+  background:radial-gradient(circle,rgba(255,158,61,.22),transparent 68%);
+  animation:drift1 46s ease-in-out infinite alternate-reverse}
+@keyframes drift1{to{transform:translate3d(-7vw,9vh,0) scale(1.14)}}
+@keyframes drift2{to{transform:translate3d(9vw,-7vh,0) scale(1.1)}}
+.grid-o{position:absolute;inset:0;opacity:.4;
+  background-image:linear-gradient(rgba(255,186,110,.05) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,186,110,.05) 1px,transparent 1px);
+  background-size:76px 76px;
+  mask-image:radial-gradient(ellipse 100% 60% at 50% 0%,#000 20%,transparent 78%);
+  -webkit-mask-image:radial-gradient(ellipse 100% 60% at 50% 0%,#000 20%,transparent 78%)}
+.noise{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.22;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ═══ nawigacja ═══ */
+.bar{position:sticky;top:0;z-index:60;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  background:rgba(6,7,10,.72);border-bottom:1px solid var(--edge)}
+.bar-in{max-width:var(--maxw);margin:0 auto;padding:13px clamp(18px,4vw,40px);
+  display:flex;align-items:center;gap:26px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.14rem;letter-spacing:.055em;
+  text-transform:uppercase;white-space:nowrap}
+.logo span{color:var(--sodium)}
+.bar nav{display:flex;gap:22px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{font-family:var(--mono);font-size:.665rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--dim);text-decoration:none;white-space:nowrap;transition:color .22s;padding:4px 0}
+.bar nav a:hover,.bar nav a[aria-current]{color:var(--sodium)}
+@media(max-width:860px){.bar nav{display:none}}
+.prog{position:absolute;left:0;bottom:-1px;height:2px;width:0;
+  background:linear-gradient(90deg,var(--sodium),var(--sodium-2));box-shadow:0 0 12px rgba(255,158,61,.6)}
+
+/* ═══ układ ═══ */
+.wrap{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+section{padding:clamp(64px,9vh,110px) 0;scroll-margin-top:64px}
+
+.kicker{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);
+  font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sodium-2);margin-bottom:18px;
+  text-shadow:0 0 18px rgba(255,158,61,.55)}
+.kicker::before{content:"";width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--sodium));
+  box-shadow:0 0 10px rgba(255,158,61,.9)}
+
+h1{font-family:var(--display);font-weight:800;text-transform:uppercase;
+  font-size:clamp(2.9rem,9vw,6.4rem);line-height:.92;letter-spacing:-.005em;margin:0 0 22px;text-wrap:balance}
+h1 .hl{color:transparent;-webkit-text-stroke:1.4px var(--sodium)}
+h2{font-family:var(--display);font-weight:700;text-transform:uppercase;position:relative;
+  font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.02;letter-spacing:.005em;
+  margin:0 0 20px;padding-bottom:16px;text-wrap:balance}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:88px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,var(--sodium),rgba(255,158,61,0));box-shadow:0 0 16px rgba(255,158,61,.8)}
+h3{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:1.22rem;
+  letter-spacing:.03em;margin:0 0 9px}
+h4{font-weight:700;font-size:1.02rem;margin:0 0 6px;letter-spacing:-.005em}
+p{margin:0 0 15px}
+.lead{font-size:clamp(1.04rem,2vw,1.22rem);color:var(--soft);font-weight:300;max-width:60ch;margin-bottom:26px}
+.sub{color:var(--soft);max-width:66ch;margin-bottom:30px}
+strong,b{font-weight:700;color:var(--ink)}
+a{color:var(--sodium)}
+
+/* ═══ hero ═══ */
+.hero{padding:clamp(70px,14vh,150px) 0 clamp(50px,8vh,88px)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--edge);margin-top:38px}
+.hero-meta div{flex:1 1 150px;padding:16px 20px 16px 0;border-right:1px solid var(--edge)}
+.hero-meta div:last-child{border-right:none}
+.hero-meta dt{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:5px}
+.hero-meta dd{margin:0;font-family:var(--display);font-weight:600;font-size:1.14rem;letter-spacing:.02em}
+
+/* ═══ karty szklane ═══ */
+.glass{position:relative;background:var(--panel);border:1px solid var(--edge);border-radius:14px;
+  padding:24px 26px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:inset 0 1px 0 rgba(255,205,150,.14),0 10px 34px -22px rgba(255,158,61,.5);
+  transition:border-color .35s,background .35s,transform .35s,box-shadow .35s}
+.glass::before{content:"";position:absolute;inset:0;border-radius:14px;padding:1px;
+  background:linear-gradient(140deg,rgba(255,175,80,.85),rgba(255,158,61,.18) 38%,transparent 58%,rgba(156,199,255,.42));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:.55;transition:opacity .35s;pointer-events:none}
+.glass:hover{background:var(--panel-2);transform:translateY(-3px);border-color:rgba(255,186,110,.5);
+  box-shadow:inset 0 1px 0 rgba(255,205,150,.25),0 22px 62px -20px rgba(255,158,61,.72)}
+.glass:hover::before{opacity:1}
+
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+
+/* decyzje */
+.dec{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.dec .no{font-family:var(--display);font-weight:800;font-size:1.65rem;line-height:1;
+  color:transparent;-webkit-text-stroke:1px var(--sodium);min-width:34px;
+  font-variant-numeric:tabular-nums;transition:color .35s}
+.glass:hover .dec .no{color:var(--sodium);-webkit-text-stroke-color:transparent}
+.dec p{margin:0;font-size:.955rem;color:var(--soft)}
+.dec p .gain{color:var(--ink);font-weight:600}
+
+/* cytat klienta */
+.quote{font-family:var(--display);font-weight:600;text-transform:none;text-shadow:0 0 34px rgba(255,158,61,.3);
+  font-size:clamp(1.35rem,3.3vw,2.15rem);line-height:1.24;letter-spacing:.005em;
+  color:var(--ink);border-left:3px solid var(--sodium);box-shadow:-3px 0 20px -4px rgba(255,158,61,.8);padding:6px 0 6px 22px;margin:0 0 22px;max-width:24ch}
+.quote em{font-style:normal;color:var(--sodium)}
+
+/* listy */
+.ticks{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+.ticks li{position:relative;padding-left:28px;color:var(--soft);font-size:.96rem}
+.ticks li::before{content:"";position:absolute;left:2px;top:.62em;width:9px;height:9px;
+  border:1.5px solid var(--sodium);border-radius:50%;box-shadow:0 0 10px rgba(255,158,61,.85)}
+.ticks.no li::before{border-color:var(--dim);background:
+  linear-gradient(45deg,transparent 44%,var(--dim) 44%,var(--dim) 56%,transparent 56%);border-radius:2px}
+.ticks li b{color:var(--ink)}
+
+/* ścieżka */
+.path{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:2px}
+.path li{position:relative;counter-increment:s;padding:13px 0 13px 50px;
+  border-bottom:1px solid var(--edge);color:var(--soft);font-size:.96rem}
+.path li:last-child{border-bottom:none}
+.path li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:12px;
+  font-family:var(--mono);font-size:.72rem;color:var(--sodium);letter-spacing:.06em}
+.path li b{color:var(--ink)}
+
+/* harmonogram */
+.tl{display:grid;gap:0}
+.tl-row{display:grid;grid-template-columns:78px 1fr 1fr;gap:18px;padding:16px 0;
+  border-bottom:1px solid var(--edge);align-items:start}
+.tl-row:last-child{border-bottom:none}
+.tl-w{font-family:var(--mono);font-size:.68rem;color:var(--sodium);letter-spacing:.08em;padding-top:3px}
+.tl-t{font-weight:600;font-size:.985rem}
+.tl-c{color:var(--dim);font-size:.885rem}
+@media(max-width:700px){.tl-row{grid-template-columns:64px 1fr;gap:12px}
+  .tl-c{grid-column:2;font-size:.83rem}}
+
+/* pakiety */
+.plans{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));align-items:stretch}
+.plan{display:flex;flex-direction:column;position:relative;background:var(--panel);
+  border:1px solid var(--edge);border-radius:16px;padding:28px 26px 30px;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:.4s;
+  box-shadow:inset 0 1px 0 rgba(255,205,150,.18),0 12px 40px -26px rgba(255,158,61,.6)}
+.plan:hover{transform:translateY(-4px);border-color:rgba(255,186,110,.6);
+  box-shadow:inset 0 1px 0 rgba(255,205,150,.3),0 26px 68px -24px rgba(255,158,61,.75)}
+.plan.best{border-color:rgba(255,175,80,.8);background:rgba(255,158,61,.09);
+  box-shadow:0 0 0 1px rgba(255,175,80,.4),inset 0 1px 0 rgba(255,215,165,.4),
+             0 0 60px -18px rgba(255,158,61,.5),0 30px 80px -28px rgba(255,158,61,.85)}
+.plan .flag{position:absolute;top:-11px;left:26px;font-family:var(--mono);font-size:.6rem;
+  letter-spacing:.18em;text-transform:uppercase;background:var(--sodium);color:#1A0F04;
+  padding:4px 12px;border-radius:100px;font-weight:700}
+.plan h3{margin-bottom:14px}
+.price{font-family:var(--display);font-weight:800;font-size:2.5rem;line-height:1;letter-spacing:-.01em;
+  font-variant-numeric:tabular-nums;margin-bottom:3px}
+.plan.best .price{color:var(--sodium)}
+.price-n{font-family:var(--mono);font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:20px}
+.plan .ticks{margin-top:4px}
+.plan .ticks li{font-size:.91rem}
+
+/* tabela rat */
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:460px}
+th{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--dim);font-weight:500;text-align:left;padding:0 16px 11px 0;border-bottom:1px solid var(--edge-2)}
+td{padding:13px 16px 13px 0;border-bottom:1px solid rgba(255,186,110,.14);color:var(--soft);
+  font-variant-numeric:tabular-nums}
+td:first-child{color:var(--ink);font-weight:600}
+tr:last-child td{border-bottom:none}
+
+/* koszty */
+.cost{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:14px 0;border-bottom:1px solid var(--edge)}
+.cost:last-of-type{border-bottom:none}
+.cost .n{font-weight:600}
+.cost .d{color:var(--dim);font-size:.875rem;display:block;font-weight:400;margin-top:2px}
+.cost .v{font-family:var(--mono);font-size:.9rem;color:var(--sodium);white-space:nowrap}
+
+/* cta */
+.cta{text-align:center;padding:clamp(56px,9vh,96px) clamp(22px,5vw,60px);
+  border:1px solid rgba(255,186,110,.45);border-radius:20px;
+  box-shadow:inset 0 1px 0 rgba(255,215,165,.3),0 0 80px -24px rgba(255,158,61,.55);background:
+    radial-gradient(ellipse 90% 130% at 50% 0%,rgba(255,158,61,.24),transparent 66%),var(--panel);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.cta h2{margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:11px;margin-top:12px;
+  font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  font-size:1.02rem;padding:15px 34px;border-radius:100px;text-decoration:none;
+  background:linear-gradient(100deg,var(--sodium),var(--sodium-2));color:#170D03;
+  box-shadow:0 14px 40px -14px rgba(255,158,61,.7);transition:.3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 20px 52px -14px rgba(255,158,61,.85)}
+
+.note{font-family:var(--mono);font-size:.775rem;line-height:1.85;color:var(--dim);
+  border-left:1px solid var(--edge-2);padding-left:18px}
+.hi{color:var(--sodium)}
+.foot{border-top:1px solid var(--edge);padding:34px 0 60px;font-family:var(--mono);
+  font-size:.7rem;color:var(--dim);letter-spacing:.05em;line-height:2}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px)}
+.rv.on{opacity:1;transform:none;transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.hero .kicker,.hero h1,.hero .lead,.hero .hero-meta{opacity:0;animation:fu 1s cubic-bezier(.2,.7,.3,1) forwards}
+.hero .kicker{animation-delay:.08s}.hero h1{animation-delay:.2s}
+.hero .lead{animation-delay:.36s}.hero .hero-meta{animation-delay:.5s}
+@keyframes fu{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .hero .kicker,.hero h1,.hero .lead,.hero .hero-meta{opacity:1}
+}
+
+/* ═══ karty decyzji (rozwijane) ═══ */
+.dcard{position:relative;background:var(--panel);border:1px solid var(--edge);border-radius:14px;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);overflow:hidden;
+  box-shadow:inset 0 1px 0 rgba(255,205,150,.16),0 10px 34px -24px rgba(255,158,61,.55);
+  transition:border-color .35s,background .35s,box-shadow .35s,transform .35s}
+.dcard::after{content:"";position:absolute;left:0;top:14px;bottom:14px;width:2px;border-radius:0 3px 3px 0;
+  background:linear-gradient(180deg,var(--sodium),rgba(255,158,61,.05));opacity:.75;transition:opacity .35s}
+.dcard:hover::after,.dcard[open]::after{opacity:1;box-shadow:0 0 14px rgba(255,158,61,.85)}
+.dcard:hover{transform:translateY(-2px);border-color:rgba(255,186,110,.52);
+  box-shadow:inset 0 1px 0 rgba(255,205,150,.26),0 20px 56px -22px rgba(255,158,61,.6)}
+.dcard[open]{background:var(--panel-2);border-color:rgba(255,175,80,.62);
+  box-shadow:inset 0 1px 0 rgba(255,205,150,.3),0 26px 70px -24px rgba(255,158,61,.75)}
+.dcard summary{list-style:none;cursor:pointer;padding:20px 22px;display:grid;
+  grid-template-columns:auto 1fr auto;gap:15px;align-items:start}
+.dcard summary:not(:has(.dnum)){grid-template-columns:1fr auto}
+.dcard summary::-webkit-details-marker{display:none}
+.dnum{font-family:var(--display);font-weight:800;font-size:1.5rem;line-height:1.1;
+  color:transparent;-webkit-text-stroke:1px var(--sodium);font-variant-numeric:tabular-nums;
+  transition:color .35s,-webkit-text-stroke-color .35s}
+.dcard[open] .dnum,.dcard:hover .dnum{color:var(--sodium);-webkit-text-stroke-color:transparent}
+.lab{font-family:var(--mono);font-size:.575rem;letter-spacing:.19em;text-transform:uppercase;
+  display:block;margin-bottom:5px;color:var(--dim)}
+.dhead h4{margin:0 0 7px;font-family:var(--display);font-weight:600;text-transform:uppercase;
+  font-size:1.06rem;letter-spacing:.02em}
+.dhead .plain{margin:0;font-size:.93rem;color:var(--soft)}
+.dmore{width:27px;height:27px;border:1px solid var(--edge-2);border-radius:50%;display:grid;
+  place-items:center;color:var(--dim);font-size:1rem;line-height:1;transition:.32s;margin-top:3px}
+.dcard summary:hover .dmore{border-color:var(--sodium);color:var(--sodium)}
+.dcard[open] .dmore{transform:rotate(45deg);border-color:var(--sodium);color:var(--sodium)}
+.dbody{padding:2px 22px 22px 59px;display:grid;gap:15px;animation:dreveal .45s cubic-bezier(.2,.7,.3,1)}
+@media(max-width:520px){.dbody{padding-left:22px}}
+@keyframes dreveal{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:none}}
+.dsep{height:1px;background:var(--edge)}
+.dblock p{margin:0;font-size:.94rem;color:var(--soft)}
+.dblock.sol .lab{color:var(--sodium)}
+.dblock.gain .lab{color:var(--ok)}
+.dblock.gain p{color:var(--ink);font-weight:500}
+
+
+/* ═══ podpowiedź „kliknij” ═══ */
+.hint{display:inline-flex;align-items:center;gap:11px;margin:0 0 22px;
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--sodium-2);background:rgba(255,158,61,.10);border:1px solid rgba(255,186,110,.42);
+  border-radius:100px;padding:9px 18px 9px 15px;
+  box-shadow:inset 0 1px 0 rgba(255,215,165,.28),0 0 30px -10px rgba(255,158,61,.75)}
+.hint .dot{width:20px;height:20px;border-radius:50%;border:1px solid var(--sodium);
+  display:grid;place-items:center;font-size:.85rem;line-height:1;flex:none;
+  animation:tap 2.4s ease-in-out infinite}
+@keyframes tap{0%,72%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,158,61,.55)}
+  82%{transform:scale(.86);box-shadow:0 0 0 8px rgba(255,158,61,0)}}
+
+.dcta{display:flex;align-items:center;gap:9px;margin-top:2px}
+.dhint{font-family:var(--mono);font-size:.575rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sodium);white-space:nowrap;transition:color .3s;opacity:.9}
+.dhint::before{content:"Kliknij"}
+.dcard[open] .dhint::before{content:"Zwiń"}
+.dcard[open] .dhint{color:var(--dim)}
+@media(max-width:430px){.dhint{display:none}}
+
+
+/* ═══ symetryczne siatki ═══ */
+.gsym2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gsym3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gsym4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1000px){.gsym4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:820px){.gsym3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){
+  .gsym2,.gsym3,.gsym4{grid-template-columns:minmax(0,1fr)}
+}
+/* nieparzysta ostatnia karta decyzji zajmuje pełną szerokość — bez sieroty */
+@media(min-width:641px){
+  .grid.g2 > .dcard:last-child:nth-child(odd){grid-column:1 / -1}
+}
+/* równa wysokość i wyrównanie treści w kartach */
+.grid > .glass{display:flex;flex-direction:column}
+.grid > .glass > :last-child{margin-bottom:0}
+
+
+.ticks.later li::before{border:1.5px solid rgba(156,199,255,.55);border-radius:50%;
+  background:none;box-shadow:0 0 9px rgba(156,199,255,.35)}
+
+
+.goform{display:inline-flex;align-items:center;gap:9px;margin-top:16px;
+  font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+  font-size:.9rem;padding:11px 22px;border-radius:100px;text-decoration:none;color:#170D03;
+  background:linear-gradient(100deg,var(--sodium),var(--sodium-2));
+  box-shadow:0 10px 30px -12px rgba(255,158,61,.8);transition:.28s}
+.goform:hover{transform:translateY(-2px);box-shadow:0 16px 42px -12px rgba(255,158,61,.95)}
+
+
+/* ═══ pływająca nawigacja ═══ */
+.fab{position:fixed;right:clamp(16px,3vw,30px);z-index:80;width:52px;height:52px;border-radius:50%;
+  cursor:pointer;display:grid;place-items:center;border:1px solid rgba(255,186,110,.5);
+  background:rgba(12,10,9,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  color:var(--sodium);font-size:1.2rem;line-height:1;transition:.28s;
+  box-shadow:inset 0 1px 0 rgba(255,215,165,.28),0 12px 34px -12px rgba(255,158,61,.75)}
+.fab:hover{border-color:var(--sodium);background:rgba(255,158,61,.16);transform:translateY(-2px)}
+.fab-menu{bottom:clamp(16px,3vw,30px)}
+.fab-top{bottom:calc(clamp(16px,3vw,30px) + 62px);opacity:.45}
+.fab-top.on{opacity:1}
+.fab .ico{display:grid;gap:4px}
+.fab .ico span{display:block;width:18px;height:1.5px;background:currentColor;border-radius:2px;transition:.28s}
+.fab-menu[aria-expanded="true"] .ico span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.fab-menu[aria-expanded="true"] .ico span:nth-child(2){opacity:0}
+.fab-menu[aria-expanded="true"] .ico span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.quick{position:fixed;right:clamp(16px,3vw,30px);bottom:calc(clamp(16px,3vw,30px) + 62px);z-index:79;
+  width:min(310px,calc(100vw - 32px));padding:18px 16px;border-radius:16px;
+  border:1px solid rgba(255,186,110,.4);background:rgba(10,9,8,.86);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  box-shadow:inset 0 1px 0 rgba(255,215,165,.24),0 26px 70px -22px rgba(0,0,0,.9),0 0 50px -20px rgba(255,158,61,.6);
+  opacity:0;pointer-events:none;transform:translateY(12px) scale(.97);transform-origin:bottom right;
+  transition:opacity .26s,transform .26s;max-height:min(70vh,560px);overflow-y:auto}
+.quick.on{opacity:1;pointer-events:auto;transform:none}
+.quick-t{font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);padding:0 10px 10px;border-bottom:1px solid var(--edge);margin-bottom:8px}
+.quick a{display:block;padding:9px 11px;border-radius:8px;text-decoration:none;color:var(--soft);
+  font-size:.885rem;line-height:1.35;transition:.2s}
+.quick a:hover{background:rgba(255,158,61,.12);color:var(--sodium)}
+.quick a[aria-current]{color:var(--sodium);background:rgba(255,158,61,.09)}
+@media(max-width:640px){.fab{width:46px;height:46px}.fab-top{bottom:calc(16px + 54px)}.quick{bottom:calc(16px + 54px)}}
+
+
+/* ═══ adres kontaktowy ═══ */
+.mailbox{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-top:8px}
+.mail{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:clamp(.95rem,2.4vw,1.18rem);
+  letter-spacing:.02em;padding:15px 30px;border-radius:100px;text-decoration:none;color:#170D03;font-weight:700;
+  background:linear-gradient(100deg,var(--sodium),var(--sodium-2));
+  box-shadow:0 14px 40px -14px rgba(255,158,61,.85);transition:.3s;word-break:break-all}
+.mail:hover{transform:translateY(-2px);box-shadow:0 20px 54px -14px rgba(255,158,61,.95)}
+.copy{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;
+  padding:14px 18px;border:none;background:none;color:var(--dim);transition:.28s;white-space:nowrap;
+  text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(255,186,110,.4)}
+.copy:hover{color:var(--sodium);text-decoration-color:var(--sodium)}
+.copy.done{color:var(--ok);text-decoration-color:var(--ok)}
+
+
+.quick a{display:grid;grid-template-columns:26px 1fr;gap:8px;align-items:baseline}
+.quick a i{font-family:var(--mono);font-size:.63rem;font-style:normal;color:var(--dim);transition:.2s}
+.quick a:hover i,.quick a[aria-current] i{color:var(--sodium)}
+.quick{overscroll-behavior:contain}
+/* ═══ wskaźnik przewijania ═══ */
+.scroller{display:inline-flex;align-items:center;gap:12px;margin-top:34px;
+  font-family:var(--mono);font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.scroller .mouse{width:22px;height:34px;border:1.5px solid rgba(255,186,110,.55);border-radius:12px;
+  position:relative;flex:none}
+.scroller .mouse::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:6px;border-radius:2px;
+  background:var(--sodium);transform:translateX(-50%);animation:wheel 1.9s ease-in-out infinite}
+@keyframes wheel{0%{opacity:0;transform:translate(-50%,0)}25%{opacity:1}
+  70%{opacity:0;transform:translate(-50%,13px)}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.scroller .mouse::after{animation:none;opacity:1}}
+
+
+/* ═══ formularz decyzji ═══ */
+.cform{max-width:640px;margin:0 auto;text-align:left}
+.cq{margin:0 0 16px}
+.cq label,.clab{display:block;font-weight:650;font-size:.95rem;margin-bottom:7px}
+.cgrid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.cform input[type=text],.cform input[type=email],.cform textarea{width:100%;background:rgba(0,0,0,.32);
+  border:1px solid var(--edge);border-radius:10px;color:var(--ink);font-family:var(--body);
+  font-size:.97rem;padding:13px 15px;transition:.22s}
+.cform textarea{min-height:92px;resize:vertical;line-height:1.6}
+.cform input:hover,.cform textarea:hover{border-color:var(--edge-2)}
+.cform input:focus,.cform textarea:focus{border-color:var(--sodium);background:rgba(0,0,0,.45)}
+.cform ::placeholder{color:#5A626C}
+.copts{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.copt{display:flex;align-items:flex-start;gap:10px;background:rgba(0,0,0,.26);border:1px solid var(--edge);
+  border-radius:11px;padding:13px 15px;cursor:pointer;transition:.22s}
+.copt:hover{border-color:var(--edge-2);background:rgba(255,158,61,.07)}
+.copt input{margin:4px 0 0;accent-color:var(--sodium);flex:none;width:16px;height:16px}
+.copt span{font-size:.88rem;color:var(--dim);line-height:1.4}
+.copt span b{display:block;color:var(--ink);font-weight:700;font-size:.97rem;margin-bottom:1px}
+.copt:has(input:checked){border-color:var(--sodium);background:rgba(255,158,61,.13);
+  box-shadow:0 0 30px -12px rgba(255,158,61,.9)}
+.cbtn{margin-top:10px;width:100%;justify-content:center;border:none;cursor:pointer;font-family:var(--display)}
+.hp{position:absolute;left:-9999px}
+/* ═══ kolory etykiet w kartach ═══ */
+.dblock .lab{color:#E08585}
+.dblock.sol .lab{color:var(--sodium)}
+.dblock.gain .lab{color:var(--ok)}
+
+::selection{background:var(--sodium);color:#120902}
+</style>
+</head>
+<body>
+
+<div class="atmo"><div class="grid-o"></div><div class="beam b1"></div><div class="beam b2"></div><div class="beam b3"></div></div>
+<div class="noise"></div>
+
+<header class="bar">
+  <div class="bar-in">
+    <div class="logo">Street<span>·</span>Elite</div>
+    <nav>
+      <a href="#decyzje">Decyzje</a>
+      <a href="#sponsorzy">Sponsorzy</a>
+      <a href="#strona">Strona</a>
+      <a href="#zapisy">Zapisy</a>
+      <a href="#zakres">Zakres</a>
+      <a href="#harmonogram">Harmonogram</a>
+      <a href="#pakiety">Warianty</a>
+      <a href="#formalnosci">Formalności</a>
+    </nav>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<div class="wrap">
+
+<section class="hero" id="start">
+  <div class="kicker">Propozycja współpracy · <span id="today">2026</span></div>
+  <h1>Strona,<br>która pracuje<br><span class="hl">na sponsorów</span></h1>
+  <p class="lead">Strona internetowa, system zapisów na zloty i pakiety sponsorskie dla MyVision_video / Street-Elite. Wszystko zbudowane na Waszych odpowiedziach z briefu.</p>
+  <dl class="hero-meta">
+    <div><dt>Dla</dt><dd>Robert Marchewka</dd></div>
+    <div><dt>Zakres</dt><dd>Strona · Zapisy · Sponsorzy</dd></div>
+    <div><dt>Uruchomienie</dt><dd>3–6 miesięcy</dd></div>
+    <div><dt>Oferta ważna</dt><dd>30 dni</dd></div>
+  </dl>
+  <div class="scroller"><span class="mouse"></span>Przewijaj w dół</div>
+</section>
+
+<section id="wstep" class="rv">
+  <div class="kicker">Wstęp</div>
+  <h2>Dziękuję za brief</h2>
+  <p class="sub">Robert, 60 pytań to sporo — a odpowiedzieliście na wszystkie, konkretnie i bez pośpiechu. Dzięki temu ten dokument nie jest ogólną ofertą „dla każdego", tylko planem zbudowanym na Waszych odpowiedziach.</p>
+  <p class="sub">Najlepiej czytać go po kolei: najpierw pokazuję, jakie decyzje wynikają z tego, co napisaliście, potem — co dokładnie powstanie, jak będzie działać, ile to kosztuje i co jest potrzebne z Waszej strony.</p>
+</section>
+
+<section id="decyzje" class="rv">
+  <div class="kicker">Wasze odpowiedzi — moje decyzje</div>
+  <h2>Co zauważyłam<br>i jak to rozwiązuję</h2>
+  <p class="sub">Każda odpowiedź z briefu prowadzi do konkretnej decyzji. Poniżej dwanaście najważniejszych.</p>
+  <div class="hint"><span class="dot">+</span>Kliknij kartę — zobaczysz pełne wyjaśnienie</div>
+
+  <div class="grid g2">
+    <details class="dcard">
+      <summary>
+        <div class="dnum">01</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Kalendarz na cały rok</h4>
+          <p class="plain">„Kalendarz na cały rok”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Zloty robicie raz na parę miesięcy, więc roczna siatka przez większość roku pokazywałaby puste pola.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Na wejściu duży baner z najbliższym zlotem — data, miejsce i przycisk zapisu. Pod nim kafelki poprzednich edycji: kliknięcie otwiera galerię tamtego zlotu.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Strona zawsze ma co pokazać — także zimą pracuje na Was archiwum i pięć lat historii.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">02</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Płatność przy bramie</h4>
+          <p class="plain">„Zarabiamy na biletach” i „wystarczy zgłoszenie”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Pieniądze bierzecie na miejscu, a przez stronę mają iść same zapisy.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Zostawiamy model, który u Was działa — pieniądze dalej bierzecie przy bramie. Strona bierze na siebie dwie inne rzeczy: wizerunek wobec sponsorów i porządek w zapisach. Sam formularz zapisu działa bezpośrednio na Waszej stronie, w okienku — gość nigdzie nie przechodzi.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Płacicie za to, co jest potrzebne teraz. Płatności online dołożymy wtedy, kiedy sami uznacie, że to dobry moment.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">03</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Zgłoszenia w wiadomościach</h4>
+          <p class="plain">„Czasem coś ucieka”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Zapisy przychodzą w wiadomościach na kilku profilach, więc łatwo któreś przeoczyć.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Jeden formularz i jedna lista wszystkich zapisów — z datą i kontaktem, dostępna dla Was w każdej chwili.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>W jednym miejscu widzicie, kto się zapisał i ilu ludzi już macie.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">04</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Baza kontaktów</h4>
+          <p class="plain">„Kontakty mamy, ale w bałaganie”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Numery i adresy są porozrzucane, więc trudno z nich skorzystać przed kolejnym zlotem.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Strona od pierwszego dnia zbiera nową bazę — z wyraźną zgodą i datą jej udzielenia. Dla starych kontaktów pokażę bezpieczne rozwiązanie.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Baza staje się Waszym majątkiem, z którego możecie spokojnie korzystać.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">05</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Liczby dla sponsorów</h4>
+          <p class="plain">„Statystyki nie są nam potrzebne” i „potrzebujemy pozyskać więcej sponsorów”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Do samej organizacji zlotu liczby faktycznie nie są Wam potrzebne — wiecie, jak to wygląda na miejscu. Sponsor decyduje jednak właśnie na ich podstawie.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Pomiar jest częścią pracy nad pakietem sponsorskim — po to, żeby było czym argumentować w rozmowie.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Do sponsora przychodzicie z konkretem, a nie z prośbą.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">06</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Zdjęcia i filmy ze zlotów</h4>
+          <p class="plain">Materiały, na których widać ludzi</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Na Waszych zdjęciach widać konkretne osoby, a materiały robili konkretni fotografowie — publikacja w internecie rządzi się tu swoimi zasadami.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Przygotuję dwa krótkie teksty: zgodę na zdjęcia w formularzu zapisu (uczestnik wie, że na zlocie robimy zdjęcia) oraz zasady publikacji w regulaminie strony. Ustalimy też z Wami, jak podpisywać autorów zdjęć.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Publikujecie spokojnie, a galeria pracuje na Waszą markę.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">07</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Dane w formularzu</h4>
+          <p class="plain">Formularz zapisu zbiera imię i telefon</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>To dane osobowe, więc od pierwszego zapisu obowiązują konkretne zasady.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Przy formularzu pojawia się pole zgody, informacja o tym, kto i po co zbiera dane, polityka prywatności oraz prosty sposób usunięcia danych.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Wszystko jest w porządku od startu, a sponsor widzi firmę, która działa profesjonalnie.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">08</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Prowadzenie strony</h4>
+          <p class="plain">„Kto aktualizuje potem — jeszcze nie wiemy”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Nie ma jeszcze wyznaczonej osoby, która będzie zajmować się stroną.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Panel projektuję tak, żeby dodanie zlotu, zmiana daty czy wrzucenie zdjęć były zrozumiałe dla każdego z Was — bez kodu i bez szkoleń. Do tego instrukcja krok po kroku.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Stronę zaktualizuje ten z Was, kto akurat ma chwilę, a wszystko zostaje w Waszych rękach.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">09</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Limit miejsc</h4>
+          <p class="plain">„Ograniczenie miejsc — w zależności od miejsca i wydarzenia”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Przy każdym zlocie liczba miejsc jest inna, więc nie da się jej ustawić raz na zawsze.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Limit ustawiacie sami przy każdym wydarzeniu, a zapisy zamykają się automatycznie z czytelnym komunikatem, gdy pula się wyczerpie.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Przy każdym zlocie sami decydujecie, ile osób przyjmujecie, a zapisy zamykają się same — nie trzeba tego pilnować.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">10</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Styl strony</h4>
+          <p class="plain">„Surowy styl, coś na luzie”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Kierunek jest jasny — a żeby trafić w niego od razu, warto zobaczyć go w konkretach.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Przed startem krótka ankieta stylu: pokazuję gotowe propozycje, Wy wskazujecie, co Wasze.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Pierwsza wersja od razu trafia w Wasz klimat.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">11</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Nazwa na stronie</h4>
+          <p class="plain">MyVision_video i Street-Elite</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>W briefie pojawiają się obie nazwy i nie wynika z niego, która ma być tą główną na stronie.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Na starcie poproszę o trzy rzeczy: oficjalną nazwę firmy do umowy, nazwę, pod którą znają Was ludzie, i tę, którą chcecie widzieć na stronie. Wystarczy kierunek — resztę dopracujemy razem.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Jedna nazwa na stronie, w adresie i w materiałach dla sponsorów — łatwiej ją zapamiętać.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">12</div>
+        <div class="dhead">
+          <span class="lab">Problem</span>
+          <h4>Współpraca z modelkami</h4>
+          <p class="plain">„Motoryzacja, organizacja zlotów i eventów, współpraca z modelkami”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Wymieniliście to jako jedną z trzech rzeczy, którymi się zajmujecie — ale z briefu nie wynika, czy ma się pojawić na stronie.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Ustalimy to na starcie. Jeśli chcecie ten obszar pokazać, przygotuję dla niego osobne miejsce — z galerią i formularzem zgłoszeń dla modelek i fotografów, uporządkowanym tak samo jak zapisy na zloty.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Nic z tego, czym się zajmujecie, nie zostaje pominięte, a Wy decydujecie, co pokazujecie na zewnątrz.</p></div>
+      </div>
+    </details>
+  </div>
+
+  <p class="note" style="margin-top:30px">Plan realizacji jest gotowy w zarysie. Po podpisaniu umowy dopracowuję go pod Wasze materiały <span class="hi">w ciągu 2 tygodni</span> — i od tej chwili pracujemy dokładnie według niego.</p>
+</section>
+
+<section id="sponsorzy" class="rv">
+  <div class="kicker">Cel numer jeden</div>
+  <blockquote class="quote">„Potrzebujemy pozyskać <em>więcej sponsorów</em>"</blockquote>
+  <p class="sub">To jedyne miejsce w całym briefie, gdzie napisaliście „potrzebujemy". Traktuję to jako cel numer jeden całego projektu. <strong>Strona jest narzędziem. Sponsorzy są celem.</strong></p>
+
+  <div class="grid gsym2">
+    <div class="glass">
+      <h3>Strona „Dla firm"</h3>
+      <p style="color:var(--soft);font-size:.96rem;margin:0">Osobna podstrona, na którą wysyłacie link każdemu potencjalnemu sponsorowi. Zamiast tłumaczyć w wiadomościach, kim jesteście — wysyłacie jeden adres, który robi wrażenie.</p>
+    </div>
+    <div class="glass">
+      <h3>Pakiety w trzech poziomach</h3>
+      <p style="color:var(--soft);font-size:.96rem;margin:0">Przygotuję je dla Was od zera — dopasowane do tego, co naprawdę dzieje się na Waszych zlotach: co sponsor dostaje na zlocie, w mediach społecznościowych i na stronie. Sponsor nie pyta „a co ja z tego mam" — widzi to czarno na białym i wybiera poziom.</p>
+    </div>
+    <div class="glass">
+      <h3>Publiczność w liczbach</h3>
+      <p style="color:var(--soft);font-size:.96rem;margin:0">Do tysiąca osób jednocześnie na zlocie, około 10 tysięcy obserwujących, młodzi ludzie w wieku 16–35 lat, zainteresowani motoryzacją. Składamy to w jeden przekonujący obraz.</p>
+    </div>
+    <div class="glass">
+      <h3>Materiał do wysyłki</h3>
+      <p style="color:var(--soft);font-size:.96rem;margin:0">Gotowy dokument, który wysyłacie firmie po pierwszym kontakcie — zamiast pisać ofertę od nowa za każdym razem.</p>
+    </div>
+  </div>
+
+  <div class="glass" style="margin-top:22px">
+    <h3>Dlaczego liczby są tu kluczowe</h3>
+    <p style="color:var(--soft);margin:0 0 12px">Sponsor nie kupuje banera na płocie — kupuje dostęp do ludzi, których zgromadziliście. I tu jest rzecz, o której łatwo zapomnieć: <strong>tę wartość już macie</strong>. Tysiąc osób na jednym zlocie, dziesięć tysięcy obserwujących, pięć lat regularnej pracy — to są liczby, o jakich niejedna firma marzy.</p>
+    <p style="color:var(--soft);margin:0 0 12px">Brakuje jednej rzeczy: nigdzie nie są spisane. A człowiek po drugiej stronie musi przekonać kogoś u siebie — szefa albo dział marketingu. Zapyta więc o jedno: <strong>ile osób to zobaczy?</strong></p>
+    <p style="color:var(--soft);margin:0">Pakiet bez liczb zostawia go bez odpowiedzi. Pakiet z liczbami broni się sam — także wtedy, gdy Was nie ma w pokoju. Dlatego zebranie tych danych wpisuję w zakres pracy. Nie po to, żebyście oglądali wykresy, tylko po to, żeby <strong>przestać pytać, czy ktoś zechce zostać sponsorem, i zacząć mówić, ile to kosztuje</strong>.</p>
+  </div>
+</section>
+
+<section id="strona" class="rv">
+  <div class="kicker">Co powstanie</div>
+  <h2>Strona</h2>
+  <p class="sub">Osiem sekcji, dwie wersje językowe — polska i angielska. Motoryzacja nie kończy się na granicy, a sponsorzy z zagranicznym kapitałem czytają po angielsku.</p>
+
+  <div class="grid gsym4">
+    <div class="glass"><h4>Strona główna z blokiem „Najbliższy zlot"</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Co, gdzie, kiedy i przycisk zapisu — wszystko, co najważniejsze, od razu na wierzchu, bez szukania.</p></div>
+    <div class="glass"><h4>Archiwum zlotów</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Kółka z poprzednimi edycjami — układ, który Wasza publiczność zna z relacji. Kliknięcie otwiera galerię tamtego zlotu, a pięć lat historii zaczyna na Was pracować.</p></div>
+    <div class="glass"><h4>Galeria</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Najlepsze zdjęcia w jednym miejscu — uporządkowane i łatwe do znalezienia.</p></div>
+    <div class="glass"><h4>Wideo</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Filmy z Waszego kanału osadzone bezpośrednio na stronie — klimat zlotu widać w 30 sekund, a strona zostaje lekka i szybka.</p></div>
+    <div class="glass"><h4>O nas i zespół</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Pięć lat, osiem osób, cała Polska. Sponsor widzi konkretnych ludzi i historię — to buduje zaufanie jeszcze przed pierwszą rozmową.</p></div>
+    <div class="glass"><h4>Aktualności</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Miejsce na zapowiedzi i relacje — strona jest żywa także między zlotami.</p></div>
+    <div class="glass"><h4>Dla firm</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Sekcja sponsorska ma swoje stałe miejsce, bo to cel numer jeden.</p></div>
+    <div class="glass"><h4>Kontakt</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Jedna droga — i nic Wam nie ucieka.</p></div>
+  </div>
+  <p class="note" style="margin-top:26px">Styl ustalamy wspólnie <span class="hi">przed startem</span> — „surowy, coś na luzie" to kierunek, który pokażę w konkretnych propozycjach do wyboru, zanim powstanie pierwsza podstrona.</p>
+</section>
+
+<section id="zapisy" class="rv">
+  <div class="kicker">Zapisy na zloty</div>
+  <h2>Jak to działa</h2>
+
+  <div class="grid g2">
+    <div class="glass">
+      <h3>Ścieżka uczestnika</h3>
+      <ol class="path">
+        <li>Zapisuje się <b>bez opuszczania Waszej strony</b> — imię, telefon, model auta</li>
+        <li>Dostaje maila z biletem: <b>kod QR prosto w telefonie</b></li>
+        <li>Przed zlotem dostaje <b>przypomnienie</b></li>
+        <li>Nie może przyjechać? Odwołuje zapis, a <b>miejsce wraca do puli</b></li>
+      </ol>
+    </div>
+    <div class="glass">
+      <h3>Ścieżka organizatora</h3>
+      <ol class="path">
+        <li><b>Ustawiacie limit</b> osobno pod każde wydarzenie</li>
+        <li>Widzicie na bieżąco <b>licznik zapisanych</b></li>
+        <li>Gdy miejsca się skończą — kolejni trafiają na <b>listę rezerwową</b></li>
+        <li>Na bramie <b>skanujecie kody telefonem</b>, kilka osób jednocześnie</li>
+        <li><b>Pełną listę pobieracie jednym kliknięciem</b> jako plik, np. do Excela</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="glass" style="margin-top:18px">
+    <h3>To nie jest zwykły formularz</h3>
+    <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Za jednym przyciskiem „Zapisz się” stoi cały system: automatyczny limit miejsc ustawiany osobno pod każdy zlot, generowanie biletów QR, mail z biletem do uczestnika, lista rezerwowa, która sama awansuje zwolnione miejsca, skaner w telefonie na bramie i eksport pełnej listy.</p>
+    <p style="color:var(--soft);font-size:.95rem;margin:0">Gotowe systemy biletowe pobierają za to abonament co miesiąc, przez cały rok — także wtedy, gdy nie robicie żadnego zlotu. Tutaj płacicie raz, a system zostaje Wasz.</p>
+  </div>
+
+  <div class="glass" style="margin-top:18px;text-align:center;padding:30px 26px">
+    <h3 style="color:var(--sodium)">Zero abonamentu · konto w 100% Wasze</h3>
+    <p style="color:var(--soft);margin:0;max-width:56ch;margin-inline:auto">System zapisów działa bez żadnego abonamentu, a wszystkie konta i dostępy są Wasze — pełna niezależność od pierwszego dnia. A system projektuję tak, żeby płatności online dało się włączyć bez przebudowy — dokładamy je wtedy, kiedy uznacie, że czas.</p>
+  </div>
+</section>
+
+<section id="zakres" class="rv">
+  <div class="kicker">Zakres</div>
+  <h2>Co robimy teraz,<br>a co zostawiamy na później</h2>
+  <p class="sub">Zaznaczyliście w briefie sporo rzeczy — i wszystkie są dobre. Część z nich świetnie sprawdzi się jako kolejny krok, kiedy strona już będzie pracować. Poniżej dokładny podział, żebyśmy oboje wiedzieli, na czym stoimy.</p>
+
+  <div class="grid g2">
+    <div class="glass">
+      <h3 style="color:var(--sodium)">Robimy teraz</h3>
+      <p class="small" style="color:var(--dim);font-size:.85rem;margin:-4px 0 14px">Lista opisuje pełny zakres — wariant <b style="color:var(--sodium)">Pełny + Sponsorzy</b>. Różnice między wariantami znajdziecie niżej, w sekcji Warianty współpracy.</p>
+      <ul class="ticks">
+        <li><b>Strona w dwóch językach</b> — wszystkie sekcje po polsku i angielsku</li>
+        <li><b>Wszystkie teksty</b> — piszę je ja, na podstawie faktów od Was</li>
+        <li><b>System zapisów</b> — automatyczny limit miejsc i bilety QR</li>
+        <li><b>Podstrona „Dla firm” i pakiety sponsorskie</b> — gotowe do wysłania firmom</li>
+        <li><b>Dane o Waszej publiczności</b> — konkretne argumenty do rozmów ze sponsorami</li>
+        <li><b>Domena, firmowa poczta i hosting</b> — konfiguracja i rejestracja na Wasze konta</li>
+        <li><b>Dokumenty i zgody RODO</b> — polityka prywatności, zgody w formularzu, prosty sposób usunięcia danych</li>
+        <li><b>Pierwsze wgranie zdjęć</b> — strona rusza wypełniona, nie pusta</li>
+        <li><b>Instrukcja krok po kroku</b> — jak samodzielnie dodawać zloty i zdjęcia</li>
+        <li><b>Przekazanie wszystkich dostępów</b> — kont, haseł, kodów</li>
+      </ul>
+    </div>
+
+    <div class="glass">
+      <h3 style="color:var(--ice)">Zostawiamy na później</h3>
+      <p class="small" style="color:var(--dim);font-size:.85rem;margin:-4px 0 14px">Nie dlatego, że są mniej ważne — po prostu mają swój lepszy moment, już po starcie strony.</p>
+      <ul class="ticks later">
+        <li><b>Sklep z merchem.</b> Dobry pomysł na kolejny krok. Zostawiam go na osobny etap, żeby pierwszy rachunek obejmował to, co potrzebne na start — a strona będzie na sklep przygotowana</li>
+        <li><b>Płatności online za bilety.</b> Na start same zapisy w zupełności wystarczą. System projektuję tak, żeby płatności dało się dołożyć bez przebudowy, kiedy uznacie, że to dobry moment</li>
+        <li><b>Kampanie reklamowe.</b> To osobna specjalizacja i osobny zawód. Moją częścią jest przygotować stronę tak, żeby była gotowa przyjąć ruch z reklam, kiedy zechcecie je uruchomić</li>
+        <li><b>Prowadzenie profilu.</b> Robicie to świetnie we trójkę, codziennie. Strona ma Wasz profil wzmacniać, a nie zastępować — i tak ją zaprojektuję</li>
+        <li><b>Wysyłka do starej bazy kontaktów.</b> Nową bazę strona zbiera od pierwszego dnia zgodnie z przepisami. Ze starych kontaktów też da się skorzystać — pokażę Wam bezpieczną drogę: zaproszenie na Waszym profilu, odpowiedzi w rozmowach, które ludzie sami zaczęli, i zapis przez stronę</li>
+        <li><b>Zdjęcia i filmy.</b> Materiały macie własne i naprawdę dobre — moją rolą jest pokazać je tak, żeby robiły wrażenie</li>
+        <li><b>Spotkania na żywo.</b> Pracujemy pisemnie: umowa, ustalenia, odbiory. Dzięki temu wszystko zostaje czarno na białym i nic się nie gubi. Na spotkanie jestem otwarta zawsze, kiedy będziecie mieli ochotę</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="odwas" class="rv">
+  <div class="kicker">Współpraca</div>
+  <h2>Co robimy<br>razem</h2>
+  <p class="sub">Najlepsze strony powstają wtedy, gdy klient opowie o sobie własnymi słowami — dlatego kilka rzeczy zbieram od Was. Rozłożyłam to na drobne kroki: żaden nie wymaga wolnego dnia, a wszystko można robić na raty. Zajrzyjcie do środka, żeby zobaczyć, o co dokładnie zapytam.</p>
+  <div class="hint"><span class="dot">+</span>Kliknij, żeby zobaczyć szczegóły</div>
+
+  <div class="grid gsym3">
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab">ok. 20 minut</span>
+          <h4>Ankieta stylu</h4>
+          <p class="plain">Pokazuję gotowe propozycje — Wy wskazujecie, co Wasze. Bez opisywania czegokolwiek słowami.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Kilka gotowych kierunków wizualnych do wyboru — klikacie ten, który najbardziej Wasz</li><li>Kolory: ciemno i surowo czy jaśniej i spokojniej</li><li>Skala od klubowego luzu do bardziej biznesowego tonu</li><li>Co Wam się zdecydowanie <b>nie</b> podoba — to często najcenniejsza odpowiedź</li><li>Można dorzucić własne zrzuty ekranu, jeśli coś wpadnie Wam w oko</li></ul><a class="goform" href="ankieta-stylu.html">Otwórz ankietę stylu →</a></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab">ok. 40 minut</span>
+          <h4>Ankieta z faktami</h4>
+          <p class="plain">Stąd biorę treść na całą stronę. Im więcej konkretów, tym mniej będziecie musieli poprawiać później.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Jak się zaczęło i co się zmieniło przez pięć lat</li><li>Kto jest kim w zespole — imiona, role, po co kto tam jest</li><li>Trzy do pięciu zlotów, które pamiętacie najlepiej, i dlaczego akurat te</li><li>Liczby dla sponsorów: ilu ludzi i aut na ostatnich zlotach, cena wejścia, kto przyjeżdża</li><li>Z kim już współpracowaliście i co im dawaliście</li><li>Kilka Waszych postów, żebym złapała sposób, w jaki mówicie</li></ul><a class="goform" href="ankieta-faktow.html">Otwórz ankietę z faktami →</a></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab">1–2 godziny</span>
+          <h4>Wybór zdjęć</h4>
+          <p class="plain">Wskazujecie najlepsze z archiwum, resztą zajmuję się ja.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Dwadzieścia do trzydziestu zdjęć, które najlepiej pokazują klimat</li><li>Pogrupowane po zlotach, jeśli to możliwe — reszta to już moja robota</li><li>Logo w najlepszej jakości, jaką macie</li><li>Linki do filmów, które chcecie na stronie</li></ul></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab">2 tygodnie na rundę</span>
+          <h4>Uwagi do etapów</h4>
+          <p class="plain">Po każdym etapie pokazuję wynik, a Wy w spokoju mówicie, co poprawić.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Pokazuję wynik etapu — macie <b>2 tygodnie</b> na obejrzenie go bez pośpiechu</li><li>Zbieracie uwagi między sobą i przysyłacie jedną listą — tak najszybciej je wdrożę</li><li>Ja mam <b>2 tygodnie</b> na wprowadzenie zmian i pokazuję wynik ponownie</li><li>Takie rundy są trzy i zwykle w zupełności wystarczają</li><li>Drobne korekty po wdrożeniu rundy nie liczą się jako osobna runda</li><li>Moje własne błędy poprawiam zawsze bez naliczania</li></ul></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab">wskazanie na starcie</span>
+          <h4>Jedna osoba do kontaktu</h4>
+          <p class="plain">Uwagi zbieracie między sobą, jak Wam wygodnie — do mnie trafia jeden wspólny głos.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Dzięki temu decyzje zapadają szybko i nic się nie gubi po drodze</li><li>Osobę można w każdej chwili zmienić — wystarczy dać znać</li></ul></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab">ok. 15 minut</span>
+          <h4>Zakup domeny i hostingu</h4>
+          <p class="plain">Rejestrujemy na Wasze dane i Waszą kartę — od pierwszego dnia to Wasza własność.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Dostajecie ode mnie instrukcję krok po kroku</li><li>Robicie to spokojnie u siebie, bez pośpiechu</li><li>Ja tylko podpowiadam, co wybrać — pieniądze nie przechodzą przeze mnie</li></ul></div>
+      </div>
+    </details>
+  </div>
+
+  <p class="note" style="margin-top:26px"><b style="color:var(--ink)">Pracujemy w Waszym tempie.</b> Na każdą decyzję i każde spojrzenie na wynik macie dwa tygodnie — spokojnie, bez pośpiechu, także w środku sezonu. Gdyby akurat wypadł duży zlot i potrzeba było więcej czasu, wystarczy jedno zdanie: przesuwamy się i wracamy dokładnie tam, gdzie skończyliśmy. Nic nie przepada.</p>
+</section>
+
+<section id="harmonogram" class="rv">
+  <div class="kicker">Plan pracy</div>
+  <h2>Harmonogram</h2>
+
+    <div class="glass" style="padding:8px 26px 12px">
+    <div class="tl">
+      <div class="tl-row"><div class="tl-w">1</div><div class="tl-t">Start — ankiety, struktura strony, dostępy</div><div class="tl-c">wypełniacie dwie ankiety, przesyłacie logo, zdjęcia i filmy</div></div>
+      <div class="tl-row"><div class="tl-w">2</div><div class="tl-t">Projekt graficzny strony głównej</div><div class="tl-c">pokazuję pierwszą wersję — macie 2 tygodnie na spokojne obejrzenie</div></div>
+      <div class="tl-row"><div class="tl-w">3</div><div class="tl-t">Pierwsza runda poprawek</div><div class="tl-c">przysyłacie uwagi jedną listą, ja wdrażam je w ciągu 2 tygodni</div></div>
+      <div class="tl-row"><div class="tl-w">4</div><div class="tl-t">Teksty w obu językach i budowa sekcji</div><div class="tl-c">odpowiadacie na pytania uzupełniające, gdy coś wymaga doprecyzowania</div></div>
+      <div class="tl-row"><div class="tl-w">5</div><div class="tl-t">Druga runda poprawek</div><div class="tl-c">znowu 2 tygodnie dla Was, potem 2 tygodnie u mnie</div></div>
+      <div class="tl-row"><div class="tl-w">6</div><div class="tl-t">Zapisy, podstrona „Dla firm” i pakiety sponsorskie</div><div class="tl-c">logotypy sponsorów, akceptacja pakietów</div></div>
+      <div class="tl-row"><div class="tl-w">7</div><div class="tl-t">Trzecia runda poprawek i testy</div><div class="tl-c">ostatnie szlify, sprawdzamy wszystko na telefonach</div></div>
+      <div class="tl-row"><div class="tl-w">8</div><div class="tl-t">Domena, poczta, start strony i przekazanie</div><div class="tl-c">zakup domeny i hostingu, odbiór</div></div>
+      <div class="tl-row"><div class="tl-w">po starcie</div><div class="tl-t">90 dni opieki</div><div class="tl-c">jestem do dyspozycji — poprawiam błędy i pomagam Wam wejść w obsługę strony</div></div>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:24px">
+    <b style="color:var(--ink)">Rytm, który daje spokój obu stronom.</b> Po każdym pokazaniu wyniku macie <span class="hi">2 tygodnie</span> na obejrzenie go bez pośpiechu i zebranie uwag. Potem <span class="hi">2 tygodnie</span> pracuję po swojej stronie. Takie rundy są trzy.<br><br>
+    Pierwszy projekt graficzny zobaczycie <span class="hi">w ciągu 1–2 miesięcy</span> od przekazania materiałów. Całość mieści się w <span class="hi">3–6 miesiącach</span>, z zapasem na sezon, wyjazdy i wszystko, co się w życiu zdarza. Jeśli skończę wcześniej — oddaję wcześniej.<br><br>
+    Przed startem prac jest jeszcze około tygodnia na formalności — szczegóły niżej.
+  </p>
+</section>
+
+<section id="pakiety" class="rv">
+  <div class="kicker">Wycena</div>
+  <h2>Warianty współpracy</h2>
+  <p class="sub">Dla porównania: podobny zakres w agencji to zwykle <strong>20 000–40 000 zł</strong>. Pracuję sama, bez biura i bez pośredników — stąd te ceny.</p>
+
+  <div class="plans">
+    <div class="plan">
+      <h3>Start</h3>
+      <div class="price">5 500 zł</div>
+      <div class="price-n">bez VAT</div>
+      <ul class="ticks">
+        <li>Jedna rozbudowana strona typu wizytówka — wszystko na jednym ekranie przewijanym w dół, po polsku</li>
+        <li>Prosty formularz zapisu — listę zamykacie ręcznie, bez biletów QR, listy rezerwowej i skanowania na bramie</li>
+        <li>Wszystkie teksty tej strony</li>
+        <li>Podstawowe dokumenty RODO — polityka prywatności i zgoda w formularzu</li>
+        <li>Domena, firmowa poczta i hosting na Waszych kontach</li>
+        <li>Instrukcja obsługi</li>
+        <li style="color:var(--dim)">Wersja angielska — opcja, od 1 200 zł</li>
+      </ul>
+    </div>
+
+    <div class="plan">
+      <h3>Pełny</h3>
+      <div class="price">11 900 zł</div>
+      <div class="price-n">bez VAT</div>
+      <ul class="ticks">
+        <li>Pełna strona — wszystkie sekcje opisane wyżej, PL + EN</li>
+        <li>Wszystkie teksty</li>
+        <li>Pełny system zapisów: automatyczny limit, bilety QR, lista rezerwowa, skanowanie na bramie</li>
+        <li>Dokumenty i zgody RODO</li>
+        <li>Pierwsze wgranie zdjęć</li>
+        <li>Domena, poczta, hosting, instrukcja, przekazanie dostępów</li>
+      </ul>
+    </div>
+
+    <div class="plan best">
+      <div class="flag">Rekomendowany</div>
+      <h3>Pełny + Sponsorzy</h3>
+      <div class="price">13 900 zł</div>
+      <div class="price-n">bez VAT</div>
+      <ul class="ticks">
+        <li><b>Wszystko z wariantu Pełny</b></li>
+        <li>Podstrona „Dla firm” dla zainteresowanych współpracą</li>
+        <li>Pakiety sponsorskie w trzech poziomach</li>
+        <li>Zebranie danych o Waszej publiczności: zasięgi, frekwencja, profil uczestników</li>
+        <li>Materiał do wysyłki sponsorom</li>
+      </ul>
+      <p style="color:var(--soft);font-size:.9rem;margin:16px 0 0">Wszystko, co dotyczy sponsorów, można zamówić osobno — kosztuje wtedy <b>4 500 zł</b>. Razem z wariantem Pełnym płacicie za to <b>2 000 zł</b>, bo część pracy wykonuję już przy samej stronie.<br><br>Polecam ten wariant, bo wprost realizuje Wasz główny cel: pokazać się sponsorom jako organizacja, z którą podpisuje się umowy.</p>
+    </div>
+  </div>
+
+  <div class="glass" style="margin-top:26px;border-color:rgba(255,175,80,.5)">
+    <span class="lab" style="color:var(--sodium);font-family:var(--mono);font-size:.6rem;letter-spacing:.19em;text-transform:uppercase;display:block;margin-bottom:8px">Moduł sponsorski · 4 500 zł osobno · 2 000 zł razem z wariantem Pełnym</span>
+    <h3>Za co dokładnie płacicie w części sponsorskiej</h3>
+    <p style="color:var(--soft);font-size:.95rem;margin:0 0 14px">Dziś nie macie żadnych materiałów dla firm — a to jedyna rzecz, o którą sami poprosiliście w briefie. Ta część powstaje od zera i składa się z sześciu rzeczy:</p>
+    <ul class="ticks">
+      <li><b>Podstrona „Dla firm” w obu językach.</b> Jeden adres, który wysyłacie każdej firmie zamiast tłumaczenia w wiadomościach, kim jesteście i co robicie</li>
+      <li><b>Trzy poziomy pakietów, zbudowane od zera.</b> Rozpisuję, co dokładnie dostaje sponsor na każdym poziomie: na terenie zlotu, w mediach społecznościowych, na stronie i w materiałach po evencie</li>
+      <li><b>Propozycja cen dla każdego poziomu.</b> Podpowiadam, ile realnie warto brać — na podstawie tego, ilu ludzi przychodzi i co sponsor faktycznie dostaje w zamian</li>
+      <li><b>Zebranie Waszych liczb.</b> Frekwencja na ostatnich zlotach, zasięgi, profil uczestników, teren działania — poukładane tak, żeby dało się je pokazać firmie</li>
+      <li><b>Gotowy dokument do wysyłki.</b> Plik, który wysyłacie po pierwszym kontakcie — z liczbami, zdjęciami i pakietami. Zamiast pisać ofertę od nowa przy każdej rozmowie</li>
+      <li><b>Formularz dla firm na stronie.</b> Zainteresowana firma zostawia kontakt sama, a zgłoszenie trafia do Was mailem — nie ginie w wiadomościach</li>
+    </ul>
+    <p style="color:var(--dim);font-size:.87rem;margin:16px 0 0">Dla porównania: sam projekt graficzny takiej oferty u studia zaczyna się od 1 500 zł i sięga 8 000 zł — a to wyłącznie grafika, bez treści, bez liczb i bez wyceny pakietów.</p>
+  </div>
+
+  <h3 style="margin-top:44px">Opcje dodatkowe</h3>
+  <p class="sub" style="margin-bottom:18px">Nic z tego nie jest potrzebne na start — to rzeczy, które można dołożyć wtedy, kiedy same o nie poprosicie. Kliknijcie, żeby zobaczyć, co dokładnie kryje się za ceną.</p>
+  <div class="grid gsym3">
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab" style="color:var(--sodium)">od 1 200 zł</span>
+          <h4>Wersja angielska</h4>
+          <p class="plain">Dla wariantu Start. W pozostałych wariantach angielski jest już w cenie — ta opcja dotyczy każdego kolejnego języka: od 1 900 zł.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>tłumaczenie wszystkich podstron i aktualności startowych</li><li>menu, przyciski, formularze i komunikaty systemowe — także maile z biletami</li><li>opisy dla wyszukiwarek: tytuł i opis każdej podstrony</li><li>przełącznik języka i poprawne adresy dla nowej wersji</li><li>test całej ścieżki zapisu w nowym języku</li></ul></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab" style="color:var(--sodium)">od 1 200 zł</span>
+          <h4>Sylwetki zespołu</h4>
+          <p class="plain">Osiem osób z imienia, twarzy i historii. Sponsor poznaje ludzi, a nie logo.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>pisemny mini-wywiad z każdą z ośmiu osób — pytania przygotowuję ja</li><li>napisanie ośmiu krótkich sylwetek w spójnym stylu</li><li>tłumaczenie wszystkich sylwetek na angielski</li><li>obróbka i wgranie zdjęć: kadrowanie, kompresja</li><li>złożenie sekcji na stronie w obu językach</li></ul></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab" style="color:var(--sodium)">1 200–1 800 zł</span>
+          <h4>Sekcja dla modelek i fotografów</h4>
+          <p class="plain">Jeśli ten obszar ma się pojawić na stronie — z galerią i uporządkowanymi zgłoszeniami.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>podstrona w obu językach z galerią zdjęć ze zlotów</li><li>formularz zgłoszeniowy: portfolio, kontakt, wybór roli</li><li>zgody RODO i zgoda na wykorzystanie wizerunku w materiałach zlotu</li><li>powiadomienia mailowe o nowych zgłoszeniach i prosta lista do przeglądania</li><li>pierwsze wgranie zdjęć do galerii</li></ul></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab" style="color:var(--sodium)">600–800 zł za zlot</span>
+          <h4>Pakiet wydarzenia</h4>
+          <p class="plain">Wszystko, czego strona potrzebuje przed kolejnym zlotem — bez żadnego abonamentu. Zamawiacie wtedy, kiedy chcecie.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>nowy blok najbliższego zlotu: data, miejsce, program, ceny</li><li>otwarcie zapisów: limit miejsc, pula biletów QR, lista rezerwowa</li><li>przeniesienie poprzedniego zlotu do archiwum</li><li>przygotowanie i wysyłka zapowiedzi mailowej do bazy uczestników</li><li>aktualizacja obu wersji językowych</li><li>kontrola po starcie zapisów: czy bilety dochodzą, czy licznik działa</li></ul></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab" style="color:var(--sodium)">700–900 zł za zlot</span>
+          <h4>Raport dla sponsorów po zlocie</h4>
+          <p class="plain">Sponsor, który dostaje ładne podsumowanie, wraca w kolejnym roku. To najprostszy sposób, żeby jednorazowa umowa zamieniła się w stałą.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>zebranie danych: frekwencja, zapisy, statystyki strony i mailingu</li><li>PDF z podsumowaniem zlotu: zdjęcia ekspozycji sponsora, liczby, zasięgi</li><li>osobna wersja dla każdego sponsora — z jego logotypem i świadczeniami</li><li>gotowy mail z podziękowaniem i zaproszeniem na kolejny zlot</li></ul></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab" style="color:var(--sodium)">2 000–3 000 zł</span>
+          <h4>Sprzedaż biletów online</h4>
+          <p class="plain">Płatność przy zapisie zamiast przy bramie. Bez abonamentu — tylko prowizja operatora płatności, około 1,5–2% od biletu.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>wybór operatora płatności i założenie konta na Wasze dane</li><li>połączenie płatności z systemem zapisów: bilet QR dopiero po opłaceniu</li><li>automatyczne potwierdzenia zakupu na maila</li><li>obsługa zwrotów i regulamin sprzedaży biletów</li><li>testy pełnej ścieżki: zapis → płatność → bilet → skan na bramie</li><li>instrukcja: jak sprawdzać wpłaty i wypłacać środki</li></ul></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab" style="color:var(--sodium)">3 000–5 000 zł</span>
+          <h4>Sklep z merchem</h4>
+          <p class="plain">Koszulki, naklejki i gadżety prosto ze strony. Wersja lekka — witryna merchu z zamówieniem przez wiadomość, bez płatności online — od 1 500 zł.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>sklep w ramach istniejącej strony, spójny wygląd, oba języki</li><li>wgranie produktów startowych do 20 pozycji: zdjęcia, opisy, rozmiary</li><li>płatności online — BLIK, karta, przelew — na koncie założonym dla Was</li><li>konfiguracja dostawy i odbioru na zlocie</li><li>regulamin sklepu i dokumenty zwrotów zgodne z prawem konsumenckim</li><li>instrukcja: jak dodawać produkty i obsługiwać zamówienia</li></ul></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dhead">
+          <span class="lab" style="color:var(--sodium)">450–600 zł za dzień</span>
+          <h4>Dyżur w dzień zlotu</h4>
+          <p class="plain">Jestem pod ręką pisemnie przez cały wjazd — gdyby cokolwiek wymagało reakcji na już.</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody" style="padding-left:22px">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>dostępność od otwarcia bram do końca wjazdu</li><li>natychmiastowe poprawki na stronie: godziny, komunikaty, mapka</li><li>wsparcie bramki, gdyby coś nie chciało się zeskanować</li><li>awaryjne zamknięcie albo dodatkowe otwarcie zapisów na miejscu</li><li>krótkie podsumowanie po zlocie: co się działo, co warto poprawić</li></ul></div>
+      </div>
+    </details>
+  </div>
+  <p class="note" style="margin-top:26px">Wariant <b>Start</b> można w każdej chwili rozbudować do <b>Pełnego</b> — dopłacacie wtedy tylko różnicę.<br>Oferta jest ważna <span class="hi">30 dni</span>. Jeśli to dla Was temat na później — dajcie znać, wrócimy do rozmowy w dogodnym terminie.</p>
+</section>
+
+<section id="platnosci" class="rv">
+  <div class="kicker">Rozliczenie</div>
+  <h2>Płatności</h2>
+  <p class="sub">Płatność w trzech częściach, powiązanych z konkretnymi wynikami: <strong>40%</strong> na start po podpisaniu umowy · <strong>30%</strong> po akceptacji projektu graficznego, czyli widzicie, jak strona będzie wyglądać, zanim zapłacicie drugą część · <strong>30%</strong> przy oddaniu, po testach i przekazaniu dostępów.</p>
+
+  <div class="glass tbl-wrap">
+    <table>
+      <thead><tr><th>Wariant</th><th>Na start · 40%</th><th>Po projekcie · 30%</th><th>Przy oddaniu · 30%</th></tr></thead>
+      <tbody>
+        <tr><td>Start · 5 500 zł</td><td>2 200 zł</td><td>1 650 zł</td><td>1 650 zł</td></tr>
+        <tr><td>Pełny · 11 900 zł</td><td>4 760 zł</td><td>3 570 zł</td><td>3 570 zł</td></tr>
+        <tr><td>Pełny + Sponsorzy · 13 900 zł</td><td>5 560 zł</td><td>4 170 zł</td><td>4 170 zł</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note" style="margin-top:22px">Każdy etap zamykamy krótkim protokołem odbioru — obie strony wiedzą, co zostało oddane i przyjęte.<br>
+  Płatność przelewem w ciągu 7 dni od rachunku. Rozliczenie: <span class="hi">umowa o dzieło i rachunek</span>. Dla Waszej firmy to wydatek, który wchodzi w koszty — bez VAT i bez składek ZUS; Wasza księgowość potwierdzi to od ręki.</p>
+</section>
+
+<section id="koszty" class="rv">
+  <div class="kicker">Poza wynagrodzeniem</div>
+  <h2>Koszty<br>po Waszej stronie</h2>
+
+  <div class="glass">
+    <div class="cost"><div><span class="n">Domena</span><span class="d">Adres Waszej strony w internecie — jak szyld z nazwą nad bramą</span></div><div class="v">60–100 zł / rok</div></div>
+    <div class="cost"><div><span class="n">Hosting z firmową pocztą</span><span class="d">Miejsce, gdzie strona fizycznie mieszka, plus adresy typu kontakt@wasza-domena.pl</span></div><div class="v">250–400 zł / rok</div></div>
+    <div class="cost"><div><span class="n">System zapisów</span><span class="d">Bez abonamentu, bez prowizji od zapisów</span></div><div class="v">0 zł</div></div>
+  </div>
+
+  <p class="note" style="margin-top:22px">Razem około <span class="hi">310–500 zł rocznie</span>, płacone bezpośrednio dostawcom — te opłaty w całości trafiają do nich.<br>
+  Wszystko rejestrujemy na Wasze konta i Waszą kartę — <span class="hi">od pierwszego dnia domena, poczta i strona są Waszą własnością</span>.<br>
+  Na przyszłość: gdybyście chcieli wysyłać maile do swojej bazy — na przykład zaproszenia na kolejny zlot — narzędzie do tego jest bezpłatne do 500 adresów, a powyżej tego progu kosztuje około 49 zł miesięcznie. Wysyłkę uruchamia człowiek, kiedy uzna, że czas — nic nie wychodzi automatycznie.</p>
+</section>
+
+<section id="gwarancja" class="rv">
+  <div class="kicker">Po oddaniu</div>
+  <h2>Gwarancja</h2>
+
+  <div class="grid g2">
+    <div class="glass">
+      <h3>90 dni gwarancji</h3>
+      <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Jeśli po oddaniu ujawni się błąd wykonania — coś nie działa tak, jak opisano w umowie — poprawiam bezpłatnie.</p>
+      <p style="color:var(--soft);font-size:.95rem;margin:0">Czas reakcji: sprawy pilne, gdy strona nie działa — <b>do 3 dni roboczych</b>; pozostałe — <b>do 5 dni roboczych</b>.</p>
+    </div>
+    <div class="glass">
+      <h3>Poprawki w trakcie</h3>
+      <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Na każdy etap przypadają <b>3 rundy poprawek</b>. Runda to jedna zbiorcza lista uwag w jednej wiadomości — dlatego uwagi zbiera jedna osoba.</p>
+      <p style="color:var(--soft);font-size:.95rem;margin:0">Drobne korekty po wdrożeniu rundy nie są naliczane. <b>Moje błędy poprawiam zawsze bezpłatnie i nie liczą się jako runda.</b> Gdyby przydała się dodatkowa runda — 100 zł/h, zawsze z wyceną przed rozpoczęciem, więc nic Was nie zaskoczy.</p>
+    </div>
+  </div>
+
+  <div class="glass" style="margin-top:18px">
+    <h3>Po odbiorze wszystko jest Wasze</h3>
+    <p style="color:var(--soft);margin:0">Dostępy, kody i konta należą do Was. Możecie rozwijać stronę ze mną, z kimkolwiek innym albo samodzielnie — instrukcja obsługi jest częścią każdego wariantu współpracy. <strong>Buduję Wam dom i oddaję klucze; co dalej z tym domem, decydujecie wyłącznie Wy.</strong></p>
+  </div>
+</section>
+
+<section id="formalnosci" class="rv">
+  <div class="kicker">Otwarte karty</div>
+  <h2>Formalności</h2>
+
+  <div class="glass">
+    <p style="color:var(--soft);margin:0 0 14px">Jestem obywatelką Białorusi i mieszkam w Polsce na stałe — wniosek o pobyt stały jest już złożony. Współpracuję na <strong>umowie o dzieło</strong> i dla Was to najprostsza dostępna forma rozliczenia: kwota wchodzi w koszty, bez VAT i bez składek ZUS.</p>
+    <p style="color:var(--soft);margin:0 0 14px">Żeby to uruchomić, Wasza firma rejestruje jednorazowe zgłoszenie online — oświadczenie o powierzeniu wykonywania pracy cudzoziemcowi. Opłata urzędowa <strong>400 zł</strong>, urząd rozpatruje je <strong>standardowo w ciągu 7 dni roboczych</strong>, wszystko przez praca.gov.pl. Przygotuję dla Was instrukcję krok po kroku — po Waszej stronie to <strong>około 15 minut</strong> przy komputerze.</p>
+    <p style="color:var(--soft);margin:0">Do przygotowania umowy poproszę tylko o dane firmy: <strong>nazwę, NIP i adres</strong>.</p>
+  </div>
+</section>
+
+<section id="rozwoj" class="rv">
+  <div class="kicker">Na przyszłość</div>
+  <h2>Dokąd ta strona<br>może Was zaprowadzić</h2>
+  <p class="sub">Nic z tego nie jest potrzebne teraz i nic nie wymaga decyzji dzisiaj. Ale strona jest budowana tak, żeby każda z tych rzeczy była później kwestią dołożenia, a nie przebudowy od zera.</p>
+
+  <div class="grid gsym3">
+    <div class="glass">
+      <h4>Publiczność, która należy do Was</h4>
+      <p style="color:var(--soft);font-size:.93rem;margin:0">W briefie napisaliście, że zależy Wam na niezależności od mediów społecznościowych. Każdy zapis to jeden kontakt więcej w bazie, która jest Wasza — po sezonie czy dwóch możecie ogłosić zlot bez oglądania się na to, komu algorytm akurat pokaże post.</p>
+    </div>
+    <div class="glass">
+      <h4>Głosowania i konkursy</h4>
+      <p style="color:var(--soft);font-size:.93rem;margin:0">Wybór najlepszego auta zlotu przez stronę, z telefonu, jeszcze w trakcie imprezy. Ludzie zostają dłużej, a nagroda ma swojego sponsora — czyli jedno miejsce w pakiecie więcej do sprzedania.</p>
+    </div>
+    <div class="glass">
+      <h4>Miejsca dla firm na zlocie</h4>
+      <p style="color:var(--soft);font-size:.93rem;margin:0">Nie tylko baner, ale stoisko. Strona może pokazywać, ile miejsc dla wystawców zostało i przyjmować zgłoszenia tak samo jak zapisy uczestników — a to osobne źródło przychodu obok sponsoringu.</p>
+    </div>
+    <div class="glass">
+      <h4>Historia, która sama pracuje</h4>
+      <p style="color:var(--soft);font-size:.93rem;margin:0">Co zlot archiwum rośnie o kolejne zdjęcia i liczby. Po dwóch sezonach macie materiał, którego nowy organizator nie zbierze w rok — i to on przekonuje sponsora szybciej niż jakakolwiek rozmowa.</p>
+    </div>
+    <div class="glass">
+      <h4>Sprzedaż biletów online</h4>
+      <p style="color:var(--soft);font-size:.93rem;margin:0">Płatność przy zapisie zamiast przy bramie — mniej gotówki, mniej kolejki, pewna frekwencja. System jest na to przygotowany od pierwszego dnia; wycena w opcjach powyżej.</p>
+    </div>
+    <div class="glass">
+      <h4>Sklep z merchem</h4>
+      <p style="color:var(--soft);font-size:.93rem;margin:0">Koszulki i naklejki prosto ze strony, odbierane na zlocie albo wysyłane kurierem. Też czeka gotowe — wycena w opcjach powyżej.</p>
+    </div>
+  </div>
+</section>
+
+<section id="krok" class="rv">
+  <div class="cta">
+    <div class="kicker" style="justify-content:center">Następny krok</div>
+    <h2>Wystarczy<br>jedna wiadomość</h2>
+    <p class="lead" style="margin-inline:auto;text-align:center;margin-bottom:34px">Zaznaczcie wariant, zostawcie dane firmy — i to wszystko. Resztą zajmuję się ja: przygotuję umowę, instrukcję do zgłoszenia i plan pierwszego tygodnia.</p>
+
+    <form class="cform" action="https://formsubmit.co/marcin.tatsiana@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="🔥 Street-Elite — decyzja o współpracy">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+
+      <div class="cq">
+        <span class="clab">Który wariant wybieracie?</span>
+        <div class="copts">
+          <label class="copt"><input type="radio" name="Wariant" value="Start — 5 500 zł" required><span><b>Start</b>5 500 zł</span></label>
+          <label class="copt"><input type="radio" name="Wariant" value="Pełny — 11 900 zł"><span><b>Pełny</b>11 900 zł</span></label>
+          <label class="copt"><input type="radio" name="Wariant" value="Pełny + Sponsorzy — 13 900 zł"><span><b>Pełny + Sponsorzy</b>13 900 zł</span></label>
+          <label class="copt"><input type="radio" name="Wariant" value="Jeszcze nie wiem — porozmawiajmy"><span><b>Jeszcze nie wiem</b>Porozmawiajmy</span></label>
+        </div>
+      </div>
+
+      <div class="cgrid">
+        <div class="cq"><label for="cf1">Nazwa firmy</label><input id="cf1" type="text" name="Nazwa firmy" placeholder="Do umowy"></div>
+        <div class="cq"><label for="cf2">NIP</label><input id="cf2" type="text" name="NIP" placeholder="Jeśli macie pod ręką"></div>
+      </div>
+      <div class="cq"><label for="cf3">Adres firmy</label><input id="cf3" type="text" name="Adres firmy" placeholder="Ulica, kod, miasto"></div>
+
+      <div class="cgrid">
+        <div class="cq"><label for="cf4">Osoba do kontaktu</label><input id="cf4" type="text" name="Osoba do kontaktu" placeholder="Imię i nazwisko" required></div>
+        <div class="cq"><label for="cf5">E-mail</label><input id="cf5" type="email" name="E-mail" placeholder="Na ten adres odpiszę" required></div>
+      </div>
+
+      <div class="cq"><label for="cf6">Chcecie coś dopisać?</label><textarea id="cf6" name="Wiadomość" placeholder="Pytania, uwagi, opcje dodatkowe, które Was interesują — cokolwiek"></textarea></div>
+
+      <button class="btn cbtn" type="submit">Wyślij →</button>
+    </form>
+
+    <p class="note" style="border:none;padding:0;margin-top:26px;max-width:52ch;margin-inline:auto;text-align:center">Wolicie zwykłego maila? Piszcie na <a href="mailto:marcin.tatsiana@gmail.com?subject=Street-Elite%20%E2%80%94%20wybieramy%20wariant">marcin.tatsiana@gmail.com</a> — jak Wam wygodniej.<br><br>Wszystkie ustalenia i dokumenty prowadzimy mailem: jedna skrzynka, jeden wątek, wszystko w jednym miejscu. <span class="hi">Nic nie ucieka i nic nie ginie.</span></p>
+  </div>
+</section>
+
+<button class="fab fab-menu" id="fabMenu" type="button" aria-label="Spis treści" aria-expanded="false">
+  <span class="ico"><span></span><span></span><span></span></span>
+</button>
+<button class="fab fab-top" id="fabTop" type="button" aria-label="Do góry">↑</button>
+<nav class="quick" id="quick" aria-label="Spis treści">
+  <div class="quick-t">Spis treści</div>
+  <a href="#start"><i>01</i>Start</a>
+  <a href="#decyzje"><i>02</i>Wasze odpowiedzi — moje decyzje</a>
+  <a href="#sponsorzy"><i>03</i>Sponsorzy — cel numer jeden</a>
+  <a href="#strona"><i>04</i>Strona — co powstanie</a>
+  <a href="#zapisy"><i>05</i>Zapisy — jak to działa</a>
+  <a href="#zakres"><i>06</i>Co robimy teraz</a>
+  <a href="#odwas"><i>07</i>Co robimy razem</a>
+  <a href="#harmonogram"><i>08</i>Harmonogram</a>
+  <a href="#pakiety"><i>09</i>Warianty współpracy</a>
+  <a href="#platnosci"><i>10</i>Płatności</a>
+  <a href="#koszty"><i>11</i>Koszty po Waszej stronie</a>
+  <a href="#gwarancja"><i>12</i>Gwarancja</a>
+  <a href="#formalnosci"><i>13</i>Formalności</a>
+  <a href="#krok"><i>14</i>Następny krok</a>
+</nav>
+
+<footer class="foot">
+  <b style="color:var(--ink)">Tatsiana Zhukavets</b> · <a href="mailto:marcin.tatsiana@gmail.com">marcin.tatsiana@gmail.com</a><br>
+  Propozycja przygotowana indywidualnie dla MyVision_video / Street-Elite<br>
+  Na podstawie briefu wypełnionego 28.07.2026 · Oferta ważna 30 dni od daty wysłania
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var prog=document.getElementById('prog');
+  var links=[].slice.call(document.querySelectorAll('.bar nav a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+
+  function onScroll(){
+    var h=document.documentElement;
+    var p=h.scrollTop/(h.scrollHeight-h.clientHeight);
+    prog.style.width=(p*100)+'%';
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(l){l.removeAttribute('aria-current');});
+          var a=links.filter(function(l){return l.getAttribute('href')==='#'+e.target.id;})[0];
+          if(a)a.setAttribute('aria-current','true');
+        }
+      });
+    },{rootMargin:'-14% 0px -72% 0px'});
+    secs.forEach(function(s){spy.observe(s);});
+
+    var rv=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('on');rv.unobserve(e.target);}
+      });
+    },{rootMargin:'0px 0px -8% 0px'});
+    [].slice.call(document.querySelectorAll('.rv')).forEach(function(el){rv.observe(el);});
+  }else{
+    [].slice.call(document.querySelectorAll('.rv')).forEach(function(el){el.classList.add('on');});
+  }
+
+
+  var fabM=document.getElementById('fabMenu'),fabT=document.getElementById('fabTop'),qk=document.getElementById('quick');
+  function closeQ(){qk.classList.remove('on');fabM.setAttribute('aria-expanded','false');}
+  fabM.addEventListener('click',function(e){e.stopPropagation();
+    var open=qk.classList.toggle('on');fabM.setAttribute('aria-expanded',open?'true':'false');});
+  qk.addEventListener('click',function(e){if(e.target.tagName==='A')closeQ();});
+  document.addEventListener('click',function(e){if(!qk.contains(e.target)&&e.target!==fabM)closeQ();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeQ();});
+  fabT.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  addEventListener('scroll',function(){
+    fabT.classList.toggle('on',window.scrollY>600);
+    if(qk.classList.contains('on'))closeQ();
+  },{passive:true});
+  qk.addEventListener('wheel',function(e){
+    var noScroll=qk.scrollHeight<=qk.clientHeight;
+    if(noScroll){closeQ();}
+  },{passive:true});
+  var qlinks=[].slice.call(qk.querySelectorAll('a'));
+  if('IntersectionObserver' in window){
+    var qs=qlinks.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+    var qspy=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){qlinks.forEach(function(l){l.removeAttribute('aria-current');});
+        var a=qlinks.filter(function(l){return l.getAttribute('href')==='#'+e.target.id;})[0];
+        if(a)a.setAttribute('aria-current','true');}});},{rootMargin:'-12% 0px -74% 0px'});
+    qs.forEach(function(x){qspy.observe(x);});
+  }
+
+
+  var cb=document.getElementById('copyMail');
+  if(cb){cb.addEventListener('click',function(){
+    var mail=document.getElementById('mailLink').textContent.trim();
+    function ok(){cb.textContent='Skopiowano ✓';cb.classList.add('done');
+      setTimeout(function(){cb.textContent='Kopiuj adres';cb.classList.remove('done');},2200);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(mail).then(ok).catch(fallback);}
+    else fallback();
+    function fallback(){var t=document.createElement('textarea');t.value=mail;t.style.position='fixed';
+      t.style.opacity='0';document.body.appendChild(t);t.select();
+      try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(t);}
+  });}
+
+
+  // pamięć pozycji przewijania w obrębie tej samej karty
+  try{
+    var KEY='se-scroll';
+    var saved=sessionStorage.getItem(KEY);
+    if(saved&&!location.hash){
+      window.addEventListener('load',function(){
+        requestAnimationFrame(function(){window.scrollTo(0,parseInt(saved,10)||0);});
+      });
+    }
+    var tick;
+    addEventListener('scroll',function(){
+      clearTimeout(tick);
+      tick=setTimeout(function(){sessionStorage.setItem(KEY,String(window.scrollY));},180);
+    },{passive:true});
+  }catch(e){}
+
+  var t=document.getElementById('today');
+  if(t)t.textContent=new Date().toLocaleDateString('pl-PL',{day:'2-digit',month:'long',year:'numeric'});
+})();
+</script>
+
+</body>
+</html>
