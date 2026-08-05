@@ -405,6 +405,36 @@ tr:last-child td{border-bottom:none}
 .dblock.sol .lab{color:var(--sodium)}
 .dblock.gain .lab{color:var(--ok)}
 
+/* ═══ droga projektu ═══ */
+.chain-t{color:var(--soft);margin:30px 0 16px;max-width:66ch}
+.chain{list-style:none;counter-reset:c;padding:0;margin:0;display:grid;gap:12px;
+  grid-template-columns:repeat(5,minmax(0,1fr))}
+.chain li{position:relative;display:flex;flex-direction:column;gap:6px;
+  background:var(--panel);border:1px solid var(--edge);border-radius:13px;padding:17px 16px 18px;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:.35s}
+.chain li:hover{border-color:rgba(255,186,110,.5);transform:translateY(-2px)}
+.chain .cn{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;color:var(--dim)}
+.chain b{font-family:var(--display);font-weight:600;text-transform:uppercase;
+  font-size:1.02rem;letter-spacing:.02em;line-height:1.15}
+.chain .cd{color:var(--soft);font-size:.855rem;line-height:1.55;flex:1}
+.chain .cw{font-family:var(--mono);font-size:.585rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--sodium);padding-top:4px;border-top:1px solid var(--edge);margin-top:4px}
+.chain li.here{background:rgba(255,158,61,.11);border-color:rgba(255,175,80,.62);
+  box-shadow:inset 0 1px 0 rgba(255,215,165,.3),0 0 44px -16px rgba(255,158,61,.75)}
+.chain li.here .cn,.chain li.here b{color:var(--sodium)}
+.chain li.here .cw{color:var(--sodium-2);font-weight:700}
+/* стрелка между шагами — только на широком экране */
+@media(min-width:981px){
+  .chain li:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;z-index:3;
+    width:6px;height:6px;border-top:1px solid var(--edge-2);border-right:1px solid var(--edge-2);
+    transform:translateY(-50%) rotate(45deg)}
+}
+@media(max-width:980px){.chain{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .chain li:last-child:nth-child(odd){grid-column:1 / -1}}
+@media(max-width:560px){.chain{grid-template-columns:minmax(0,1fr)}
+  .chain li:last-child:nth-child(odd){grid-column:auto}
+  .chain li{padding:15px 15px 16px}}
+
 /* ═══ trzy kroki w CTA ═══ */
 .next3{max-width:600px;margin:0 auto 34px;text-align:left}
 .next3 li{padding:14px 0 14px 50px}
@@ -470,6 +500,40 @@ tr:last-child td{border-bottom:none}
   <h2>Dziękuję za brief</h2>
   <p class="sub">Robert, odpowiedzieliście na wszystkie 60 pytań — konkretnie i bez pośpiechu. Dzięki temu ten dokument nie jest ogólną ofertą „dla każdego”, tylko planem zbudowanym na Waszych odpowiedziach.</p>
   <p class="sub">Najlepiej czytać go po kolei: najpierw pokazuję, jakie decyzje wynikają z tego, co napisaliście, potem — co dokładnie powstanie, jak będzie działać, ile to kosztuje i co jest potrzebne z Waszej strony.</p>
+
+  <p class="chain-t">A tak wygląda cała droga — żebyście od razu wiedzieli, gdzie jesteśmy i co będzie dalej:</p>
+  <ol class="chain">
+    <li class="here">
+      <span class="cn">01</span>
+      <b>Ta propozycja</b>
+      <span class="cd">Warunki, wycena i decyzje, które widzicie na tej stronie</span>
+      <span class="cw">jesteście tutaj</span>
+    </li>
+    <li>
+      <span class="cn">02</span>
+      <b>Wasza decyzja i umowa</b>
+      <span class="cd">Bez pośpiechu. Umowę przygotowuję do dwóch tygodni od Waszego „tak”</span>
+      <span class="cw">czas na spokojne przemyślenie</span>
+    </li>
+    <li>
+      <span class="cn">03</span>
+      <b>Plan realizacji</b>
+      <span class="cd">Mapa strony ekran po ekranie, wypełnienie pakietów sponsorskich, harmonogram i kierunki wizualne do wyboru</span>
+      <span class="cw">2 tygodnie po podpisaniu</span>
+    </li>
+    <li>
+      <span class="cn">04</span>
+      <b>Realizacja</b>
+      <span class="cd">Pracujemy dokładnie według planu, w ośmiu etapach, z trzema rundami poprawek</span>
+      <span class="cw">3–6 miesięcy</span>
+    </li>
+    <li>
+      <span class="cn">05</span>
+      <b>Odbiór i opieka</b>
+      <span class="cd">Przekazanie wszystkich dostępów, instrukcja obsługi i gwarancja na wykonanie</span>
+      <span class="cw">+ 90 dni</span>
+    </li>
+  </ol>
 </section>
 
 <section id="decyzje" class="rv">
