@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dziękuję — wiadomość dotarła</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#06070A;--panel:rgba(255,255,255,.055);--edge:rgba(255,186,110,.20);
+  --edge-2:rgba(255,186,110,.38);--ink:#F2F4F7;--soft:#9BA5B2;--dim:#69727E;
+  --sodium:#FF9E3D;--sodium-2:#FFC178;--ok:#7BD8A4;
+  --display:"Saira Condensed",'Arial Narrow',sans-serif;
+  --body:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--void);color:var(--ink);font-family:var(--body);
+  font-size:clamp(16px,1rem + .2vw,18px);line-height:1.7;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  min-height:100svh;display:grid;place-items:center;padding:clamp(20px,6vw,56px)}
+:where(a,button):focus-visible{outline:2px solid var(--sodium);outline-offset:4px;border-radius:4px}
+
+.atmo{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.beam{position:absolute;border-radius:50%;filter:blur(88px);opacity:.7}
+.b1{width:70vw;height:70vw;max-width:720px;max-height:720px;top:-24vh;right:-16vw;
+  background:radial-gradient(circle,rgba(255,158,61,.32),transparent 64%)}
+.b2{width:56vw;height:56vw;max-width:600px;max-height:600px;bottom:-18vh;left:-16vw;
+  background:radial-gradient(circle,rgba(156,199,255,.20),transparent 66%)}
+
+.card{position:relative;z-index:2;width:min(620px,100%);text-align:center;
+  background:var(--panel);border:1px solid var(--edge-2);border-radius:20px;
+  padding:clamp(30px,7vw,56px) clamp(22px,5vw,48px);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:inset 0 1px 0 rgba(255,215,165,.28),0 0 80px -24px rgba(255,158,61,.55)}
+
+.mark{width:64px;height:64px;margin:0 auto 24px;border-radius:50%;display:grid;place-items:center;
+  border:1.5px solid var(--ok);color:var(--ok);font-size:1.7rem;line-height:1;
+  box-shadow:0 0 40px -8px rgba(123,216,164,.6)}
+
+.kicker{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);
+  font-size:.63rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sodium-2);
+  margin-bottom:16px;text-shadow:0 0 18px rgba(255,158,61,.55)}
+
+h1{font-family:var(--display);font-weight:800;text-transform:uppercase;
+  font-size:clamp(2rem,7vw,3.1rem);line-height:1;letter-spacing:.005em;
+  margin:0 0 18px;text-wrap:balance}
+
+p{margin:0 0 15px;color:var(--soft);text-wrap:pretty}
+p:last-of-type{margin-bottom:0}
+strong{color:var(--ink);font-weight:700}
+
+.steps{list-style:none;padding:0;margin:28px 0 0;text-align:left;counter-reset:s;
+  border-top:1px solid var(--edge);padding-top:6px}
+.steps li{position:relative;counter-increment:s;padding:13px 0 13px 46px;
+  border-bottom:1px solid var(--edge);color:var(--soft);font-size:.95rem}
+.steps li:last-child{border-bottom:none}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:13px;
+  font-family:var(--mono);font-size:.72rem;color:var(--sodium);letter-spacing:.06em}
+.steps b{color:var(--ink)}
+
+.back{display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+  font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  font-size:.95rem;padding:13px 30px;border-radius:100px;text-decoration:none;color:#170D03;
+  background:linear-gradient(100deg,var(--sodium),var(--sodium-2));
+  box-shadow:0 14px 40px -14px rgba(255,158,61,.7);transition:.3s}
+.back:hover{transform:translateY(-2px);box-shadow:0 20px 52px -14px rgba(255,158,61,.85)}
+
+.mail{margin-top:24px;font-family:var(--mono);font-size:.76rem;line-height:1.9;color:var(--dim)}
+.mail a{color:var(--sodium)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="atmo"><div class="beam b1"></div><div class="beam b2"></div></div>
+
+<main class="card">
+  <div class="mark">✓</div>
+  <div class="kicker">Odebrane</div>
+  <h1>Wiadomość<br>dotarła</h1>
+  <p>Dziękuję — wszystko już u mnie. Nic więcej nie musicie teraz robić.</p>
+
+  <ol class="steps">
+    <li><b>Odpisuję w ciągu 24 godzin</b> — potwierdzę, że wszystko doszło, i odpowiem na pytania, jeśli jakieś zostały</li>
+    <li><b>Dalsze kroki ustalamy mailem</b> — jeden wątek, wszystko w jednym miejscu</li>
+  </ol>
+
+  <a class="back" href="index.html">← Wróć do propozycji</a>
+
+  <p class="mail">Gdyby coś było pilne — piszcie wprost:<br>
+  <a href="mailto:marcin.tatsiana@gmail.com">marcin.tatsiana@gmail.com</a></p>
+</main>
+
+</body>
+</html>

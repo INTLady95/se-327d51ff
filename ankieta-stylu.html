@@ -26,10 +26,11 @@
   <p class="lead">Żadnego opisywania słowami — pokazuję gotowe kierunki, Wy wybieracie. Nie ma złych odpowiedzi, a każdą decyzję można później zmienić.</p>
 </div>
 
-<form action="https://formsubmit.co/marcin.tatsiana@gmail.com" method="POST">
+<form action="https://formsubmit.co/marcin.tatsiana@gmail.com" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_subject" value="🎨 Ankieta stylu — Street-Elite">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://intlady95.github.io/se-327d51ff/dziekuje.html">
   <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
 
   <fieldset>
@@ -52,7 +53,7 @@
         <label class="opt"><input type="radio" name="Kolorystyka" value="Ciemna" required><span>Ciemna — czerń, grafit, mocny akcent</span></label>
         <label class="opt"><input type="radio" name="Kolorystyka" value="Jasna"><span>Jasna — biel, szarości, spokojnie</span></label>
         <label class="opt"><input type="radio" name="Kolorystyka" value="Kontrastowa"><span>Kontrastowa — mocne zestawienia, dużo charakteru</span></label>
-        <label class="opt"><input type="radio" name="Kolorystyka" value="Zdecydujcie za nas"><span>Zdecyduj za nas</span></label>
+        <label class="opt"><input type="radio" name="Kolorystyka" value="Zdecyduj za nas"><span>Zdecyduj za nas</span></label>
       </div>
     </div>
 
@@ -82,7 +83,7 @@
       <div class="opts">
         <label class="opt"><input type="radio" name="Typografia" value="Mocne, szerokie, wyraziste" required><span>Mocne i wyraziste — jak na plakacie</span></label>
         <label class="opt"><input type="radio" name="Typografia" value="Spokojne i czytelne"><span>Spokojne i czytelne — bez krzyku</span></label>
-        <label class="opt"><input type="radio" name="Typografia" value="Nie mam zdania"><span>Nie mam zdania — wybierz najlepsze</span></label>
+        <label class="opt"><input type="radio" name="Typografia" value="Nie mamy zdania"><span>Nie mamy zdania — wybierz najlepsze</span></label>
       </div>
     </div>
   </fieldset>
@@ -94,6 +95,12 @@
       <label for="p1">Strony albo profile, które Wam się podobają</label>
       <span class="hintx">Cokolwiek — nie musi być z motoryzacji. Wystarczy link i słowo, co się podoba.</span>
       <textarea id="p1" name="Co nam się podoba" placeholder="np. jakiś zlot z zagranicy — podoba się nam, jak pokazują zdjęcia"></textarea>
+    </div>
+
+    <div class="q">
+      <label for="p4">Zrzuty ekranu, jeśli coś wpadło Wam w oko</label>
+      <span class="hintx">Można dołączyć kilka plików, łącznie do 10 MB. Gdyby było ich więcej albo coś nie chciało się załączyć — po prostu wyślijcie je mailem.</span>
+      <input id="p4" type="file" name="Zrzuty ekranu" accept="image/*" multiple>
     </div>
 
     <div class="q">

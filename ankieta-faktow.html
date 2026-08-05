@@ -16,20 +16,21 @@
 
 <header class="bar"><div class="bar-in">
   <a class="back" href="index.html#odwas">← Wróć do propozycji</a>
-  <span class="step">Ankieta 2 z 2 · ok. 40 minut</span>
+  <span class="step">Ankieta 2 z 2 · 40–60 minut</span>
 </div></header>
 
 <div class="wrap">
 <div class="head">
   <div class="kicker">Ankieta z faktami</div>
   <h1>Wasza historia<br>i Wasze liczby</h1>
-  <p class="lead">Stąd biorę treść na całą stronę i argumenty do pakietów sponsorskich. Można wypełniać na raty — im więcej konkretów, tym mniej będziecie musieli poprawiać później.</p>
+  <p class="lead">Stąd biorę treść na całą stronę i argumenty do pakietów sponsorskich. Można wypełniać na raty — im więcej konkretów, tym szybciej teksty zabrzmią jak Wy.</p>
 </div>
 
 <form action="https://formsubmit.co/marcin.tatsiana@gmail.com" method="POST">
   <input type="hidden" name="_subject" value="📋 Ankieta z faktami — Street-Elite">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://intlady95.github.io/se-327d51ff/dziekuje.html">
   <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
 
   <fieldset>
@@ -48,6 +49,11 @@
       <span class="hintx">Wystarczy kierunek — resztę dopracujemy razem.</span>
       <input id="n3" type="text" name="Nazwa na stronie" placeholder="MyVision_video, Street-Elite czy coś jeszcze innego">
     </div>
+    <div class="q">
+      <label for="n4">Linki do Waszych profili</label>
+      <span class="hintx">Facebook, Instagram, YouTube, TikTok — wszystkie, które prowadzicie. Trafią na stronę, a filmy z Waszego kanału osadzimy bezpośrednio w niej.</span>
+      <textarea id="n4" name="Linki do profili" placeholder="Po jednym linku w linii"></textarea>
+    </div>
   </fieldset>
 
   <fieldset>
@@ -59,6 +65,7 @@
     </div>
     <div class="q">
       <label for="h2">Co się przez te pięć lat najbardziej zmieniło?</label>
+      <span class="hintx">I z czego jesteście najbardziej dumni — to często najlepsze zdanie na całej stronie.</span>
       <textarea id="h2" name="Co sie zmienilo" placeholder="np. z 30 aut na parkingu do tysiąca osób"></textarea>
     </div>
     <div class="q">
@@ -95,9 +102,14 @@
       <textarea id="l4" name="Kto przyjezdza" placeholder="Skąd przyjeżdżają, czy z rodzinami, jakie auta"></textarea>
     </div>
     <div class="q">
+      <label for="l6">Ile osób ogląda Wasze posty i relacje?</label>
+      <span class="hintx">W aplikacji Instagrama albo Facebooka: profil → statystyki → zasięg. Wystarczy liczba z ostatniego miesiąca — albo zrzut ekranu wysłany mailem.</span>
+      <input id="l6" type="text" name="Zasiegi w social mediach" placeholder="np. 40 tysięcy odbiorców w miesiącu">
+    </div>
+    <div class="q">
       <label for="l5">Ile zlotów planujecie w sezonie i kiedy jest najbliższy?</label>
       <span class="hintx">Bez zobowiązań — po prostu żebym wiedziała, jak wygląda Wasz rok.</span>
-      <textarea id="l5" name="Kalendarz sezonu" placeholder="np. 4 zloty od maja do września, najbliższy we wrześniu"></textarea>
+      <textarea id="l5" name="Kalendarz sezonu" placeholder="np. 4 zloty od maja do września, każdy na jeden dzień; najbliższy — wrzesień"></textarea>
     </div>
   </fieldset>
 
@@ -115,7 +127,7 @@
     <div class="q">
       <label for="s3">Czego szukacie u nowych sponsorów?</label>
       <span class="hintx">Konkretnie: pieniądze, nagrody, sprzęt, wsparcie medialne?</span>
-      <textarea id="s3" name="Czego szukamy u sponsorow" placeholder=""></textarea>
+      <textarea id="s3" name="Czego szukamy u sponsorow" placeholder="np. wsparcie finansowe, nagrody dla uczestników, nagłośnienie i scena"></textarea>
     </div>
   </fieldset>
 
@@ -137,7 +149,12 @@
     </div>
     <div class="q">
       <label for="g2">Coś jeszcze, o co nie zapytałam?</label>
-      <textarea id="g2" name="Coś jeszcze" placeholder=""></textarea>
+      <textarea id="g2" name="Coś jeszcze" placeholder="Cokolwiek przyjdzie Wam do głowy"></textarea>
+    </div>
+    <div class="q">
+      <label for="kp">Kto będzie osobą do kontaktu przy projekcie?</label>
+      <span class="hintx">Ta osoba zbiera uwagi zespołu i przesyła mi je jedną listą. Nie musi to być ta sama osoba, która wypełnia ankietę — i można ją w każdej chwili zmienić.</span>
+      <input id="kp" type="text" name="Osoba do kontaktu" placeholder="Imię i adres e-mail">
     </div>
     <div class="q">
       <label for="who">Kto wypełnia</label>

@@ -33,9 +33,11 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;background:var(--void);color:var(--ink);
-  font-family:var(--body);font-size:17px;line-height:1.7;font-weight:400;
+  font-family:var(--body);font-size:clamp(1rem,.97rem + .18vw,1.0625rem);line-height:1.7;font-weight:400;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  overflow-wrap:break-word;text-size-adjust:100%;-webkit-text-size-adjust:100%;
 }
+h1,h2,h3,h4,.price,.quote{overflow-wrap:break-word;hyphens:auto}
 :where(a,button):focus-visible{outline:2px solid var(--sodium);outline-offset:4px;border-radius:4px}
 
 /* ═══ atmosfera ═══ */
@@ -128,17 +130,7 @@ a{color:var(--sodium)}
 .glass:hover::before{opacity:1}
 
 .grid{display:grid;gap:16px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-
-/* decyzje */
-.dec{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
-.dec .no{font-family:var(--display);font-weight:800;font-size:1.65rem;line-height:1;
-  color:transparent;-webkit-text-stroke:1px var(--sodium);min-width:34px;
-  font-variant-numeric:tabular-nums;transition:color .35s}
-.glass:hover .dec .no{color:var(--sodium);-webkit-text-stroke-color:transparent}
-.dec p{margin:0;font-size:.955rem;color:var(--soft)}
-.dec p .gain{color:var(--ink);font-weight:600}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(290px,100%),1fr))}
 
 /* cytat klienta */
 .quote{font-family:var(--display);font-weight:600;text-transform:none;text-shadow:0 0 34px rgba(255,158,61,.3);
@@ -151,8 +143,6 @@ a{color:var(--sodium)}
 .ticks li{position:relative;padding-left:28px;color:var(--soft);font-size:.96rem}
 .ticks li::before{content:"";position:absolute;left:2px;top:.62em;width:9px;height:9px;
   border:1.5px solid var(--sodium);border-radius:50%;box-shadow:0 0 10px rgba(255,158,61,.85)}
-.ticks.no li::before{border-color:var(--dim);background:
-  linear-gradient(45deg,transparent 44%,var(--dim) 44%,var(--dim) 56%,transparent 56%);border-radius:2px}
 .ticks li b{color:var(--ink)}
 
 /* ścieżka */
@@ -176,7 +166,7 @@ a{color:var(--sodium)}
   .tl-c{grid-column:2;font-size:.83rem}}
 
 /* pakiety */
-.plans{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));align-items:stretch}
+.plans{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(276px,100%),1fr));align-items:stretch}
 .plan{display:flex;flex-direction:column;position:relative;background:var(--panel);
   border:1px solid var(--edge);border-radius:16px;padding:28px 26px 30px;
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:.4s;
@@ -371,20 +361,6 @@ tr:last-child td{border-bottom:none}
 @media(max-width:640px){.fab{width:46px;height:46px}.fab-top{bottom:calc(16px + 54px)}.quick{bottom:calc(16px + 54px)}}
 
 
-/* ═══ adres kontaktowy ═══ */
-.mailbox{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-top:8px}
-.mail{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:clamp(.95rem,2.4vw,1.18rem);
-  letter-spacing:.02em;padding:15px 30px;border-radius:100px;text-decoration:none;color:#170D03;font-weight:700;
-  background:linear-gradient(100deg,var(--sodium),var(--sodium-2));
-  box-shadow:0 14px 40px -14px rgba(255,158,61,.85);transition:.3s;word-break:break-all}
-.mail:hover{transform:translateY(-2px);box-shadow:0 20px 54px -14px rgba(255,158,61,.95)}
-.copy{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;
-  padding:14px 18px;border:none;background:none;color:var(--dim);transition:.28s;white-space:nowrap;
-  text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(255,186,110,.4)}
-.copy:hover{color:var(--sodium);text-decoration-color:var(--sodium)}
-.copy.done{color:var(--ok);text-decoration-color:var(--ok)}
-
-
 .quick a{display:grid;grid-template-columns:26px 1fr;gap:8px;align-items:baseline}
 .quick a i{font-family:var(--mono);font-size:.63rem;font-style:normal;color:var(--dim);transition:.2s}
 .quick a:hover i,.quick a[aria-current] i{color:var(--sodium)}
@@ -405,7 +381,7 @@ tr:last-child td{border-bottom:none}
 .cform{max-width:640px;margin:0 auto;text-align:left}
 .cq{margin:0 0 16px}
 .cq label,.clab{display:block;font-weight:650;font-size:.95rem;margin-bottom:7px}
-.cgrid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.cgrid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
 .cform input[type=text],.cform input[type=email],.cform textarea{width:100%;background:rgba(0,0,0,.32);
   border:1px solid var(--edge);border-radius:10px;color:var(--ink);font-family:var(--body);
   font-size:.97rem;padding:13px 15px;transition:.22s}
@@ -413,7 +389,7 @@ tr:last-child td{border-bottom:none}
 .cform input:hover,.cform textarea:hover{border-color:var(--edge-2)}
 .cform input:focus,.cform textarea:focus{border-color:var(--sodium);background:rgba(0,0,0,.45)}
 .cform ::placeholder{color:#5A626C}
-.copts{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.copts{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr))}
 .copt{display:flex;align-items:flex-start;gap:10px;background:rgba(0,0,0,.26);border:1px solid var(--edge);
   border-radius:11px;padding:13px 15px;cursor:pointer;transition:.22s}
 .copt:hover{border-color:var(--edge-2);background:rgba(255,158,61,.07)}
@@ -428,6 +404,25 @@ tr:last-child td{border-bottom:none}
 .dblock .lab{color:#E08585}
 .dblock.sol .lab{color:var(--sodium)}
 .dblock.gain .lab{color:var(--ok)}
+
+/* ═══ trzy kroki w CTA ═══ */
+.next3{max-width:600px;margin:0 auto 34px;text-align:left}
+.next3 li{padding:14px 0 14px 50px}
+.next3 li:last-child{border-bottom:none}
+
+/* ═══ tabela rat → karty na wąskim ekranie ═══ */
+@media(max-width:620px){
+  .tbl-wrap table{min-width:0}
+  .tbl-wrap thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .tbl-wrap tr{display:block;padding:14px 0;border-bottom:1px solid var(--edge-2)}
+  .tbl-wrap tr:last-child{border-bottom:none}
+  .tbl-wrap td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    padding:6px 0;border-bottom:none}
+  .tbl-wrap td:first-child{font-family:var(--display);text-transform:uppercase;
+    font-size:1.02rem;letter-spacing:.02em;padding-bottom:10px;color:var(--sodium)}
+  .tbl-wrap td[data-l]::before{content:attr(data-l);font-family:var(--mono);font-size:.6rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--dim);flex:none}
+}
 
 ::selection{background:var(--sodium);color:#120902}
 </style>
@@ -448,6 +443,7 @@ tr:last-child td{border-bottom:none}
       <a href="#zakres">Zakres</a>
       <a href="#harmonogram">Harmonogram</a>
       <a href="#pakiety">Warianty</a>
+      <a href="#platnosci">Płatności</a>
       <a href="#formalnosci">Formalności</a>
     </nav>
   </div>
@@ -457,14 +453,14 @@ tr:last-child td{border-bottom:none}
 <div class="wrap">
 
 <section class="hero" id="start">
-  <div class="kicker">Propozycja współpracy · <span id="today">2026</span></div>
+  <div class="kicker">Propozycja współpracy · 5 sierpnia 2026</div>
   <h1>Strona,<br>która pracuje<br><span class="hl">na sponsorów</span></h1>
   <p class="lead">Strona internetowa, system zapisów na zloty i pakiety sponsorskie dla MyVision_video / Street-Elite. Wszystko zbudowane na Waszych odpowiedziach z briefu.</p>
   <dl class="hero-meta">
     <div><dt>Dla</dt><dd>Robert Marchewka</dd></div>
     <div><dt>Zakres</dt><dd>Strona · Zapisy · Sponsorzy</dd></div>
     <div><dt>Uruchomienie</dt><dd>3–6 miesięcy</dd></div>
-    <div><dt>Oferta ważna</dt><dd>30 dni</dd></div>
+    <div><dt>Oferta ważna</dt><dd>do 15 września 2026</dd></div>
   </dl>
   <div class="scroller"><span class="mouse"></span>Przewijaj w dół</div>
 </section>
@@ -472,7 +468,7 @@ tr:last-child td{border-bottom:none}
 <section id="wstep" class="rv">
   <div class="kicker">Wstęp</div>
   <h2>Dziękuję za brief</h2>
-  <p class="sub">Robert, 60 pytań to sporo — a odpowiedzieliście na wszystkie, konkretnie i bez pośpiechu. Dzięki temu ten dokument nie jest ogólną ofertą „dla każdego", tylko planem zbudowanym na Waszych odpowiedziach.</p>
+  <p class="sub">Robert, odpowiedzieliście na wszystkie 60 pytań — konkretnie i bez pośpiechu. Dzięki temu ten dokument nie jest ogólną ofertą „dla każdego”, tylko planem zbudowanym na Waszych odpowiedziach.</p>
   <p class="sub">Najlepiej czytać go po kolei: najpierw pokazuję, jakie decyzje wynikają z tego, co napisaliście, potem — co dokładnie powstanie, jak będzie działać, ile to kosztuje i co jest potrzebne z Waszej strony.</p>
 </section>
 
@@ -487,7 +483,7 @@ tr:last-child td{border-bottom:none}
       <summary>
         <div class="dnum">01</div>
         <div class="dhead">
-          <span class="lab">Problem</span>
+          <span class="lab">Punkt wyjścia</span>
           <h4>Kalendarz na cały rok</h4>
           <p class="plain">„Kalendarz na cały rok”</p>
         </div>
@@ -495,7 +491,7 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co to znaczy</span><p>Zloty robicie raz na parę miesięcy, więc roczna siatka przez większość roku pokazywałaby puste pola.</p></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Wasz sezon ma swój rytm: kilka dużych zlotów w roku. Roczna siatka kalendarza przez większość czasu pokazywałaby więc puste pola.</p></div>
         <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Na wejściu duży baner z najbliższym zlotem — data, miejsce i przycisk zapisu. Pod nim kafelki poprzednich edycji: kliknięcie otwiera galerię tamtego zlotu.</p></div>
         <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Strona zawsze ma co pokazać — także zimą pracuje na Was archiwum i pięć lat historii.</p></div>
       </div>
@@ -504,24 +500,7 @@ tr:last-child td{border-bottom:none}
       <summary>
         <div class="dnum">02</div>
         <div class="dhead">
-          <span class="lab">Problem</span>
-          <h4>Płatność przy bramie</h4>
-          <p class="plain">„Zarabiamy na biletach” i „wystarczy zgłoszenie”</p>
-        </div>
-        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
-      </summary>
-      <div class="dbody">
-        <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co to znaczy</span><p>Pieniądze bierzecie na miejscu, a przez stronę mają iść same zapisy.</p></div>
-        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Zostawiamy model, który u Was działa — pieniądze dalej bierzecie przy bramie. Strona bierze na siebie dwie inne rzeczy: wizerunek wobec sponsorów i porządek w zapisach. Sam formularz zapisu działa bezpośrednio na Waszej stronie, w okienku — gość nigdzie nie przechodzi.</p></div>
-        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Płacicie za to, co jest potrzebne teraz. Płatności online dołożymy wtedy, kiedy sami uznacie, że to dobry moment.</p></div>
-      </div>
-    </details>
-    <details class="dcard">
-      <summary>
-        <div class="dnum">03</div>
-        <div class="dhead">
-          <span class="lab">Problem</span>
+          <span class="lab">Punkt wyjścia</span>
           <h4>Zgłoszenia w wiadomościach</h4>
           <p class="plain">„Czasem coś ucieka”</p>
         </div>
@@ -529,33 +508,16 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co to znaczy</span><p>Zapisy przychodzą w wiadomościach na kilku profilach, więc łatwo któreś przeoczyć.</p></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Zapisy przychodzą w wiadomościach na kilku profilach naraz — przy takim ruchu pojedyncze zgłoszenie ma prawo zginąć w tłumie. To kwestia skali, nie uwagi.</p></div>
         <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Jeden formularz i jedna lista wszystkich zapisów — z datą i kontaktem, dostępna dla Was w każdej chwili.</p></div>
-        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>W jednym miejscu widzicie, kto się zapisał i ilu ludzi już macie.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Nic Wam już nie ucieknie — nawet w tygodniu przed zlotem, kiedy wiadomości jest najwięcej.</p></div>
       </div>
     </details>
     <details class="dcard">
       <summary>
-        <div class="dnum">04</div>
+        <div class="dnum">03</div>
         <div class="dhead">
-          <span class="lab">Problem</span>
-          <h4>Baza kontaktów</h4>
-          <p class="plain">„Kontakty mamy, ale w bałaganie”</p>
-        </div>
-        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
-      </summary>
-      <div class="dbody">
-        <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co to znaczy</span><p>Numery i adresy są porozrzucane, więc trudno z nich skorzystać przed kolejnym zlotem.</p></div>
-        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Strona od pierwszego dnia zbiera nową bazę — z wyraźną zgodą i datą jej udzielenia. Dla starych kontaktów pokażę bezpieczne rozwiązanie.</p></div>
-        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Baza staje się Waszym majątkiem, z którego możecie spokojnie korzystać.</p></div>
-      </div>
-    </details>
-    <details class="dcard">
-      <summary>
-        <div class="dnum">05</div>
-        <div class="dhead">
-          <span class="lab">Problem</span>
+          <span class="lab">Punkt wyjścia</span>
           <h4>Liczby dla sponsorów</h4>
           <p class="plain">„Statystyki nie są nam potrzebne” i „potrzebujemy pozyskać więcej sponsorów”</p>
         </div>
@@ -565,14 +527,82 @@ tr:last-child td{border-bottom:none}
         <div class="dsep"></div>
         <div class="dblock"><span class="lab">Co to znaczy</span><p>Do samej organizacji zlotu liczby faktycznie nie są Wam potrzebne — wiecie, jak to wygląda na miejscu. Sponsor decyduje jednak właśnie na ich podstawie.</p></div>
         <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Pomiar jest częścią pracy nad pakietem sponsorskim — po to, żeby było czym argumentować w rozmowie.</p></div>
-        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Do sponsora przychodzicie z konkretem, a nie z prośbą.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Do rozmowy ze sponsorem wchodzicie z konkretem w ręku.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">04</div>
+        <div class="dhead">
+          <span class="lab">Punkt wyjścia</span>
+          <h4>Płatność przy bramie</h4>
+          <p class="plain">„Zarabiamy na biletach” i „wystarczy zgłoszenie”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Pieniądze bierzecie na miejscu, a przez stronę mają iść same zapisy.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Zostawiamy model, który u Was działa — pieniądze dalej bierzecie przy bramie. Strona bierze na siebie dwie inne rzeczy: wizerunek wobec sponsorów i porządek w zapisach. Sam formularz zapisu działa bezpośrednio na Waszej stronie, w okienku — gość nigdzie nie przechodzi.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Płacicie za to, co jest potrzebne teraz — płatności online dołożymy, kiedy sami uznacie, że to dobry moment.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">05</div>
+        <div class="dhead">
+          <span class="lab">Punkt wyjścia</span>
+          <h4>Baza kontaktów</h4>
+          <p class="plain">„Kontakty mamy, ale w bałaganie”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Kontakty macie — są tylko rozproszone po różnych miejscach, więc trudno z nich skorzystać przed kolejnym zlotem.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Strona od pierwszego dnia zbiera nową bazę — z wyraźną zgodą i datą jej udzielenia. Dla starych kontaktów pokażę bezpieczne rozwiązanie.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Baza staje się Waszym majątkiem, z którego możecie spokojnie korzystać.</p></div>
       </div>
     </details>
     <details class="dcard">
       <summary>
         <div class="dnum">06</div>
         <div class="dhead">
-          <span class="lab">Problem</span>
+          <span class="lab">Punkt wyjścia</span>
+          <h4>Limit miejsc</h4>
+          <p class="plain">„Ograniczenie miejsc — w zależności od miejsca i wydarzenia”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Przy każdym zlocie liczba miejsc jest inna, więc nie da się jej ustawić raz na zawsze.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Limit ustawiacie sami przy każdym wydarzeniu, a zapisy zamykają się automatycznie z czytelnym komunikatem, gdy pula się wyczerpie.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Nigdy nie zapisze się więcej osób, niż zaplanowaliście — a Wy dzień zlotu zaczynacie ze spokojną głową.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">07</div>
+        <div class="dhead">
+          <span class="lab">Punkt wyjścia</span>
+          <h4>Prowadzenie strony</h4>
+          <p class="plain">„Kto aktualizuje potem — jeszcze nie wiemy”</p>
+        </div>
+        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+      </summary>
+      <div class="dbody">
+        <div class="dsep"></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Tę decyzję dopiero podejmiecie — i nic nie musi zapadać teraz.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Panel projektuję tak, żeby dodanie zlotu, zmiana daty czy wrzucenie zdjęć były zrozumiałe dla każdego z Was — bez kodu i bez szkoleń. Do tego instrukcja krok po kroku.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Stronę zaktualizuje ten z Was, kto akurat ma chwilę, a wszystko zostaje w Waszych rękach.</p></div>
+      </div>
+    </details>
+    <details class="dcard">
+      <summary>
+        <div class="dnum">08</div>
+        <div class="dhead">
+          <span class="lab">Punkt wyjścia</span>
           <h4>Zdjęcia i filmy ze zlotów</h4>
           <p class="plain">Materiały, na których widać ludzi</p>
         </div>
@@ -587,9 +617,9 @@ tr:last-child td{border-bottom:none}
     </details>
     <details class="dcard">
       <summary>
-        <div class="dnum">07</div>
+        <div class="dnum">09</div>
         <div class="dhead">
-          <span class="lab">Problem</span>
+          <span class="lab">Punkt wyjścia</span>
           <h4>Dane w formularzu</h4>
           <p class="plain">Formularz zapisu zbiera imię i telefon</p>
         </div>
@@ -604,43 +634,9 @@ tr:last-child td{border-bottom:none}
     </details>
     <details class="dcard">
       <summary>
-        <div class="dnum">08</div>
-        <div class="dhead">
-          <span class="lab">Problem</span>
-          <h4>Prowadzenie strony</h4>
-          <p class="plain">„Kto aktualizuje potem — jeszcze nie wiemy”</p>
-        </div>
-        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
-      </summary>
-      <div class="dbody">
-        <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co to znaczy</span><p>Nie ma jeszcze wyznaczonej osoby, która będzie zajmować się stroną.</p></div>
-        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Panel projektuję tak, żeby dodanie zlotu, zmiana daty czy wrzucenie zdjęć były zrozumiałe dla każdego z Was — bez kodu i bez szkoleń. Do tego instrukcja krok po kroku.</p></div>
-        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Stronę zaktualizuje ten z Was, kto akurat ma chwilę, a wszystko zostaje w Waszych rękach.</p></div>
-      </div>
-    </details>
-    <details class="dcard">
-      <summary>
-        <div class="dnum">09</div>
-        <div class="dhead">
-          <span class="lab">Problem</span>
-          <h4>Limit miejsc</h4>
-          <p class="plain">„Ograniczenie miejsc — w zależności od miejsca i wydarzenia”</p>
-        </div>
-        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
-      </summary>
-      <div class="dbody">
-        <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co to znaczy</span><p>Przy każdym zlocie liczba miejsc jest inna, więc nie da się jej ustawić raz na zawsze.</p></div>
-        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Limit ustawiacie sami przy każdym wydarzeniu, a zapisy zamykają się automatycznie z czytelnym komunikatem, gdy pula się wyczerpie.</p></div>
-        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Przy każdym zlocie sami decydujecie, ile osób przyjmujecie, a zapisy zamykają się same — nie trzeba tego pilnować.</p></div>
-      </div>
-    </details>
-    <details class="dcard">
-      <summary>
         <div class="dnum">10</div>
         <div class="dhead">
-          <span class="lab">Problem</span>
+          <span class="lab">Punkt wyjścia</span>
           <h4>Styl strony</h4>
           <p class="plain">„Surowy styl, coś na luzie”</p>
         </div>
@@ -657,7 +653,7 @@ tr:last-child td{border-bottom:none}
       <summary>
         <div class="dnum">11</div>
         <div class="dhead">
-          <span class="lab">Problem</span>
+          <span class="lab">Punkt wyjścia</span>
           <h4>Nazwa na stronie</h4>
           <p class="plain">MyVision_video i Street-Elite</p>
         </div>
@@ -665,7 +661,7 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co to znaczy</span><p>W briefie pojawiają się obie nazwy i nie wynika z niego, która ma być tą główną na stronie.</p></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Obie nazwy mają swoją historię i swoją publiczność. Do ustalenia zostaje tylko, która z nich gra pierwsze skrzypce na stronie.</p></div>
         <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Na starcie poproszę o trzy rzeczy: oficjalną nazwę firmy do umowy, nazwę, pod którą znają Was ludzie, i tę, którą chcecie widzieć na stronie. Wystarczy kierunek — resztę dopracujemy razem.</p></div>
         <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Jedna nazwa na stronie, w adresie i w materiałach dla sponsorów — łatwiej ją zapamiętać.</p></div>
       </div>
@@ -674,7 +670,7 @@ tr:last-child td{border-bottom:none}
       <summary>
         <div class="dnum">12</div>
         <div class="dhead">
-          <span class="lab">Problem</span>
+          <span class="lab">Punkt wyjścia</span>
           <h4>Współpraca z modelkami</h4>
           <p class="plain">„Motoryzacja, organizacja zlotów i eventów, współpraca z modelkami”</p>
         </div>
@@ -682,7 +678,7 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co to znaczy</span><p>Wymieniliście to jako jedną z trzech rzeczy, którymi się zajmujecie — ale z briefu nie wynika, czy ma się pojawić na stronie.</p></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Wymieniliście to jako jedną z trzech rzeczy, którymi się zajmujecie — została tylko decyzja, czy ten obszar ma mieć swoje miejsce na stronie.</p></div>
         <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Ustalimy to na starcie. Jeśli chcecie ten obszar pokazać, przygotuję dla niego osobne miejsce — z galerią i formularzem zgłoszeń dla modelek i fotografów, uporządkowanym tak samo jak zapisy na zloty.</p></div>
         <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Nic z tego, czym się zajmujecie, nie zostaje pominięte, a Wy decydujecie, co pokazujecie na zewnątrz.</p></div>
       </div>
@@ -694,17 +690,17 @@ tr:last-child td{border-bottom:none}
 
 <section id="sponsorzy" class="rv">
   <div class="kicker">Cel numer jeden</div>
-  <blockquote class="quote">„Potrzebujemy pozyskać <em>więcej sponsorów</em>"</blockquote>
-  <p class="sub">To jedyne miejsce w całym briefie, gdzie napisaliście „potrzebujemy". Traktuję to jako cel numer jeden całego projektu. <strong>Strona jest narzędziem. Sponsorzy są celem.</strong></p>
+  <blockquote class="quote">„Potrzebujemy pozyskać <em>więcej sponsorów</em>”</blockquote>
+  <p class="sub">To jedyne miejsce w całym briefie, gdzie napisaliście „potrzebujemy”. Traktuję to jako cel numer jeden całego projektu. <strong>Strona jest narzędziem. Sponsorzy są celem.</strong></p>
 
   <div class="grid gsym2">
     <div class="glass">
-      <h3>Strona „Dla firm"</h3>
+      <h3>Strona „Dla firm”</h3>
       <p style="color:var(--soft);font-size:.96rem;margin:0">Osobna podstrona, na którą wysyłacie link każdemu potencjalnemu sponsorowi. Zamiast tłumaczyć w wiadomościach, kim jesteście — wysyłacie jeden adres, który robi wrażenie.</p>
     </div>
     <div class="glass">
       <h3>Pakiety w trzech poziomach</h3>
-      <p style="color:var(--soft);font-size:.96rem;margin:0">Przygotuję je dla Was od zera — dopasowane do tego, co naprawdę dzieje się na Waszych zlotach: co sponsor dostaje na zlocie, w mediach społecznościowych i na stronie. Sponsor nie pyta „a co ja z tego mam" — widzi to czarno na białym i wybiera poziom.</p>
+      <p style="color:var(--soft);font-size:.96rem;margin:0">Przygotuję je dla Was od zera — dopasowane do tego, co naprawdę dzieje się na Waszych zlotach: co sponsor dostaje na zlocie, w mediach społecznościowych i na stronie. Sponsor nie pyta „a co ja z tego mam” — widzi to czarno na białym i wybiera poziom.</p>
     </div>
     <div class="glass">
       <h3>Publiczność w liczbach</h3>
@@ -718,8 +714,8 @@ tr:last-child td{border-bottom:none}
 
   <div class="glass" style="margin-top:22px">
     <h3>Dlaczego liczby są tu kluczowe</h3>
-    <p style="color:var(--soft);margin:0 0 12px">Sponsor nie kupuje banera na płocie — kupuje dostęp do ludzi, których zgromadziliście. I tu jest rzecz, o której łatwo zapomnieć: <strong>tę wartość już macie</strong>. Tysiąc osób na jednym zlocie, dziesięć tysięcy obserwujących, pięć lat regularnej pracy — to są liczby, o jakich niejedna firma marzy.</p>
-    <p style="color:var(--soft);margin:0 0 12px">Brakuje jednej rzeczy: nigdzie nie są spisane. A człowiek po drugiej stronie musi przekonać kogoś u siebie — szefa albo dział marketingu. Zapyta więc o jedno: <strong>ile osób to zobaczy?</strong></p>
+    <p style="color:var(--soft);margin:0 0 12px">Sponsor nie kupuje banera na płocie — kupuje dostęp do ludzi, których zgromadziliście. I tu jest najważniejsze: <strong>tę wartość już macie</strong>. Tysiąc osób na jednym zlocie, dziesięć tysięcy obserwujących, pięć lat regularnej pracy — to są liczby, o jakich niejedna firma marzy.</p>
+    <p style="color:var(--soft);margin:0 0 12px">Do kompletu brakuje tylko jednego: te liczby nie są jeszcze nigdzie spisane. A człowiek po drugiej stronie musi przekonać kogoś u siebie — szefa albo dział marketingu. Zapyta więc o jedno: <strong>ile osób to zobaczy?</strong></p>
     <p style="color:var(--soft);margin:0">Pakiet bez liczb zostawia go bez odpowiedzi. Pakiet z liczbami broni się sam — także wtedy, gdy Was nie ma w pokoju. Dlatego zebranie tych danych wpisuję w zakres pracy. Nie po to, żebyście oglądali wykresy, tylko po to, żeby <strong>przestać pytać, czy ktoś zechce zostać sponsorem, i zacząć mówić, ile to kosztuje</strong>.</p>
   </div>
 </section>
@@ -730,7 +726,7 @@ tr:last-child td{border-bottom:none}
   <p class="sub">Osiem sekcji, dwie wersje językowe — polska i angielska. Motoryzacja nie kończy się na granicy, a sponsorzy z zagranicznym kapitałem czytają po angielsku.</p>
 
   <div class="grid gsym4">
-    <div class="glass"><h4>Strona główna z blokiem „Najbliższy zlot"</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Co, gdzie, kiedy i przycisk zapisu — wszystko, co najważniejsze, od razu na wierzchu, bez szukania.</p></div>
+    <div class="glass"><h4>Strona główna z blokiem „Najbliższy zlot”</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Co, gdzie, kiedy i przycisk zapisu — wszystko, co najważniejsze, od razu na wierzchu, bez szukania.</p></div>
     <div class="glass"><h4>Archiwum zlotów</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Kółka z poprzednimi edycjami — układ, który Wasza publiczność zna z relacji. Kliknięcie otwiera galerię tamtego zlotu, a pięć lat historii zaczyna na Was pracować.</p></div>
     <div class="glass"><h4>Galeria</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Najlepsze zdjęcia w jednym miejscu — uporządkowane i łatwe do znalezienia.</p></div>
     <div class="glass"><h4>Wideo</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Filmy z Waszego kanału osadzone bezpośrednio na stronie — klimat zlotu widać w 30 sekund, a strona zostaje lekka i szybka.</p></div>
@@ -739,7 +735,7 @@ tr:last-child td{border-bottom:none}
     <div class="glass"><h4>Dla firm</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Sekcja sponsorska ma swoje stałe miejsce, bo to cel numer jeden.</p></div>
     <div class="glass"><h4>Kontakt</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Jedna droga — i nic Wam nie ucieka.</p></div>
   </div>
-  <p class="note" style="margin-top:26px">Styl ustalamy wspólnie <span class="hi">przed startem</span> — „surowy, coś na luzie" to kierunek, który pokażę w konkretnych propozycjach do wyboru, zanim powstanie pierwsza podstrona.</p>
+  <p class="note" style="margin-top:26px">Styl ustalamy wspólnie <span class="hi">przed startem</span> — „surowy, coś na luzie” to kierunek, który pokażę w konkretnych propozycjach do wyboru, zanim powstanie pierwsza podstrona.</p>
 </section>
 
 <section id="zapisy" class="rv">
@@ -776,14 +772,14 @@ tr:last-child td{border-bottom:none}
 
   <div class="glass" style="margin-top:18px;text-align:center;padding:30px 26px">
     <h3 style="color:var(--sodium)">Zero abonamentu · konto w 100% Wasze</h3>
-    <p style="color:var(--soft);margin:0;max-width:56ch;margin-inline:auto">System zapisów działa bez żadnego abonamentu, a wszystkie konta i dostępy są Wasze — pełna niezależność od pierwszego dnia. A system projektuję tak, żeby płatności online dało się włączyć bez przebudowy — dokładamy je wtedy, kiedy uznacie, że czas.</p>
+    <p style="color:var(--soft);margin:0;max-width:56ch;margin-inline:auto">System zapisów działa bez abonamentu i bez prowizji, a wszystkie konta i dostępy są Wasze — pełna niezależność od pierwszego dnia.</p>
   </div>
 </section>
 
 <section id="zakres" class="rv">
   <div class="kicker">Zakres</div>
   <h2>Co robimy teraz,<br>a co zostawiamy na później</h2>
-  <p class="sub">Zaznaczyliście w briefie sporo rzeczy — i wszystkie są dobre. Część z nich świetnie sprawdzi się jako kolejny krok, kiedy strona już będzie pracować. Poniżej dokładny podział, żebyśmy oboje wiedzieli, na czym stoimy.</p>
+  <p class="sub">Zaznaczyliście w briefie sporo rzeczy — i wszystkie są dobre. Część z nich świetnie sprawdzi się jako kolejny krok, kiedy strona już będzie pracować. Poniżej dokładny podział, żeby obie strony wiedziały, na czym stoją.</p>
 
   <div class="grid g2">
     <div class="glass">
@@ -843,9 +839,9 @@ tr:last-child td{border-bottom:none}
     <details class="dcard">
       <summary>
         <div class="dhead">
-          <span class="lab">ok. 40 minut</span>
+          <span class="lab">40–60 minut</span>
           <h4>Ankieta z faktami</h4>
-          <p class="plain">Stąd biorę treść na całą stronę. Im więcej konkretów, tym mniej będziecie musieli poprawiać później.</p>
+          <p class="plain">Stąd biorę treść na całą stronę. Im więcej konkretów, tym szybciej teksty zabrzmią jak Wy — już w pierwszej wersji.</p>
         </div>
         <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
       </summary>
@@ -885,7 +881,7 @@ tr:last-child td{border-bottom:none}
     <details class="dcard">
       <summary>
         <div class="dhead">
-          <span class="lab">wskazanie na starcie</span>
+          <span class="lab">decyzja na starcie</span>
           <h4>Jedna osoba do kontaktu</h4>
           <p class="plain">Uwagi zbieracie między sobą, jak Wam wygodnie — do mnie trafia jeden wspólny głos.</p>
         </div>
@@ -893,7 +889,7 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody" style="padding-left:22px">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Dzięki temu decyzje zapadają szybko i nic się nie gubi po drodze</li><li>Osobę można w każdej chwili zmienić — wystarczy dać znać</li></ul></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Wybieracie tego z Was, komu najwygodniej pisać — nie musi to być szef</li><li>Ta osoba dostaje ode mnie wyniki etapów i odsyła jedną listę uwag</li><li>Dzięki temu decyzje zapadają szybko i nic się nie gubi po drodze</li><li>Osobę można w każdej chwili zmienić — wystarczy dać znać</li></ul></div>
       </div>
     </details>
     <details class="dcard">
@@ -921,22 +917,22 @@ tr:last-child td{border-bottom:none}
 
     <div class="glass" style="padding:8px 26px 12px">
     <div class="tl">
-      <div class="tl-row"><div class="tl-w">1</div><div class="tl-t">Start — ankiety, struktura strony, dostępy</div><div class="tl-c">wypełniacie dwie ankiety, przesyłacie logo, zdjęcia i filmy</div></div>
-      <div class="tl-row"><div class="tl-w">2</div><div class="tl-t">Projekt graficzny strony głównej</div><div class="tl-c">pokazuję pierwszą wersję — macie 2 tygodnie na spokojne obejrzenie</div></div>
-      <div class="tl-row"><div class="tl-w">3</div><div class="tl-t">Pierwsza runda poprawek</div><div class="tl-c">przysyłacie uwagi jedną listą, ja wdrażam je w ciągu 2 tygodni</div></div>
-      <div class="tl-row"><div class="tl-w">4</div><div class="tl-t">Teksty w obu językach i budowa sekcji</div><div class="tl-c">odpowiadacie na pytania uzupełniające, gdy coś wymaga doprecyzowania</div></div>
-      <div class="tl-row"><div class="tl-w">5</div><div class="tl-t">Druga runda poprawek</div><div class="tl-c">znowu 2 tygodnie dla Was, potem 2 tygodnie u mnie</div></div>
-      <div class="tl-row"><div class="tl-w">6</div><div class="tl-t">Zapisy, podstrona „Dla firm” i pakiety sponsorskie</div><div class="tl-c">logotypy sponsorów, akceptacja pakietów</div></div>
-      <div class="tl-row"><div class="tl-w">7</div><div class="tl-t">Trzecia runda poprawek i testy</div><div class="tl-c">ostatnie szlify, sprawdzamy wszystko na telefonach</div></div>
-      <div class="tl-row"><div class="tl-w">8</div><div class="tl-t">Domena, poczta, start strony i przekazanie</div><div class="tl-c">zakup domeny i hostingu, odbiór</div></div>
-      <div class="tl-row"><div class="tl-w">po starcie</div><div class="tl-t">90 dni opieki</div><div class="tl-c">jestem do dyspozycji — poprawiam błędy i pomagam Wam wejść w obsługę strony</div></div>
+      <div class="tl-row"><div class="tl-w">Etap 1</div><div class="tl-t">Start — ankiety, struktura strony, dostępy</div><div class="tl-c">wypełniacie dwie ankiety, przesyłacie logo, zdjęcia i filmy</div></div>
+      <div class="tl-row"><div class="tl-w">Etap 2</div><div class="tl-t">Projekt graficzny strony głównej</div><div class="tl-c">pokazuję pierwszą wersję — macie 2 tygodnie na spokojne obejrzenie</div></div>
+      <div class="tl-row"><div class="tl-w">Etap 3</div><div class="tl-t">Pierwsza runda poprawek</div><div class="tl-c">przysyłacie uwagi jedną listą, ja wdrażam je w ciągu 2 tygodni</div></div>
+      <div class="tl-row"><div class="tl-w">Etap 4</div><div class="tl-t">Teksty w obu językach i budowa sekcji</div><div class="tl-c">odpowiadacie na pytania uzupełniające, gdy coś wymaga doprecyzowania</div></div>
+      <div class="tl-row"><div class="tl-w">Etap 5</div><div class="tl-t">Druga runda poprawek</div><div class="tl-c">znowu 2 tygodnie dla Was, potem 2 tygodnie u mnie</div></div>
+      <div class="tl-row"><div class="tl-w">Etap 6</div><div class="tl-t">Zapisy, podstrona „Dla firm” i pakiety sponsorskie</div><div class="tl-c">logotypy sponsorów, akceptacja pakietów</div></div>
+      <div class="tl-row"><div class="tl-w">Etap 7</div><div class="tl-t">Trzecia runda poprawek i testy</div><div class="tl-c">ostatnie szlify, sprawdzamy wszystko na telefonach</div></div>
+      <div class="tl-row"><div class="tl-w">Etap 8</div><div class="tl-t">Domena, poczta, start strony i przekazanie</div><div class="tl-c">zakup domeny i hostingu, odbiór</div></div>
+      <div class="tl-row"><div class="tl-w">po starcie</div><div class="tl-t">90 dni gwarancji</div><div class="tl-c">jestem do dyspozycji — poprawiam błędy wykonania i pomagam Wam wejść w obsługę strony</div></div>
     </div>
   </div>
 
   <p class="note" style="margin-top:24px">
     <b style="color:var(--ink)">Rytm, który daje spokój obu stronom.</b> Po każdym pokazaniu wyniku macie <span class="hi">2 tygodnie</span> na obejrzenie go bez pośpiechu i zebranie uwag. Potem <span class="hi">2 tygodnie</span> pracuję po swojej stronie. Takie rundy są trzy.<br><br>
     Pierwszy projekt graficzny zobaczycie <span class="hi">w ciągu 1–2 miesięcy</span> od przekazania materiałów. Całość mieści się w <span class="hi">3–6 miesiącach</span>, z zapasem na sezon, wyjazdy i wszystko, co się w życiu zdarza. Jeśli skończę wcześniej — oddaję wcześniej.<br><br>
-    Przed startem prac jest jeszcze około tygodnia na formalności — szczegóły niżej.
+    Zanim ruszy Etap 1, jest jeszcze czas na formalności: <span class="hi">około tygodnia</span> na przygotowanie umowy po Waszej decyzji i <span class="hi">do 7 dni roboczych</span> na zgłoszenie w urzędzie — te dwie rzeczy dzieją się równolegle. Szczegóły niżej, w sekcji Formalności.
   </p>
 </section>
 
@@ -952,7 +948,7 @@ tr:last-child td{border-bottom:none}
       <div class="price-n">bez VAT</div>
       <ul class="ticks">
         <li>Jedna rozbudowana strona typu wizytówka — wszystko na jednym ekranie przewijanym w dół, po polsku</li>
-        <li>Prosty formularz zapisu — listę zamykacie ręcznie, bez biletów QR, listy rezerwowej i skanowania na bramie</li>
+        <li>Prosty formularz zapisu — zgłoszenia trafiają na jedną listę, którą prowadzicie po swojemu; bilety QR, lista rezerwowa i skanowanie na bramie są w wariancie Pełnym</li>
         <li>Wszystkie teksty tej strony</li>
         <li>Podstawowe dokumenty RODO — polityka prywatności i zgoda w formularzu</li>
         <li>Domena, firmowa poczta i hosting na Waszych kontach</li>
@@ -994,7 +990,7 @@ tr:last-child td{border-bottom:none}
   <div class="glass" style="margin-top:26px;border-color:rgba(255,175,80,.5)">
     <span class="lab" style="color:var(--sodium);font-family:var(--mono);font-size:.6rem;letter-spacing:.19em;text-transform:uppercase;display:block;margin-bottom:8px">Moduł sponsorski · 4 500 zł osobno · 2 000 zł razem z wariantem Pełnym</span>
     <h3>Za co dokładnie płacicie w części sponsorskiej</h3>
-    <p style="color:var(--soft);font-size:.95rem;margin:0 0 14px">Dziś nie macie żadnych materiałów dla firm — a to jedyna rzecz, o którą sami poprosiliście w briefie. Ta część powstaje od zera i składa się z sześciu rzeczy:</p>
+    <p style="color:var(--soft);font-size:.95rem;margin:0 0 14px">To jedyna rzecz, o którą sami poprosiliście w briefie. Powstaje w całości od zera — bo dziś cała ta wartość żyje na zlotach i w Waszych głowach, a jej miejsce jest przed oczami sponsora, czarno na białym. Ta część składa się z sześciu rzeczy:</p>
     <ul class="ticks">
       <li><b>Podstrona „Dla firm” w obu językach.</b> Jeden adres, który wysyłacie każdej firmie zamiast tłumaczenia w wiadomościach, kim jesteście i co robicie</li>
       <li><b>Trzy poziomy pakietów, zbudowane od zera.</b> Rozpisuję, co dokładnie dostaje sponsor na każdym poziomie: na terenie zlotu, w mediach społecznościowych, na stronie i w materiałach po evencie</li>
@@ -1007,14 +1003,14 @@ tr:last-child td{border-bottom:none}
   </div>
 
   <h3 style="margin-top:44px">Opcje dodatkowe</h3>
-  <p class="sub" style="margin-bottom:18px">Nic z tego nie jest potrzebne na start — to rzeczy, które można dołożyć wtedy, kiedy same o nie poprosicie. Kliknijcie, żeby zobaczyć, co dokładnie kryje się za ceną.</p>
+  <p class="sub" style="margin-bottom:18px">Nic z tego nie jest potrzebne na start — to rzeczy, które można dołożyć wtedy, kiedy sami o nie poprosicie. Kliknijcie, żeby zobaczyć, co dokładnie kryje się za ceną.</p>
   <div class="grid gsym3">
     <details class="dcard">
       <summary>
         <div class="dhead">
           <span class="lab" style="color:var(--sodium)">od 1 200 zł</span>
           <h4>Wersja angielska</h4>
-          <p class="plain">Dla wariantu Start. W pozostałych wariantach angielski jest już w cenie — ta opcja dotyczy każdego kolejnego języka: od 1 900 zł.</p>
+          <p class="plain">Dotyczy wariantu Start — w wariantach Pełny i Pełny + Sponsorzy angielski jest już w cenie. Ta sama stawka obowiązuje przy każdym kolejnym języku, w dowolnym wariancie.</p>
         </div>
         <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
       </summary>
@@ -1122,7 +1118,7 @@ tr:last-child td{border-bottom:none}
       </div>
     </details>
   </div>
-  <p class="note" style="margin-top:26px">Wariant <b>Start</b> można w każdej chwili rozbudować do <b>Pełnego</b> — dopłacacie wtedy tylko różnicę.<br>Oferta jest ważna <span class="hi">30 dni</span>. Jeśli to dla Was temat na później — dajcie znać, wrócimy do rozmowy w dogodnym terminie.</p>
+  <p class="note" style="margin-top:26px">Wariant <b>Start</b> można w każdej chwili rozbudować do <b>Pełnego</b> — dopłacacie wtedy tylko różnicę.<br>Oferta jest ważna <span class="hi">do 15 września 2026</span>. A gdyby ten termin okazał się za krótki — wystarczy jedna wiadomość: przedłużę bez pytań i wrócimy do rozmowy w momencie, który będzie dla Was dobry.</p>
 </section>
 
 <section id="platnosci" class="rv">
@@ -1134,14 +1130,14 @@ tr:last-child td{border-bottom:none}
     <table>
       <thead><tr><th>Wariant</th><th>Na start · 40%</th><th>Po projekcie · 30%</th><th>Przy oddaniu · 30%</th></tr></thead>
       <tbody>
-        <tr><td>Start · 5 500 zł</td><td>2 200 zł</td><td>1 650 zł</td><td>1 650 zł</td></tr>
-        <tr><td>Pełny · 11 900 zł</td><td>4 760 zł</td><td>3 570 zł</td><td>3 570 zł</td></tr>
-        <tr><td>Pełny + Sponsorzy · 13 900 zł</td><td>5 560 zł</td><td>4 170 zł</td><td>4 170 zł</td></tr>
+        <tr><td>Start · 5 500 zł</td><td data-l="Na start · 40%">2 200 zł</td><td data-l="Po projekcie · 30%">1 650 zł</td><td data-l="Przy oddaniu · 30%">1 650 zł</td></tr>
+        <tr><td>Pełny · 11 900 zł</td><td data-l="Na start · 40%">4 760 zł</td><td data-l="Po projekcie · 30%">3 570 zł</td><td data-l="Przy oddaniu · 30%">3 570 zł</td></tr>
+        <tr><td>Pełny + Sponsorzy · 13 900 zł</td><td data-l="Na start · 40%">5 560 zł</td><td data-l="Po projekcie · 30%">4 170 zł</td><td data-l="Przy oddaniu · 30%">4 170 zł</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="note" style="margin-top:22px">Każdy etap zamykamy krótkim protokołem odbioru — obie strony wiedzą, co zostało oddane i przyjęte.<br>
-  Płatność przelewem w ciągu 7 dni od rachunku. Rozliczenie: <span class="hi">umowa o dzieło i rachunek</span>. Dla Waszej firmy to wydatek, który wchodzi w koszty — bez VAT i bez składek ZUS; Wasza księgowość potwierdzi to od ręki.</p>
+  <p class="note" style="margin-top:22px">Każdy etap zamykamy krótkim protokołem odbioru — to jedno potwierdzenie mailem, dzięki któremu obie strony mają ten sam obraz: co zostało oddane i przyjęte.<br>
+  Po każdym etapie wystawiam rachunek, ze zwykłym siedmiodniowym terminem przelewu. Rozliczenie: <span class="hi">umowa o dzieło i rachunek</span>. Dla Waszej firmy to wydatek, który wchodzi w koszty — bez VAT i bez składek ZUS; Wasza księgowość potwierdzi to od ręki.</p>
 </section>
 
 <section id="koszty" class="rv">
@@ -1171,25 +1167,14 @@ tr:last-child td{border-bottom:none}
     </div>
     <div class="glass">
       <h3>Poprawki w trakcie</h3>
-      <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Na każdy etap przypadają <b>3 rundy poprawek</b>. Runda to jedna zbiorcza lista uwag w jednej wiadomości — dlatego uwagi zbiera jedna osoba.</p>
-      <p style="color:var(--soft);font-size:.95rem;margin:0">Drobne korekty po wdrożeniu rundy nie są naliczane. <b>Moje błędy poprawiam zawsze bezpłatnie i nie liczą się jako runda.</b> Gdyby przydała się dodatkowa runda — 100 zł/h, zawsze z wyceną przed rozpoczęciem, więc nic Was nie zaskoczy.</p>
+      <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">W całym projekcie są <b>trzy rundy poprawek</b> — dokładnie te, które widzicie w harmonogramie. Runda to jedna zbiorcza lista uwag w jednej wiadomości — zbiera je u Was jedna osoba, dzięki czemu żadna uwaga nie zginie po drodze.</p>
+      <p style="color:var(--soft);font-size:.95rem;margin:0">Drobne korekty po wdrożeniu rundy nie są naliczane. <b>Moje błędy poprawiam zawsze bezpłatnie i nie liczą się jako runda.</b> A gdybyście po trzech rundach chcieli dopracować coś jeszcze — chętnie, w stawce 100 zł/h, zawsze z wyceną przed rozpoczęciem, więc nic Was nie zaskoczy.</p>
     </div>
   </div>
 
   <div class="glass" style="margin-top:18px">
     <h3>Po odbiorze wszystko jest Wasze</h3>
-    <p style="color:var(--soft);margin:0">Dostępy, kody i konta należą do Was. Możecie rozwijać stronę ze mną, z kimkolwiek innym albo samodzielnie — instrukcja obsługi jest częścią każdego wariantu współpracy. <strong>Buduję Wam dom i oddaję klucze; co dalej z tym domem, decydujecie wyłącznie Wy.</strong></p>
-  </div>
-</section>
-
-<section id="formalnosci" class="rv">
-  <div class="kicker">Otwarte karty</div>
-  <h2>Formalności</h2>
-
-  <div class="glass">
-    <p style="color:var(--soft);margin:0 0 14px">Jestem obywatelką Białorusi i mieszkam w Polsce na stałe — wniosek o pobyt stały jest już złożony. Współpracuję na <strong>umowie o dzieło</strong> i dla Was to najprostsza dostępna forma rozliczenia: kwota wchodzi w koszty, bez VAT i bez składek ZUS.</p>
-    <p style="color:var(--soft);margin:0 0 14px">Żeby to uruchomić, Wasza firma rejestruje jednorazowe zgłoszenie online — oświadczenie o powierzeniu wykonywania pracy cudzoziemcowi. Opłata urzędowa <strong>400 zł</strong>, urząd rozpatruje je <strong>standardowo w ciągu 7 dni roboczych</strong>, wszystko przez praca.gov.pl. Przygotuję dla Was instrukcję krok po kroku — po Waszej stronie to <strong>około 15 minut</strong> przy komputerze.</p>
-    <p style="color:var(--soft);margin:0">Do przygotowania umowy poproszę tylko o dane firmy: <strong>nazwę, NIP i adres</strong>.</p>
+    <p style="color:var(--soft);margin:0">Dostępy, kody i konta należą do Was. Wraz z ostatnią płatnością przechodzą na Was także pełne prawa autorskie do strony — zapiszemy to wprost w umowie. Możecie rozwijać stronę ze mną, z kimkolwiek innym albo samodzielnie — instrukcja obsługi jest częścią każdego wariantu współpracy. <strong>Buduję Wam dom i oddaję klucze; co dalej z tym domem, decydujecie wyłącznie Wy.</strong></p>
   </div>
 </section>
 
@@ -1209,7 +1194,7 @@ tr:last-child td{border-bottom:none}
     </div>
     <div class="glass">
       <h4>Sprzedaż biletów online</h4>
-      <p style="color:var(--soft);font-size:.93rem;margin:0">Płatność przy zapisie zamiast przy bramie: mniej gotówki na miejscu, krótsza kolejka i pewność, ile osób naprawdę przyjedzie. System jest na to gotowy od pierwszego dnia — wystarczy włączyć.</p>
+      <p style="color:var(--soft);font-size:.93rem;margin:0">Płatność przy zapisie zamiast przy bramie: mniej gotówki na miejscu, krótsza kolejka i pewność, ile osób naprawdę przyjedzie. Strona jest na to przygotowana od pierwszego dnia — dokładamy to jako opcję dodatkową, bez żadnej przebudowy.</p>
     </div>
     <div class="glass">
       <h4>Sklep z merchem</h4>
@@ -1228,16 +1213,35 @@ tr:last-child td{border-bottom:none}
   <p class="note" style="margin-top:26px">To tylko kierunki, nie plany. Jeśli któryś Was zaciekawi — powiedzcie, a policzę go osobno. A jeśli żaden, strona spokojnie działa dalej sama.</p>
 </section>
 
+<section id="formalnosci" class="rv">
+  <div class="kicker">Otwarte karty</div>
+  <h2>Formalności</h2>
+
+  <div class="glass">
+    <p style="color:var(--soft);margin:0 0 14px">Jestem obywatelką Białorusi i mieszkam w Polsce na stałe — wniosek o pobyt stały jest już złożony. Współpracuję na <strong>umowie o dzieło</strong> — dla Was to najprostsza forma rozliczenia: kwota wchodzi w koszty, bez VAT i bez składek ZUS.</p>
+    <p style="color:var(--soft);margin:0 0 14px">Żeby to uruchomić, Wasza firma rejestruje jednorazowe zgłoszenie online — oświadczenie o powierzeniu wykonywania pracy cudzoziemcowi. Opłata urzędowa <strong>400 zł</strong>, urząd rozpatruje je <strong>standardowo w ciągu 7 dni roboczych</strong>, wszystko przez praca.gov.pl. Przygotuję dla Was instrukcję krok po kroku — po Waszej stronie to <strong>około 15 minut</strong> przy komputerze.</p>
+    <p style="color:var(--soft);margin:0">Do przygotowania umowy poproszę tylko o dane firmy: <strong>nazwę, NIP i adres</strong>.</p>
+  </div>
+</section>
+
+
 <section id="krok" class="rv">
   <div class="cta">
     <div class="kicker" style="justify-content:center">Następny krok</div>
     <h2>Wystarczy<br>jedna wiadomość</h2>
-    <p class="lead" style="margin-inline:auto;text-align:center;margin-bottom:34px">Zaznaczcie wariant, zostawcie dane firmy — i to wszystko. Resztą zajmuję się ja: przygotuję umowę, instrukcję do zgłoszenia i plan pierwszego tygodnia.</p>
+    <p class="lead" style="margin-inline:auto;text-align:center;margin-bottom:28px">Zaznaczcie wariant, zostawcie dane firmy — i to wszystko. Resztą zajmuję się ja.</p>
+
+    <ol class="path next3">
+      <li><b>Odpisuję w ciągu 24 godzin</b> — potwierdzam, że wiadomość dotarła, i odpowiadam na pytania, jeśli jakieś zostały</li>
+      <li><b>W ciągu tygodnia przygotowuję umowę</b> — dostajecie ją do spokojnego przeczytania, bez terminu na odpowiedź. W tym samym czasie wysyłam instrukcję do zgłoszenia w urzędzie, żeby oba tory szły równolegle</li>
+      <li><b>Po podpisaniu ruszamy Etapem 1</b> — dostajecie linki do dwóch ankiet i listę materiałów, wszystko rozłożone na drobne kroki</li>
+    </ol>
 
     <form class="cform" action="https://formsubmit.co/marcin.tatsiana@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="🔥 Street-Elite — decyzja o współpracy">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://intlady95.github.io/se-327d51ff/dziekuje.html">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
 
       <div class="cq">
@@ -1301,14 +1305,16 @@ tr:last-child td{border-bottom:none}
   <a href="#platnosci"><i>10</i>Płatności</a>
   <a href="#koszty"><i>11</i>Koszty po Waszej stronie</a>
   <a href="#gwarancja"><i>12</i>Gwarancja</a>
-  <a href="#formalnosci"><i>13</i>Formalności</a>
-  <a href="#krok"><i>14</i>Następny krok</a>
+  <a href="#rozwoj"><i>13</i>Co dalej, kiedy strona już działa</a>
+  <a href="#formalnosci"><i>14</i>Formalności</a>
+  <a href="#krok"><i>15</i>Następny krok</a>
 </nav>
 
 <footer class="foot">
   <b style="color:var(--ink)">Tatsiana Zhukavets</b> · <a href="mailto:marcin.tatsiana@gmail.com">marcin.tatsiana@gmail.com</a><br>
   Propozycja przygotowana indywidualnie dla MyVision_video / Street-Elite<br>
-  Na podstawie briefu wypełnionego 28.07.2026 · Oferta ważna 30 dni od daty wysłania
+  Na podstawie briefu wypełnionego 28.07.2026 · Oferta ważna do 15 września 2026<br>
+  Potrzebujecie więcej czasu? Wystarczy jedna wiadomość — przedłużę bez pytań
 </footer>
 
 </div>
@@ -1376,19 +1382,6 @@ tr:last-child td{border-bottom:none}
   }
 
 
-  var cb=document.getElementById('copyMail');
-  if(cb){cb.addEventListener('click',function(){
-    var mail=document.getElementById('mailLink').textContent.trim();
-    function ok(){cb.textContent='Skopiowano ✓';cb.classList.add('done');
-      setTimeout(function(){cb.textContent='Kopiuj adres';cb.classList.remove('done');},2200);}
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(mail).then(ok).catch(fallback);}
-    else fallback();
-    function fallback(){var t=document.createElement('textarea');t.value=mail;t.style.position='fixed';
-      t.style.opacity='0';document.body.appendChild(t);t.select();
-      try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(t);}
-  });}
-
-
   // pamięć pozycji przewijania w obrębie tej samej karty
   try{
     var KEY='se-scroll';
@@ -1404,9 +1397,6 @@ tr:last-child td{border-bottom:none}
       tick=setTimeout(function(){sessionStorage.setItem(KEY,String(window.scrollY));},180);
     },{passive:true});
   }catch(e){}
-
-  var t=document.getElementById('today');
-  if(t)t.textContent=new Date().toLocaleDateString('pl-PL',{day:'2-digit',month:'long',year:'numeric'});
 })();
 </script>
 
