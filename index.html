@@ -294,7 +294,7 @@ tr:last-child td{border-bottom:none}
 .dhint{font-family:var(--mono);font-size:.575rem;letter-spacing:.16em;text-transform:uppercase;
   color:var(--sodium);white-space:nowrap;transition:color .3s;opacity:.9}
 .dhint::before{content:"Kliknijcie"}
-.dcard[open] .dhint::before{content:"Zwiń"}
+.dcard[open] .dhint::before{content:"Zwińcie"}
 .dcard[open] .dhint{color:var(--dim)}
 @media(max-width:430px){.dhint{display:none}}
 
@@ -412,7 +412,7 @@ tr:last-child td{border-bottom:none}
 /* ═══ droga projektu ═══ */
 .chain-t{color:var(--soft);margin:30px 0 16px;max-width:66ch}
 .chain{list-style:none;counter-reset:c;padding:0;margin:0;display:grid;gap:12px;
-  grid-template-columns:repeat(5,minmax(0,1fr))}
+  grid-template-columns:repeat(6,minmax(0,1fr))}
 .chain li{position:relative;display:flex;flex-direction:column;gap:6px;
   background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:17px 16px 18px;
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:.35s}
@@ -427,7 +427,7 @@ tr:last-child td{border-bottom:none}
   box-shadow:inset 0 1px 0 rgba(255,215,165,.3),0 0 44px -16px rgba(255,158,61,.75)}
 .chain li.here .cn,.chain li.here b{color:var(--sodium)}
 .chain li.here .cw{color:var(--sodium-2);font-weight:700}
-/* стрелка между шагами — только на широком экране */
+/* strzałka między krokami — tylko na szerokim ekranie */
 @media(min-width:981px){
   .chain li:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;z-index:3;
     width:6px;height:6px;border-top:1px solid var(--edge-2);border-right:1px solid var(--edge-2);
@@ -500,10 +500,10 @@ tr:last-child td{border-bottom:none}
   <dl class="hero-meta">
     <div><dt>Dla</dt><dd>Robert Marchewka</dd></div>
     <div><dt>Zakres</dt><dd>Strona · Zapisy · Sponsorzy</dd></div>
-    <div><dt>Czas realizacji</dt><dd>5–8 miesięcy</dd></div>
+    <div><dt>Czas realizacji</dt><dd>4–7 miesięcy</dd></div>
     <div><dt>Oferta ważna</dt><dd>do 15 września 2026</dd></div>
   </dl>
-  <div class="scroller"><span class="mouse"></span>Przewijajcie w dół</div>
+  <div class="scroller"><span class="mouse"></span>Przewińcie w dół</div>
 </section>
 
 <section id="wstep" class="rv">
@@ -531,26 +531,32 @@ tr:last-child td{border-bottom:none}
     </li>
     <li>
       <span class="cn">02</span>
-      <b>Wasza decyzja i umowa</b>
-      <span class="cd">Bez pośpiechu. Projekt umowy przygotowuję do dwóch tygodni od Waszego „tak”, a końcową wersję ustalamy razem</span>
-      <span class="cw">czas na spokojne przemyślenie</span>
+      <b>Wasza decyzja i rozmowa o warunkach</b>
+      <span class="cd">Bez pośpiechu. Dostajecie ode mnie projekt umowy i omawiamy warunki tak długo, aż wszystko będzie dla Was jasne</span>
+      <span class="cw">tyle czasu, ile potrzebujecie</span>
     </li>
     <li>
       <span class="cn">03</span>
-      <b>Plan realizacji</b>
-      <span class="cd">Mapa strony ekran po ekranie, wypełnienie pakietów sponsorskich, harmonogram i kierunek wizualny</span>
-      <span class="cw">2 tygodnie po podpisaniu</span>
+      <b>Podpisanie umowy</b>
+      <span class="cd">Umowę podpisujemy skanami przez e-mail, a Wasza firma składa w tym czasie krótkie zgłoszenie w urzędzie</span>
+      <span class="cw">do 7 dni roboczych</span>
     </li>
     <li>
       <span class="cn">04</span>
-      <b>Realizacja</b>
-      <span class="cd">Pracujemy dokładnie według planu, w ośmiu etapach, z trzema rundami poprawek</span>
-      <span class="cw">5–8 miesięcy</span>
+      <b>Plan realizacji</b>
+      <span class="cd">Mapa strony ekran po ekranie, zawartość pakietów sponsorskich, harmonogram i kierunek wizualny</span>
+      <span class="cw">2 tygodnie po podpisaniu</span>
     </li>
     <li>
       <span class="cn">05</span>
+      <b>Realizacja</b>
+      <span class="cd">Pracujemy dokładnie według planu, w ośmiu etapach, z trzema rundami poprawek</span>
+      <span class="cw">4–7 miesięcy</span>
+    </li>
+    <li>
+      <span class="cn">06</span>
       <b>Odbiór i opieka</b>
-      <span class="cd">Przekazanie wszystkich dostępów, instrukcja obsługi i gwarancja wykonania</span>
+      <span class="cd">Przekazanie wszystkich dostępów, instrukcja obsługi i 90 dni gwarancji</span>
       <span class="cw">+ 90 dni</span>
     </li>
   </ol>
@@ -568,7 +574,7 @@ tr:last-child td{border-bottom:none}
         <div class="dnum">01</div>
         <div class="dhead">
           <span class="lab">Punkt wyjścia</span>
-          <h4>Kalendarz na cały rok</h4>
+          <h4>Rytm sezonu</h4>
           <p class="plain">„Kalendarz na cały rok”</p>
         </div>
         <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
@@ -577,7 +583,7 @@ tr:last-child td{border-bottom:none}
         <div class="dsep"></div>
         <div class="dblock"><span class="lab">Co to znaczy</span><p>Wasz sezon ma swój rytm: kilka dużych zlotów w roku. Roczna siatka kalendarza przez większość czasu pokazywałaby więc puste pola.</p></div>
         <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Na wejściu duży baner z najbliższym zlotem — data, miejsce i przycisk zapisu. Pod nim kafelki poprzednich edycji: kliknięcie otwiera galerię tamtego zlotu.</p></div>
-        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Strona zawsze ma co pokazać — także zimą pracuje na Was archiwum i pięć lat historii.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Strona zawsze ma co pokazać — także zimą pracują na Was archiwum i pięć lat historii.</p></div>
       </div>
     </details>
     <details class="dcard">
@@ -592,7 +598,7 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co to znaczy</span><p>Zapisy przychodzą w wiadomościach na kilku profilach naraz — przy takim ruchu pojedyncze zgłoszenie ma prawo zginąć w tłumie.</p></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Zapisy przychodzą w wiadomościach na kilku profilach naraz — przy takim ruchu pojedyncze zgłoszenie potrafi zginąć w tłumie.</p></div>
         <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Jeden formularz i jedna lista wszystkich zapisów — z datą i kontaktem, dostępna dla Was w każdej chwili.</p></div>
         <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Wszystko ląduje na jednej liście — nawet w tygodniu przed zlotem, kiedy wiadomości jest najwięcej.</p></div>
       </div>
@@ -627,7 +633,7 @@ tr:last-child td{border-bottom:none}
       <div class="dbody">
         <div class="dsep"></div>
         <div class="dblock"><span class="lab">Co to znaczy</span><p>Pieniądze bierzecie na miejscu, a przez stronę mają iść same zapisy.</p></div>
-        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Zostawiamy model, który u Was działa — pieniądze dalej bierzecie przy bramie. Strona bierze na siebie dwie inne rzeczy: wizerunek wobec sponsorów i porządek w zapisach. Sam formularz zapisu działa bezpośrednio na Waszej stronie, w okienku — uczestnik nigdzie nie przechodzi.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Zostawiamy model, który u Was działa — pieniądze dalej bierzecie przy bramie. Strona bierze na siebie dwie inne rzeczy: wizerunek wobec sponsorów i porządek w zapisach. Sam formularz zapisu działa bezpośrednio na Waszej stronie, w okienku — wszystko dzieje się u Was.</p></div>
         <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Płacicie za to, co jest potrzebne teraz — płatności online dołożymy, kiedy sami uznacie, że to dobry moment.</p></div>
       </div>
     </details>
@@ -677,7 +683,7 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co to znaczy</span><p>Tę decyzję podejmiecie spokojnie, w swoim czasie.</p></div>
+        <div class="dblock"><span class="lab">Co to znaczy</span><p>Tę decyzję podejmiecie spokojnie, we własnym tempie.</p></div>
         <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Panel projektuję tak, żeby dodanie zlotu, zmiana daty czy wrzucenie zdjęć były zrozumiałe dla każdego z Was — bez kodu i bez szkoleń. Do tego instrukcja krok po kroku.</p></div>
         <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Stronę zaktualizuje ten z Was, kto akurat ma chwilę, a wszystko zostaje w Waszych rękach.</p></div>
       </div>
@@ -695,7 +701,7 @@ tr:last-child td{border-bottom:none}
       <div class="dbody">
         <div class="dsep"></div>
         <div class="dblock"><span class="lab">Co to znaczy</span><p>Na Waszych zdjęciach widać konkretne osoby, a materiały robili konkretni fotografowie — publikacja w internecie rządzi się tu swoimi zasadami.</p></div>
-        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Przygotuję dwa krótkie teksty: zgodę na zdjęcia w formularzu zapisu (uczestnik wie, że na zlocie robimy zdjęcia) oraz zasady publikacji w regulaminie strony. Ustalimy też z Wami, jak podpisywać autorów zdjęć.</p></div>
+        <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Przygotuję dwa krótkie teksty: zgodę na zdjęcia w formularzu zapisu (uczestnik wie, że na zlocie są robione zdjęcia) oraz zasady publikacji w regulaminie strony. Ustalimy też z Wami, jak oznaczać autorów zdjęć.</p></div>
         <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Publikujecie spokojnie, a galeria pracuje na Waszą markę.</p></div>
       </div>
     </details>
@@ -747,7 +753,7 @@ tr:last-child td{border-bottom:none}
         <div class="dsep"></div>
         <div class="dblock"><span class="lab">Co to znaczy</span><p>Obie nazwy mają swoją historię i swoją publiczność. Do ustalenia zostaje tylko, która z nich ma być na stronie tą główną.</p></div>
         <div class="dblock sol"><span class="lab">Rozwiązanie</span><p>Na starcie poproszę o trzy rzeczy: oficjalną nazwę firmy do umowy, nazwę, pod którą znają Was ludzie, i tę, którą chcecie widzieć na stronie. Wystarczy kierunek — resztę dopracujemy razem.</p></div>
-        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Jedna nazwa na stronie, w adresie i w materiałach dla sponsorów — łatwiej ją zapamiętać.</p></div>
+        <div class="dblock gain"><span class="lab">Co Wam to daje</span><p>Jedna nazwa na stronie, w adresie i w materiałach dla sponsorów — ludzie zapamiętują ją od razu.</p></div>
       </div>
     </details>
     <details class="dcard">
@@ -771,7 +777,7 @@ tr:last-child td{border-bottom:none}
 
   <div class="glass" style="margin-top:30px;border-color:rgba(255,175,80,.42)">
     <h3>To dopiero zarys — pełny plan dostajecie po podpisaniu</h3>
-    <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Powyżej są decyzje i kierunek. Pod nimi leży <b>plan realizacji</b>: mapa strony ekran po ekranie, co dokładnie znajdzie się w każdej sekcji, trzy poziomy pakietów sponsorskich z konkretnym wypełnieniem i propozycją cen, harmonogram tydzień po tygodniu oraz kierunek wizualny ustalony na podstawie ankiety stylu.</p>
+    <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Powyżej są decyzje i kierunek. Pod nimi leży <b>plan realizacji</b>: mapa strony ekran po ekranie, co dokładnie znajdzie się w każdej sekcji, trzy poziomy pakietów sponsorskich z konkretną zawartością i propozycją cen, harmonogram tydzień po tygodniu oraz kierunek wizualny ustalony na podstawie ankiety stylu.</p>
     <p style="color:var(--soft);font-size:.95rem;margin:0">Dopracowuję go pod Wasze materiały <span class="hi">w ciągu 2 tygodni od podpisania umowy</span> — i od tej chwili pracujemy dokładnie według niego, bez niespodzianek po drodze.</p>
   </div>
 </section>
@@ -792,7 +798,7 @@ tr:last-child td{border-bottom:none}
     </div>
     <div class="glass">
       <h3>Publiczność w liczbach</h3>
-      <p style="color:var(--soft);font-size:.96rem;margin:0">Do tysiąca osób jednocześnie na zlocie, około 10 tysięcy obserwujących, młodzi ludzie w wieku 16–35 lat, zainteresowani motoryzacją. Składamy to w jeden przekonujący obraz.</p>
+      <p style="color:var(--soft);font-size:.96rem;margin:0">Do tysiąca osób jednocześnie na zlocie, około dziesięciu tysięcy obserwujących, młodzi ludzie w wieku 16–35 lat, zainteresowani motoryzacją. Składamy to w jeden przekonujący obraz.</p>
     </div>
     <div class="glass">
       <h3>Materiał do wysyłki</h3>
@@ -813,11 +819,11 @@ tr:last-child td{border-bottom:none}
   <div class="glass" style="margin-top:18px">
     <h3>Dlaczego liczby są tu kluczowe</h3>
     <p style="color:var(--soft);margin:0 0 12px">Sponsor kupuje dostęp do ludzi, których zgromadziliście — i tu jest najważniejsze: <strong>tę wartość już macie</strong>. Tysiąc osób na jednym zlocie, dziesięć tysięcy obserwujących, pięć lat regularnej pracy. To liczby, o jakich niejedna firma marzy.</p>
-    <p style="color:var(--soft);margin:0 0 12px">Zostaje je zebrać w jednym miejscu — i tym się zajmę. Człowiek po drugiej stronie zwykle musi bowiem przekonać kogoś u siebie: szefa albo dział marketingu. Pierwsze pytanie, które usłyszy, brzmi zawsze tak samo: <strong>ile osób to zobaczy?</strong></p>
+    <p style="color:var(--soft);margin:0 0 12px">Zostaje je zebrać w jednym miejscu — i tym się zajmę. Człowiek po drugiej stronie zwykle musi przekonać kogoś u siebie: szefa albo dział marketingu. Pierwsze pytanie, które usłyszy, brzmi zawsze tak samo: <strong>ile osób to zobaczy?</strong></p>
     <p style="color:var(--soft);margin:0">Pakiet z gotową odpowiedzią broni się sam — także wtedy, gdy Was nie ma w pokoju. Dlatego zebranie tych danych wpisuję w zakres pracy: żebyście mogli <strong>przestać pytać, czy ktoś zechce zostać sponsorem, i zacząć mówić, ile to kosztuje</strong>.</p>
   </div>
 
-  <p class="note" style="margin-top:22px"><b style="color:var(--ink)">Cała ta część wchodzi w skład wariantu <span class="hi">Pełny + Sponsorzy</span>.</b> Można ją też wziąć samodzielnie, bez strony — kosztuje wtedy 8 880 zł i jest w pełni gotowa do wysyłania firmom. W wariancie Pełny + Sponsorzy wychodzi na 8 000 zł, bo materiały zbieram wtedy raz, a wykorzystuję je i w pakiecie, i na stronie.</p>
+  <p class="note" style="margin-top:22px"><b style="color:var(--ink)">Cała ta część wchodzi w skład wariantu <span class="hi">Pełny + Sponsorzy</span>.</b> Można ją też wziąć osobno, bez strony — kosztuje wtedy 8 880 zł i jest w pełni gotowa do wysłania firmom. W wariancie Pełny + Sponsorzy wychodzi na 8 000 zł, bo materiały zbieram wtedy raz, a wykorzystuję je i w pakiecie, i na stronie.</p>
 </section>
 
 <section id="strona" class="rv">
@@ -835,9 +841,9 @@ tr:last-child td{border-bottom:none}
     <div class="glass"><h4>Dla firm</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Sekcja sponsorska ma swoje stałe miejsce, bo to cel numer jeden.</p></div>
     <div class="glass"><h4>Kontakt</h4><p style="color:var(--soft);font-size:.93rem;margin:0">Jedna droga — każda wiadomość trafia w to samo miejsce.</p></div>
   </div>
-  <p class="note" style="margin-top:26px"><b style="color:var(--ink)">Siedem pierwszych sekcji jest w cenie</b> wariantów <span class="hi">Pełny</span> i <span class="hi">Pełny + Sponsorzy</span> — w obu językach, bez dopłat. Ósma, <span class="hi">Dla firm</span>, należy do części sponsorskiej i wchodzi w wariant Pełny + Sponsorzy. W wariancie <span class="hi">Start</span> to samo mieści się na jednej rozbudowanej stronie przewijanej w dół, po polsku.</p>
+  <p class="note" style="margin-top:26px"><b style="color:var(--ink)">Siedem pierwszych sekcji jest w cenie</b> wariantów <span class="hi">Pełny</span> i <span class="hi">Pełny + Sponsorzy</span> — w obu językach, bez dopłat. Ósma, <span class="hi">Dla firm</span>, należy do części sponsorskiej i wchodzi w skład wariantu Pełny + Sponsorzy. W wariancie <span class="hi">Start</span> to samo mieści się na jednej rozbudowanej stronie przewijanej w dół, po polsku.</p>
 
-  <p class="note" style="margin-top:16px">Styl ustalamy wspólnie <span class="hi">przed startem</span> — „surowy, coś na luzie” to dobry punkt wyjścia, a resztę doprecyzujemy w krótkiej ankiecie. Pierwszy zobaczycie gotowy projekt strony głównej, jeszcze zanim powstanie jakakolwiek podstrona.</p>
+  <p class="note" style="margin-top:16px">Styl ustalamy wspólnie <span class="hi">przed startem</span> — „surowy, coś na luzie” to dobry punkt wyjścia, a resztę doprecyzujemy w krótkiej ankiecie. Najpierw zobaczycie gotowy projekt strony głównej, jeszcze zanim powstanie jakakolwiek podstrona.</p>
 </section>
 
 <section id="zapisy" class="rv">
@@ -863,7 +869,7 @@ tr:last-child td{border-bottom:none}
         <li><b>Dodajecie nowy zlot</b> — data, miejsce, zdjęcie — i otwieracie zapisy</li>
         <li><b>Ustawiacie limit miejsc</b> osobno pod to wydarzenie</li>
         <li>Widzicie na bieżąco <b>licznik zapisanych</b> i całą listę</li>
-        <li>Gdy miejsca się skończą, kolejni trafiają na <b>listę rezerwową</b> — a gdy ktoś odwoła, zapraszacie następną osobę jednym kliknięciem</li>
+        <li>Gdy miejsca się skończą, kolejni trafiają na <b>listę rezerwową</b> — a gdy ktoś odwoła zapis, zapraszacie następną osobę jednym kliknięciem</li>
         <li>Przed zlotem <b>wysyłacie przypomnienie</b> do zapisanych — jednym kliknięciem, z gotowej treści</li>
         <li>Na bramie <b>skanujecie kody telefonem</b> — jeden skan to sekunda, a przy dużym wjeździe może skanować kilka osób, każda ze swojego telefonu</li>
         <li>Po zlocie <b>pobieracie pełną listę</b> jako plik, np. do Excela, a zlot przenosi się do archiwum</li>
@@ -872,8 +878,8 @@ tr:last-child td{border-bottom:none}
   </div>
 
   <div class="glass" style="margin-top:18px">
-    <h3>To nie jest zwykły formularz</h3>
-    <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Za jednym przyciskiem „Zapisz się” stoi komplet narzędzi: limit miejsc ustawiany osobno pod każdy zlot, bilety z kodem QR wysyłane mailem, link do odwołania zapisu, lista rezerwowa, skaner w telefonie na bramie i eksport pełnej listy do pliku. Wszystko na sprawdzonej platformie zdarzeń, skonfigurowanej pod Was i działającej na Waszym koncie.</p>
+    <h3>Dużo więcej niż formularz</h3>
+    <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Za jednym przyciskiem „Zapisz się” stoi komplet narzędzi: limit miejsc ustawiany osobno pod każdy zlot, bilety z kodem QR wysyłane mailem, link do odwołania zapisu, lista rezerwowa, skaner w telefonie na bramie i eksport pełnej listy do pliku. Wszystko na sprawdzonej platformie do obsługi wydarzeń, skonfigurowanej pod Was i działającej na Waszym koncie.</p>
     <p style="color:var(--soft);font-size:.95rem;margin:0">Przy darmowych zapisach nie ma tu abonamentu ani prowizji — płacicie raz, za przygotowanie i wdrożenie. Konto zostaje Wasze, więc korzystacie z niego przy każdym kolejnym zlocie bez dodatkowych opłat.</p>
   </div>
 
@@ -915,13 +921,13 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 
-  <p class="note" style="margin-top:22px"><b style="color:var(--ink)">Treści dokumentów prawnych to osobna pozycja</b> — opisuję ją niżej, w opcjach dodatkowych. Sama strona jest przygotowana tak, żeby te dokumenty przyjąć: pola zgód, miejsce na politykę i regulamin, mechanizm usuwania danych. Prawo zostawiam prawnikom, a technikę biorę na siebie.</p>
+  <p class="note" style="margin-top:22px"><b style="color:var(--ink)">Treści dokumentów prawnych to osobna pozycja</b> — opisuję ją niżej, przy zestawieniu kosztów. Sama strona jest przygotowana tak, żeby te dokumenty przyjąć: pola zgód, miejsce na politykę i regulamin, mechanizm usuwania danych. Prawo zostawiam prawnikom, a technikę biorę na siebie.</p>
 </section>
 
 <section id="odwas" class="rv">
   <div class="kicker">Współpraca</div>
   <h2>Co robimy<br>razem</h2>
-  <p class="sub">Najlepsze strony powstają wtedy, gdy klient opowie o sobie własnymi słowami — dlatego kilka rzeczy zbieram od Was. Rozłożyłam to na drobne kroki: każdy mieści się w jednym spokojnym wieczorze, a wszystko można robić na raty. Wypełniamy je dopiero po podpisaniu umowy — dziś możecie po prostu zajrzeć do środka i zobaczyć, o co zapytam.</p>
+  <p class="sub">Najlepsze strony powstają wtedy, gdy klient opowie o sobie własnymi słowami — dlatego kilka rzeczy zbieram od Was. Rozłożyłam to na drobne kroki: każdy mieści się w jednym spokojnym wieczorze, a wszystko można robić na raty. Wypełniamy je dopiero po podpisaniu umowy — dziś możecie zajrzeć do środka i zobaczyć, o co zapytam.</p>
   <div class="hint"><span class="dot">+</span>Kliknijcie, żeby zobaczyć szczegóły</div>
 
   <div class="grid gsym3">
@@ -964,13 +970,13 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody" style="padding-left:22px">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Jak się zaczęło i co się zmieniło przez pięć lat</li><li>Kto jest kim w zespole — imiona, role, po co kto tam jest</li><li>Trzy do pięciu zlotów, które pamiętacie najlepiej, i dlaczego akurat te</li><li>Liczby dla sponsorów: ile osób i aut na ostatnich zlotach, cena wejścia, kto przyjeżdża</li><li>Zasięgi Waszych postów i relacji — liczba, o którą firmy pytają najczęściej</li><li>Kilka Waszych postów, żebym złapała sposób, w jaki mówicie</li></ul><a class="goform" href="ankieta-faktow.html">Zajrzyjcie do środka →</a></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Jak się zaczęło i co się zmieniło przez pięć lat</li><li>Kto jest kim w zespole — imiona, role, kto za co odpowiada</li><li>Trzy do pięciu zlotów, które pamiętacie najlepiej, i dlaczego akurat te</li><li>Liczby dla sponsorów: ile osób i aut na ostatnich zlotach, cena wejścia, kto przyjeżdża</li><li>Zasięgi Waszych postów i relacji — liczba, o którą firmy pytają najczęściej</li><li>Kilka Waszych postów, żebym złapała sposób, w jaki mówicie</li></ul><a class="goform" href="ankieta-faktow.html">Zajrzyjcie do środka →</a></div>
       </div>
     </details>
     <details class="dcard">
       <summary>
         <div class="dhead">
-          <span class="lab">ok. 25 minut · wariant ze sponsorami</span>
+          <span class="lab">ok. 25 minut · wariant Pełny + Sponsorzy</span>
           <h4>Ankieta sponsorska</h4>
           <p class="plain">Wasz cel numer jeden dostaje osobną ankietę. Z niej powstają trzy poziomy pakietów i propozycja cen.</p>
         </div>
@@ -992,13 +998,13 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody" style="padding-left:22px">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Dwadzieścia do trzydziestu zdjęć, które najlepiej pokazują klimat</li><li>Pogrupowane po zlotach, jeśli to możliwe — reszta to już moja robota</li><li>Logo w najlepszej jakości, jaką macie</li><li>Linki do filmów, które chcecie na stronie</li></ul></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Dwadzieścia do trzydziestu zdjęć, które najlepiej pokazują klimat</li><li>Pogrupowane według zlotów, jeśli to możliwe — reszta to już moja robota</li><li>Logo w najlepszej jakości, jaką macie</li><li>Linki do filmów, które chcecie na stronie</li></ul></div>
       </div>
     </details>
     <details class="dcard">
       <summary>
         <div class="dhead">
-          <span class="lab">2 + 2 tygodnie na rundę</span>
+          <span class="lab">1 + 2 tygodnie na rundę</span>
           <h4>Uwagi do etapów</h4>
           <p class="plain">Po każdym etapie pokazuję wynik, a Wy w spokoju mówicie, co poprawić.</p>
         </div>
@@ -1006,7 +1012,7 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody" style="padding-left:22px">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Pokazuję wynik etapu — macie <b>2 tygodnie</b> na obejrzenie go bez pośpiechu</li><li>Zbieracie uwagi między sobą i przysyłacie jedną listą — tak najszybciej je wdrożę</li><li>Ja mam <b>2 tygodnie</b> na wprowadzenie zmian i pokazuję wynik ponownie</li><li>Są trzy takie rundy i zwykle w zupełności wystarczają</li><li>Drobne korekty po wdrożeniu rundy nie liczą się jako osobna runda</li><li>Moje własne błędy poprawiam zawsze bezpłatnie</li></ul></div>
+        <div class="dblock"><span class="lab">Co będzie w środku</span><ul class="ticks" style="margin-top:8px"><li>Pokazuję wynik etapu — macie <b>tydzień</b> na obejrzenie go bez pośpiechu</li><li>Zbieracie uwagi między sobą i przysyłacie jedną listą — tak najszybciej je wdrożę</li><li>Ja mam <b>2 tygodnie</b> na wprowadzenie zmian i pokazuję wynik ponownie</li><li>Są trzy takie rundy i zwykle w zupełności wystarczają</li><li>Drobne korekty po wdrożeniu rundy nie liczą się jako osobna runda</li></ul></div>
       </div>
     </details>
     <details class="dcard">
@@ -1039,7 +1045,7 @@ tr:last-child td{border-bottom:none}
     </details>
   </div>
 
-  <p class="note" style="margin-top:26px"><b style="color:var(--ink)">Wasze tempo jest wpisane w harmonogram.</b> Na obejrzenie każdego etapu macie do dwóch tygodni — to świadomie dużo, bo wolę, żebyście patrzyli na wynik na spokojnie niż w biegu, także w środku sezonu. W wyliczeniu terminu zakładam mniej więcej tydzień, więc zapas jest po Waszej stronie. A gdyby wypadł duży zlot i potrzeba było więcej czasu — wystarczy jedno zdanie: praca czeka nienaruszona, a termin oddania przesuwa się dokładnie o tyle, ile trwała przerwa. To jedyna konsekwencja.</p>
+  <p class="note" style="margin-top:26px"><b style="color:var(--ink)">Wasze tempo jest wpisane w harmonogram.</b> Na obejrzenie każdego etapu macie tydzień — wystarczająco, żeby spojrzeć na wynik na spokojnie, także w środku sezonu. A gdyby wypadł duży zlot i trzeba było więcej czasu — wystarczy jedno zdanie: przerwa do 4 tygodni jest wpisana w harmonogram, praca czeka nienaruszona, a termin oddania przesuwa się dokładnie o tyle, ile trwała przerwa. Dłuższą pauzę planujemy wspólnie na nowo. A okna, w których wynik leży u Was, mogą pracować na projekt: w tym czasie chętnie przygotuję coś z opcji dodatkowych — na przykład sylwetki zespołu albo pakiet dokumentów prawnych — i całość posuwa się na dwóch torach naraz.</p>
 </section>
 
 <section id="harmonogram" class="rv">
@@ -1049,28 +1055,28 @@ tr:last-child td{border-bottom:none}
     <div class="glass" style="padding:8px 26px 12px">
     <div class="tl">
       <div class="tl-row"><div class="tl-w">Etap 1</div><div class="tl-t">Start — ankiety, struktura strony, dostępy</div><div class="tl-c">wypełniacie krótkie ankiety, przesyłacie logo, zdjęcia i filmy</div></div>
-      <div class="tl-row"><div class="tl-w">Etap 2</div><div class="tl-t">Projekt graficzny strony głównej</div><div class="tl-c">pokazuję pierwszą wersję — macie 2 tygodnie na spokojne obejrzenie</div></div>
+      <div class="tl-row"><div class="tl-w">Etap 2</div><div class="tl-t">Projekt graficzny strony głównej</div><div class="tl-c">pokazuję pierwszą wersję — macie tydzień na spokojne obejrzenie</div></div>
       <div class="tl-row"><div class="tl-w">Etap 3</div><div class="tl-t">Pierwsza runda poprawek</div><div class="tl-c">przysyłacie uwagi jedną listą, ja wdrażam je w ciągu 2 tygodni</div></div>
       <div class="tl-row"><div class="tl-w">Etap 4</div><div class="tl-t">Projekty pozostałych podstron, teksty w obu językach i budowa sekcji</div><div class="tl-c">odpowiadacie na pytania uzupełniające, gdy coś wymaga doprecyzowania</div></div>
-      <div class="tl-row"><div class="tl-w">Etap 5</div><div class="tl-t">Druga runda poprawek</div><div class="tl-c">znowu 2 tygodnie dla Was, potem 2 tygodnie u mnie</div></div>
+      <div class="tl-row"><div class="tl-w">Etap 5</div><div class="tl-t">Druga runda poprawek</div><div class="tl-c">tydzień dla Was, potem 2 tygodnie u mnie</div></div>
       <div class="tl-row"><div class="tl-w">Etap 6</div><div class="tl-t">Zapisy, podstrona „Dla firm” i pakiety sponsorskie</div><div class="tl-c">logotypy sponsorów, akceptacja pakietów</div></div>
       <div class="tl-row"><div class="tl-w">Etap 7</div><div class="tl-t">Trzecia runda poprawek i testy</div><div class="tl-c">pełna próba zapisów — od zgłoszenia przez bilet po skan na bramie — formularze, oba języki, telefony i komputery</div></div>
       <div class="tl-row"><div class="tl-w">Etap 8</div><div class="tl-t">Domena, poczta, start strony i przekazanie</div><div class="tl-c">zakup domeny i hostingu, odbiór</div></div>
-      <div class="tl-row"><div class="tl-w">po starcie</div><div class="tl-t">90 dni gwarancji</div><div class="tl-c">jestem do dyspozycji — poprawiam błędy wykonania i pomagam Wam wejść w obsługę strony</div></div>
+      <div class="tl-row"><div class="tl-w">po starcie</div><div class="tl-t">90 dni gwarancji</div><div class="tl-c">jestem do dyspozycji — poprawiam błędy wykonania i pomagam Wam oswoić się z obsługą strony</div></div>
     </div>
   </div>
 
   <p class="note" style="margin-top:24px">
-    <b style="color:var(--ink)">Rytm.</b> Po każdym pokazaniu wyniku macie do <span class="hi">2 tygodni</span> na spokojne obejrzenie go i zebranie uwag, potem <span class="hi">2 tygodnie</span> pracuję po swojej stronie. Takie rundy są trzy.<br><br>
-    <b style="color:var(--ink)">Terminy.</b> Pierwszy projekt graficzny zobaczycie <span class="hi">w ciągu 1–2 miesięcy</span> od przekazania materiałów, a całość zajmuje <span class="hi">5–8 miesięcy</span> — też licząc od materiałów, nie od podpisania umowy. Podaję termin, który dotrzymam, a nie taki, który dobrze wygląda w ofercie: same rundy poprawek to trzy miesiące kalendarza, a dochodzą do tego projekty podstron, teksty w dwóch językach, system zapisów, pakiety sponsorskie i testy. Jeśli skończę wcześniej — oddaję wcześniej.<br><br>
-    <b style="color:var(--ink)">Formalności.</b> Zanim ruszy Etap 1, jest jeszcze <span class="hi">do dwóch tygodni</span> na projekt umowy po Waszej decyzji i <span class="hi">do 7 dni roboczych</span> na zgłoszenie w urzędzie — te dwie rzeczy dzieją się równolegle, więc jedna nie czeka na drugą. Szczegóły niżej, w sekcji Formalności.
+    <b style="color:var(--ink)">Rytm.</b> Po każdym pokazaniu wyniku macie <span class="hi">tydzień</span> na spokojne obejrzenie go i zebranie uwag, potem <span class="hi">2 tygodnie</span> pracuję po swojej stronie. Są trzy takie rundy.<br><br>
+    <b style="color:var(--ink)">Terminy.</b> Pierwszy projekt graficzny zobaczycie <span class="hi">w ciągu 1–2 miesięcy</span> od przekazania planu realizacji, a całość zajmuje <span class="hi">4–7 miesięcy</span> — też licząc od planu, bo dopiero od niego zaczyna się właściwa praca. Podaję termin, którego dotrzymam, a nie taki, który dobrze wygląda w ofercie: same rundy poprawek to ponad dwa miesiące kalendarzowe, a dochodzą do tego projekty podstron, teksty w dwóch językach, system zapisów, pakiety sponsorskie i testy. Jeśli skończę wcześniej — oddaję wcześniej.<br><br>
+    <b style="color:var(--ink)">Formalności.</b> Zanim ruszy Etap 1, są jeszcze dwa kroki: projekt umowy i rozmowa o warunkach — w Waszym tempie — oraz zgłoszenie w urzędzie, które urząd rozpatruje <span class="hi">do 7 dni roboczych</span>; obie rzeczy dzieją się równolegle, więc jedna nie czeka na drugą. Szczegóły niżej, w sekcji Formalności.
   </p>
 </section>
 
 <section id="pakiety" class="rv">
   <div class="kicker">Wycena</div>
   <h2>Warianty współpracy</h2>
-  <p class="sub">Dla porównania: rozbudowana strona firmowa — wielojęzyczna, z dedykowanymi funkcjami — kosztuje dziś na polskim rynku <strong>14 000–35 000 zł</strong> w agencji. I to sama strona: system zapisów i pakiety sponsorskie wycenia się osobno. Pracuję sama, bez biura i bez pośredników — stąd te ceny.</p>
+  <p class="sub">Dla porównania: rozbudowana strona firmowa — wielojęzyczna, z dedykowanymi funkcjami — kosztuje dziś na polskim rynku <strong>14 000–35 000 zł</strong> w agencji. I to sama strona: system zapisów i pakiety sponsorskie wycenia się osobno. Ten sam zakres robicie bezpośrednio ze mną — bez marży agencji i bez kosztów biura wliczonych w cenę. Płacicie za pracę, nie za strukturę.</p>
 
   <div class="plans">
     <div class="plan">
@@ -1079,9 +1085,9 @@ tr:last-child td{border-bottom:none}
       <div class="price-n">kwota brutto · bez VAT</div>
       <ul class="ticks">
         <li>Jedna rozbudowana strona typu wizytówka — wszystko na jednym ekranie przewijanym w dół, po polsku</li>
-        <li>Prosty formularz zapisu — zgłoszenia trafiają na jedną listę, którą prowadzicie po swojemu; bilety QR, lista rezerwowa i skanowanie na bramie są w wariancie Pełnym</li>
+        <li>Prosty formularz zapisu — zgłoszenia trafiają na jedną listę, którą prowadzicie po swojemu; bilety QR, lista rezerwowa i skanowanie na bramie są w wariancie Pełny</li>
         <li>Wszystkie teksty tej strony</li>
-        <li>Pole zgody w formularzu i miejsce na dokumenty — same treści jako opcja</li>
+        <li>Pole zgody w formularzu i miejsce na dokumenty — same treści jako osobna pozycja</li>
         <li>Domena, firmowa poczta i hosting na Waszych kontach</li>
         <li>Instrukcja obsługi</li>
         <li style="color:var(--dim)">Wersja angielska — opcja, od 1 200 zł</li>
@@ -1096,7 +1102,7 @@ tr:last-child td{border-bottom:none}
         <li>Pełna strona — wszystkie sekcje opisane wyżej, PL + EN</li>
         <li>Wszystkie teksty</li>
         <li>Pełny system zapisów: automatyczny limit, bilety QR, lista rezerwowa, skanowanie na bramie</li>
-        <li>Pola zgód w formularzach i miejsce na dokumenty — same treści jako opcja</li>
+        <li>Pola zgód w formularzach i miejsce na dokumenty — same treści jako osobna pozycja</li>
         <li>Pierwsze wgranie zdjęć</li>
         <li>Domena, poczta, hosting, instrukcja, przekazanie dostępów</li>
       </ul>
@@ -1120,44 +1126,82 @@ tr:last-child td{border-bottom:none}
 
   <div class="glass" style="margin-top:22px;border-color:rgba(255,186,110,.34)">
     <h3>Ile to jest razem</h3>
-    <p style="color:var(--soft);font-size:.95rem;margin:0 0 10px"><b style="color:var(--ink)">Kwoty w tabeli są ostateczne.</b> Nie jestem płatnikiem VAT, więc nic się do nich nie dolicza — ile widzicie, tyle płacicie.</p>
-    <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Poza moim wynagrodzeniem trafiają do Was jeszcze dwie pozycje, obie płacone wprost dostawcom: jednorazowa <b>opłata urzędowa 400 zł</b> przy zgłoszeniu w urzędzie oraz <b>310–500 zł rocznie</b> za domenę i hosting.</p>
-    <p style="color:var(--soft);font-size:.95rem;margin:0">Do startu potrzebny jest jeszcze <b>pakiet dokumentów prawnych — 1 200 zł</b>, opisany niżej w opcjach dodatkowych. Wyceniam go osobno, bo to jedyna część, którą przed publikacją zatwierdza Wasz prawnik, a nie ja. <b style="color:var(--ink)">I to już wszystkie obowiązkowe koszty w tym projekcie.</b></p>
+    <p style="color:var(--soft);font-size:.95rem;margin:0 0 10px"><b style="color:var(--ink)">Podane kwoty są ostateczne.</b> Nie jestem podatnikiem VAT, więc nic się do nich nie dolicza — ile widzicie, tyle płacicie.</p>
+    <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Poza moim wynagrodzeniem dochodzą jeszcze dwie pozycje, obie opłacane bezpośrednio tam, gdzie powstają: jednorazowa <b>opłata urzędowa 400 zł</b> w urzędzie oraz <b>310–500 zł rocznie</b> za domenę i hosting u dostawców.</p>
+    <p style="color:var(--soft);font-size:.95rem;margin:0">Do startu strona potrzebuje jeszcze <b>dokumentów prawnych</b> — polityki prywatności, regulaminu i treści zgód. Tu macie wybór: dokumenty przygotowuje Wasz prawnik albo bierzecie moje gotowe projekty — <b>pakiet dokumentów prawnych, 1 200 zł</b>, opisany w karcie poniżej. Wyceniam go osobno, bo to jedyna część, którą przed publikacją zatwierdza Wasz prawnik, a nie ja. <b style="color:var(--ink)">I to już komplet kosztów w tym projekcie.</b></p>
+  </div>
+
+  <h3 style="margin-top:44px;scroll-margin-top:76px" id="dokumenty">Dokumenty w projekcie</h3>
+  <p class="sub" style="margin-bottom:18px">Papierologię biorę na siebie — komplet dokumentów projektu jest w cenie każdego wariantu. Osobno wyceniam tylko jedną pozycję: treści dokumentów prawnych, bo jako jedyna trafia przed publikacją do zatwierdzenia u Waszego prawnika.</p>
+  <div class="grid g2">
+    <div class="glass">
+      <h3 style="color:var(--sodium)">Przygotowuję w cenie</h3>
+      <ul class="ticks">
+        <li><b>Plan realizacji</b> — kilkanaście stron konkretów: mapa strony, harmonogram, kierunek wizualny</li>
+        <li><b>Cztery ankiety</b> — struktury, stylu i faktów oraz ankieta sponsorska, każda z opisem, o co pytam i po co</li>
+        <li><b>Projekt umowy</b> — do spokojnego przeczytania, końcową wersję ustalamy razem</li>
+        <li><b>Instrukcja zgłoszenia w urzędzie</b> — krok po kroku, ok. 15 minut po Waszej stronie</li>
+        <li><b>Protokoły odbioru etapów</b> — jedno potwierdzenie mailem po każdym etapie, obie strony mają ten sam obraz</li>
+        <li><b>Ilustrowana instrukcja obsługi strony</b> — zrzut po zrzucie, wszystkie codzienne czynności</li>
+        <li><b>Dokumentacja techniczna strony</b> — jak strona jest zbudowana i jak wszystko ze sobą współpracuje; każdy przyszły wykonawca podejmie pracę bez przeszkód</li>
+        <li><b>Komplet dostępów i haseł</b> — uporządkowany i przekazany przy odbiorze</li>
+      </ul>
+    </div>
+  <details class="dcard">
+    <summary>
+      <div class="dhead">
+        <span class="lab" style="color:var(--sodium)">1 200 zł · pozycja na start</span>
+        <h4>Pakiet dokumentów prawnych</h4>
+        <p class="plain">Projekty wszystkich dokumentów, których strona z zapisami potrzebuje — napisane pod Wasz konkretny przypadek, gotowe do sprawdzenia u prawnika.</p>
+      </div>
+      <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
+    </summary>
+    <div class="dbody" style="padding-left:22px">
+      <div class="dsep"></div>
+      <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>projekt polityki prywatności wraz z informacją o plikach cookies — napisany pod to, co naprawdę dzieje się na Waszej stronie</li><li>projekt regulaminu strony i zasad publikacji zdjęć</li><li>treści zgód: w formularzu zapisu, przy wizerunku na zdjęciach, przy zapisie na powiadomienia</li><li>klauzula informacyjna dla uczestników i procedura usunięcia danych</li><li><b>lista pytań do prawnika</b> — gotowa do wysłania, żeby rozmowa z nim trwała kwadrans, a nie godzinę</li><li>po jego uwagach wprowadzam jedną rundę poprawek bez dodatkowej opłaty</li></ul></div>
+      <div class="dsep"></div>
+      <div class="dblock"><span class="lab">Co jest już w cenie strony</span><p>Cała techniczna strona zgód — pola w formularzach, miejsce na dokumenty, baner cookies i mechanizm usuwania danych — wchodzi w cenę każdego wariantu. Ten pakiet to same treści dokumentów, gotowe do wpięcia w przygotowane miejsca.</p></div>
+      <div class="dsep"></div>
+      <div class="dblock"><span class="lab">Dlaczego to się opłaca</span><p>Indywidualne przygotowanie takiego kompletu w kancelarii to najczęściej <b>1 500–4 000 zł</b>. Tutaj dokumenty powstają razem ze stroną i opisują dokładnie ją, a Wasz prawnik dostaje gotowy materiał do zatwierdzenia — sama weryfikacja to zwykle kilkaset złotych zamiast pełnej ceny przygotowania. Łącznie wychodzicie na tym korzystniej, a dokumenty pasują do strony jeden do jednego.</p></div>
+      <div class="dsep"></div>
+      <div class="dblock"><span class="lab">Jeden warunek</span><p>To są <b>projekty</b> do zatwierdzenia — jestem projektantką stron, prawo zostawiam prawnikom. Przed publikacją zatwierdza je Wasz prawnik; dopiero wtedy trafiają na stronę. Dzięki tym projektom jego praca jest krótsza i tańsza, bo dostaje gotowy materiał zamiast pustej kartki.</p></div>
+    </div>
+  </details>
   </div>
 
   <div class="glass" style="margin-top:18px;border-color:rgba(255,175,80,.5)">
-    <span class="lab" style="color:var(--sodium);font-family:var(--mono);font-size:.6rem;letter-spacing:.19em;text-transform:uppercase;display:block;margin-bottom:8px">Moduł sponsorski · 8 880 zł osobno · 8 000 zł w pakiecie</span>
+    <span class="lab" style="color:var(--sodium);font-family:var(--mono);font-size:.6rem;letter-spacing:.19em;text-transform:uppercase;display:block;margin-bottom:8px">Część sponsorska · 8 880 zł osobno · 8 000 zł razem ze stroną</span>
     <h3>Za co dokładnie płacicie w części sponsorskiej</h3>
     <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">To jedyna rzecz, o którą sami poprosiliście w briefie — i powstaje w całości od zera.</p>
-    <p style="color:var(--soft);font-size:.95rem;margin:0 0 14px"><b style="color:var(--ink)">Zacznijmy od tego, czym są poziomy.</b> To trzy gotowe propozycje dla firmy: mniejsza, średnia i największa. Każda ma swoją cenę i swoją listę tego, co sponsor za nią dostaje. Firma po prostu wybiera tę, która mieści się w jej budżecie — zamiast pytać „a ile to u Was kosztuje?” i czekać, aż coś wymyślicie.</p>
+    <p style="color:var(--soft);font-size:.95rem;margin:0 0 14px"><b style="color:var(--ink)">Zacznijmy od tego, czym są poziomy.</b> To trzy gotowe propozycje dla firmy: mniejsza, średnia i największa. Każda ma swoją cenę i swoją listę tego, co sponsor za nią dostaje. Firma wybiera tę, która mieści się w jej budżecie — a Wy macie gotową odpowiedź na pytanie „ile to kosztuje?” od ręki.</p>
     <ul class="ticks">
       <li><b>Podstrona „Dla firm”, po polsku i angielsku.</b> Jeden adres, który wysyłacie firmie zamiast tłumaczyć wszystko w wiadomościach: kim jesteście, ilu ludzi przyjeżdża i co możecie zaproponować</li>
       <li><b>Trzy poziomy, rozpisane punkt po punkcie.</b> Przy każdym widać dokładnie, co sponsor dostaje w czterech miejscach: na terenie zlotu, w mediach społecznościowych, na stronie i po zlocie</li>
       <li><b>Propozycja ceny dla każdego poziomu.</b> Podpowiadam, ile realnie warto brać i od jakiej kwoty lepiej nie schodzić w rozmowie</li>
       <li><b>Wasze liczby zamienione w argumenty.</b> Ilu ludzi przyjeżdża, ilu widzi Wasze posty, kto to jest — zapisane tak, żeby firma mogła pokazać to u siebie i dostać zgodę na wydatek</li>
-      <li><b>Gotowy plik PDF do wysłania.</b> Kilka stron: liczby, zdjęcia, trzy poziomy i kontakt. Wysyłacie mailem albo wrzucacie w komunikatorze</li>
+      <li><b>Gotowy plik PDF do wysłania.</b> Kilka stron: liczby, zdjęcia, trzy poziomy i kontakt. Wysyłacie mailem albo przez komunikator</li>
       <li><b>Formularz dla firm na stronie.</b> Zainteresowana firma zostawia kontakt sama, o dowolnej porze, a zgłoszenie trafia do Was mailem</li>
     </ul>
-    <p style="color:var(--soft);font-size:.95rem;margin:16px 0 0"><b style="color:var(--ink)">Rozmowy z firmami prowadzicie Wy</b> — znacie swoją scenę i swoich ludzi lepiej niż ktokolwiek z zewnątrz. Moim zadaniem jest dać Wam do ręki komplet, z którym te rozmowy stają się łatwe: adres, liczby i gotową odpowiedź na każde „a co my z tego mamy”.</p>
-    <p style="color:var(--dim);font-size:.87rem;margin:14px 0 0">Dla porównania: sam projekt graficzny takiej oferty w studiu graficznym zaczyna się od 1 500 zł i sięga 8 000 zł — a to wyłącznie grafika, bez treści, bez liczb i bez wyceny pakietów.</p>
+    <p style="color:var(--soft);font-size:.95rem;margin:16px 0 0"><b style="color:var(--ink)">Rozmowy z firmami prowadzicie Wy</b> — znacie swoją scenę i swoich ludzi lepiej niż ktokolwiek z zewnątrz. Moim zadaniem jest dać Wam do ręki komplet, z którym te rozmowy idą gładko: adres, liczby i gotową odpowiedź na każde „a co my z tego mamy”.</p>
+    <p style="color:var(--dim);font-size:.87rem;margin:14px 0 0">Dla porównania: sam projekt graficzny takiej oferty w studiu projektowym zaczyna się od 1 500 zł i sięga 8 000 zł — a to wyłącznie grafika, bez treści, bez liczb i bez wyceny pakietów.</p>
   </div>
 
   <div class="glass" style="margin-top:26px;border-color:rgba(156,199,255,.34)">
     <h3 style="color:var(--ice)">Jeśli interesuje Was tylko jedna rzecz</h3>
     <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Całość nie jest warunkiem. Każdą z tych części można wziąć osobno — zadziała sama, bez strony albo jeszcze przed nią:</p>
     <ul class="ticks">
-      <li><b>Sama część sponsorska — 8 880 zł.</b> Trzy poziomy, propozycja cen, Wasze liczby i gotowy plik do wysyłania firmom. Działa bez strony: wysyłacie go mailem tak samo, jak dziś piszecie wiadomości</li>
+      <li><b>Sama część sponsorska — 8 880 zł.</b> Trzy poziomy, propozycja cen, Wasze liczby i gotowy plik do wysyłania firmom. Działa bez strony — a pełną moc zyskuje razem z nią: dochodzi adres „Dla firm”, który wysyłacie zamiast tłumaczyć, i formularz, przez który firmy zgłaszają się same. W wariancie Pełny + Sponsorzy ta sama praca kosztuje 8 000 zł i pracuje w obu miejscach naraz</li>
       <li><b>Sam system zapisów.</b> Bilety z kodem QR, limit miejsc, lista rezerwowa i skanowanie na bramie — z linkiem, który wrzucacie tam, gdzie dziś zbieracie zgłoszenia. Wycenię po krótkiej rozmowie o tym, ilu ludzi przyjeżdża</li>
       <li><b>Sam plan realizacji.</b> Kilkanaście stron konkretów: mapa strony ekran po ekranie, zawartość każdej sekcji, harmonogram i kierunek wizualny. Przyda się także wtedy, gdy stronę zrobicie później albo etapami. Cenę ustalamy indywidualnie</li>
-      <li><b>Coś jeszcze z listy poniżej.</b> Każda opcja dodatkowa może powstać samodzielnie — napiszcie, co Was interesuje, a odeślę wycenę</li>
+      <li><b>Coś jeszcze z listy poniżej.</b> Każda opcja dodatkowa może powstać samodzielnie — napiszcie, co Was interesuje, a prześlę wycenę</li>
     </ul>
     <p style="color:var(--dim);font-size:.87rem;margin:14px 0 0">Bierzecie dokładnie to, czego potrzebujecie teraz. A gdy weźmiecie kilka rzeczy naraz, materiały zbieram raz i wykorzystuję je wszędzie — dlatego całość wychodzi korzystniej niż części osobno.</p>
   </div>
 
   <h3 style="margin-top:44px">Opcje dodatkowe</h3>
   <p class="sub" style="margin-bottom:14px">Wszystko poniżej jest w pełni dobrowolne. <b>Strona działa w pełni bez którejkolwiek z nich</b> — obsługę zlotów i aktualizacje robicie sami, a instrukcja krok po kroku jest w cenie projektu. Te pozycje kupujecie wtedy, kiedy wolicie oddać komuś robotę, a nie dlatego, że musicie.</p>
-  <p class="sub" style="margin-bottom:18px">Widełki zależą od zakresu — dokładną kwotę podaję zawsze przed startem, po krótkiej wymianie zdań o tym, czego konkretnie chcecie. Kliknijcie kartę, żeby zobaczyć, co kryje się za ceną.</p>
-  <div class="grid gsym3">
+  <p class="sub" style="margin-bottom:18px">Widełki zależą od zakresu — dokładną kwotę podaję zawsze przed startem, po krótkiej wymianie wiadomości o tym, czego konkretnie chcecie. Każdą opcję możecie zamówić w dowolnym momencie: przed startem, w trakcie projektu albo długo po oddaniu strony. W trakcie projektu wykonuję je w oknach, gdy wynik etapu leży u Was — równolegle, a harmonogram strony biegnie swoim rytmem. Kliknijcie kartę, żeby zobaczyć, co kryje się za ceną.</p>
+  <div class="grid gsym4">
     <details class="dcard">
       <summary>
         <div class="dhead">
@@ -1175,22 +1219,6 @@ tr:last-child td{border-bottom:none}
     <details class="dcard">
       <summary>
         <div class="dhead">
-          <span class="lab" style="color:var(--sodium)">1 200 zł</span>
-          <h4>Pakiet dokumentów prawnych</h4>
-          <p class="plain">Projekty wszystkich dokumentów, których strona z zapisami potrzebuje — napisane pod Wasz konkretny przypadek, gotowe do sprawdzenia u prawnika.</p>
-        </div>
-        <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
-      </summary>
-      <div class="dbody" style="padding-left:22px">
-        <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>projekt polityki prywatności — opisany pod to, co naprawdę dzieje się na Waszej stronie</li><li>projekt regulaminu strony i zasad publikacji zdjęć</li><li>treści zgód: w formularzu zapisu, przy wizerunku na zdjęciach, przy zapisie na powiadomienia</li><li>klauzula informacyjna dla uczestników i procedura usunięcia danych</li><li><b>lista pytań do prawnika</b> — gotowa do wysłania, żeby rozmowa z nim trwała kwadrans, a nie godzinę</li><li>po jego uwagach wprowadzam poprawki do dokumentów bez dodatkowej opłaty</li></ul></div>
-        <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Jeden warunek</span><p>To są <b>projekty</b>, a nie gotowa porada prawna — jestem projektantką stron, nie prawnikiem. Przed publikacją musi je zatwierdzić Wasz prawnik; dopiero wtedy trafiają na stronę. Dzięki tym projektom jego praca jest krótsza i tańsza, bo dostaje gotowy materiał zamiast pustej kartki.</p></div>
-      </div>
-    </details>
-    <details class="dcard">
-      <summary>
-        <div class="dhead">
           <span class="lab" style="color:var(--sodium)">od 1 200 zł</span>
           <h4>Sylwetki zespołu</h4>
           <p class="plain">Osiem osób z imieniem, twarzą i historią. Sponsor poznaje ludzi, a nie logo.</p>
@@ -1199,7 +1227,7 @@ tr:last-child td{border-bottom:none}
       </summary>
       <div class="dbody" style="padding-left:22px">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>pisemny mini-wywiad z każdą z ośmiu osób — pytania przygotowuję ja</li><li>napisanie ośmiu krótkich sylwetek w spójnym stylu</li><li>tłumaczenie wszystkich sylwetek na angielski</li><li>obróbka i wgranie zdjęć: kadrowanie, kompresja</li><li>złożenie sekcji na stronie w obu językach</li></ul></div>
+        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>pisemny miniwywiad z każdą z ośmiu osób — pytania przygotowuję ja</li><li>napisanie ośmiu krótkich sylwetek w spójnym stylu</li><li>tłumaczenie wszystkich sylwetek na angielski</li><li>obróbka i wgranie zdjęć: kadrowanie, kompresja</li><li>złożenie sekcji na stronie w obu językach</li></ul></div>
       </div>
     </details>
     <details class="dcard">
@@ -1235,7 +1263,7 @@ tr:last-child td{border-bottom:none}
         <div class="dhead">
           <span class="lab" style="color:var(--sodium)">700–900 zł za zlot</span>
           <h4>Raport dla sponsorów po zlocie</h4>
-          <p class="plain">Sponsor, który dostaje ładne podsumowanie, wraca w kolejnym roku. To najprostszy sposób, żeby jednorazowa umowa zamieniła się w stałą. Zamawiacie go tylko po tych zlotach, na których sponsorzy faktycznie byli.</p>
+          <p class="plain">Sponsor, który dostaje ładne podsumowanie, wraca w kolejnym roku. To najpewniejszy sposób, żeby jednorazowa umowa zamieniła się w stałą. Zamawiacie go tylko po tych zlotach, na których sponsorzy faktycznie byli.</p>
         </div>
         <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
       </summary>
@@ -1249,7 +1277,7 @@ tr:last-child td{border-bottom:none}
         <div class="dhead">
           <span class="lab" style="color:var(--sodium)">2 000–3 000 zł</span>
           <h4>Sprzedaż biletów online</h4>
-          <p class="plain">Płatność przy zapisie zamiast przy bramie. Bez abonamentu — tylko prowizja operatora płatności, około 1,5–2% od biletu.</p>
+          <p class="plain">Płatność przy zapisie zamiast przy bramie. Bez abonamentu — dochodzi tylko prowizja operatora płatności; dokładną stawkę podam przy wycenie.</p>
         </div>
         <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
       </summary>
@@ -1263,21 +1291,21 @@ tr:last-child td{border-bottom:none}
         <div class="dhead">
           <span class="lab" style="color:var(--sodium)">4 000–6 000 zł</span>
           <h4>Sklep z merchem</h4>
-          <p class="plain">Koszulki, naklejki i gadżety prosto ze strony. Wersja lekka — witryna merchu z zamówieniem przez wiadomość, bez płatności online — od 1 500 zł.</p>
+          <p class="plain">Koszulki, naklejki i gadżety prosto ze strony. Wersja lekka — witryna z merchem i zamówieniem przez wiadomość, bez płatności online — od 1 500 zł.</p>
         </div>
         <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
       </summary>
       <div class="dbody" style="padding-left:22px">
         <div class="dsep"></div>
-        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>sklep w ramach istniejącej strony, spójny wygląd, oba języki</li><li>wgranie produktów startowych do 20 pozycji: zdjęcia, opisy, rozmiary</li><li>płatności online — BLIK, karta, przelew — na koncie założonym dla Was</li><li>konfiguracja dostawy i odbioru na zlocie</li><li>regulamin sklepu i dokumenty zwrotów zgodne z prawem konsumenckim</li><li>instrukcja: jak dodawać produkty i obsługiwać zamówienia</li></ul></div>
+        <div class="dblock"><span class="lab">Co wchodzi w tę cenę</span><ul class="ticks" style="margin-top:8px"><li>sklep w ramach istniejącej strony, spójny wygląd, oba języki</li><li>wgranie produktów startowych do 20 pozycji: zdjęcia, opisy, rozmiary</li><li>płatności online — BLIK, karta, przelew — na koncie założonym dla Was</li><li>konfiguracja dostawy i odbioru na zlocie</li><li>regulamin sklepu i zasady zwrotów zgodne z prawem konsumenckim</li><li>instrukcja: jak dodawać produkty i obsługiwać zamówienia</li></ul></div>
       </div>
     </details>
     <details class="dcard">
       <summary>
         <div class="dhead">
           <span class="lab" style="color:var(--sodium)">500–700 zł za dzień</span>
-          <h4>Dyżur w dzień zlotu</h4>
-          <p class="plain">Jestem dostępna pisemnie przez cały wjazd — gdyby cokolwiek wymagało natychmiastowej reakcji.</p>
+          <h4>Dyżur w dniu zlotu</h4>
+          <p class="plain">Przez cały wjazd czuwam nad stroną i odpisuję od ręki — gdyby cokolwiek wymagało natychmiastowej reakcji.</p>
         </div>
         <div class="dcta"><span class="dhint" aria-hidden="true"></span><div class="dmore" aria-hidden="true">+</div></div>
       </summary>
@@ -1287,26 +1315,26 @@ tr:last-child td{border-bottom:none}
       </div>
     </details>
   </div>
-  <p class="note" style="margin-top:26px">Wariant <b>Start</b> można w każdej chwili rozbudować do <b>Pełnego</b> — dopłacacie wtedy tylko różnicę.<br>Oferta jest ważna <span class="hi">do 15 września 2026</span>. A gdyby ten termin okazał się za krótki — wystarczy jedna wiadomość: przedłużę bez pytań i wrócimy do rozmowy w momencie, który będzie dla Was dobry.</p>
+  <p class="note" style="margin-top:26px">Wariant <b>Start</b> można w każdej chwili rozbudować do <b>Pełnego</b> — dopłacacie wtedy tylko różnicę.<br>Oferta i podane ceny są ważne <span class="hi">do 15 września 2026</span> — do tego dnia rezerwuję w kalendarzu termin startu Waszego projektu. Później też chętnie porozmawiamy — potwierdzę wtedy na nowo terminy i wycenę.</p>
 </section>
 
 <section id="platnosci" class="rv">
   <div class="kicker">Rozliczenie</div>
   <h2>Płatności</h2>
-  <p class="sub">Płatność w trzech częściach, powiązanych z konkretnymi wynikami: <strong>40%</strong> na start po podpisaniu umowy · <strong>30%</strong> po akceptacji projektu graficznego, czyli widzicie, jak strona będzie wyglądać, zanim zapłacicie drugą część · <strong>30%</strong> przy oddaniu, po testach i przekazaniu dostępów.</p>
+  <p class="sub">Płatność w czterech częściach, powiązanych z konkretnymi wynikami: <strong>40%</strong> na start po podpisaniu umowy · <strong>20%</strong> po akceptacji projektu graficznego — najpierw widzicie, jak strona będzie wyglądać, dopiero potem płacicie drugą część · <strong>20%</strong> po zbudowaniu wszystkich sekcji strony · <strong>20%</strong> przy oddaniu, po testach i przekazaniu dostępów.</p>
 
   <div class="glass tbl-wrap">
     <table>
-      <thead><tr><th>Wariant</th><th>Na start · 40%</th><th>Po projekcie · 30%</th><th>Przy oddaniu · 30%</th></tr></thead>
+      <thead><tr><th>Wariant</th><th>Na start · 40%</th><th>Po projekcie · 20%</th><th>Po budowie · 20%</th><th>Przy oddaniu · 20%</th></tr></thead>
       <tbody>
-        <tr><td>Start · 7 000 zł</td><td data-l="Na start · 40%">2 800 zł</td><td data-l="Po projekcie · 30%">2 100 zł</td><td data-l="Przy oddaniu · 30%">2 100 zł</td></tr>
-        <tr><td>Pełny · 14 000 zł</td><td data-l="Na start · 40%">5 600 zł</td><td data-l="Po projekcie · 30%">4 200 zł</td><td data-l="Przy oddaniu · 30%">4 200 zł</td></tr>
-        <tr><td>Pełny + Sponsorzy · 22 000 zł</td><td data-l="Na start · 40%">8 800 zł</td><td data-l="Po projekcie · 30%">6 600 zł</td><td data-l="Przy oddaniu · 30%">6 600 zł</td></tr>
+        <tr><td>Start · 7 000 zł</td><td data-l="Na start · 40%">2 800 zł</td><td data-l="Po projekcie · 20%">1 400 zł</td><td data-l="Po budowie · 20%">1 400 zł</td><td data-l="Przy oddaniu · 20%">1 400 zł</td></tr>
+        <tr><td>Pełny · 14 000 zł</td><td data-l="Na start · 40%">5 600 zł</td><td data-l="Po projekcie · 20%">2 800 zł</td><td data-l="Po budowie · 20%">2 800 zł</td><td data-l="Przy oddaniu · 20%">2 800 zł</td></tr>
+        <tr><td>Pełny + Sponsorzy · 22 000 zł</td><td data-l="Na start · 40%">8 800 zł</td><td data-l="Po projekcie · 20%">4 400 zł</td><td data-l="Po budowie · 20%">4 400 zł</td><td data-l="Przy oddaniu · 20%">4 400 zł</td></tr>
       </tbody>
     </table>
   </div>
   <p class="note" style="margin-top:22px">Kwoty w tabeli to kwoty z umowy — nic się do nich nie dolicza. Przy umowie o dzieło zaliczkę na podatek odprowadza Wasza firma jako płatnik; to rutyna dla każdej księgowości, a ja dostarczam <b>oświadczenie o rezydencji podatkowej</b>, żeby naliczyła właściwą, niższą stawkę. Każdy etap zamykamy krótkim protokołem odbioru — to jedno potwierdzenie mailem, dzięki któremu obie strony mają ten sam obraz: co zostało oddane i przyjęte.<br>
-  Do każdej z trzech części wystawiam rachunek, ze zwykłym siedmiodniowym terminem przelewu. Rozliczenie: <span class="hi">umowa o dzieło i rachunek</span>. Dla Waszej firmy to wydatek, który wchodzi w koszty — bez VAT i bez składek ZUS; Wasza księgowość potwierdzi to od ręki.</p>
+  Do każdej z czterech części wystawiam rachunek, ze zwykłym siedmiodniowym terminem przelewu. Rozliczenie: <span class="hi">umowa o dzieło i rachunek</span>. Dla Waszej firmy to wydatek, który wchodzi w koszty — bez VAT i bez składek ZUS; Wasza księgowość potwierdzi to od ręki.</p>
 </section>
 
 <section id="koszty" class="rv">
@@ -1322,7 +1350,7 @@ tr:last-child td{border-bottom:none}
 
   <p class="note" style="margin-top:22px">Razem to zwykle <span class="hi">około 310–500 zł rocznie</span>, płacone bezpośrednio dostawcom — te opłaty w całości trafiają do nich, nie do mnie. Nie ja ustalam te ceny, więc traktujcie je jako rząd wielkości: dokładne kwoty podam Wam przed zakupem, razem z instrukcją krok po kroku.<br>
   Wszystko rejestrujemy na Wasze konta i Waszą kartę — <span class="hi">domena, poczta i strona są Waszą własnością</span>, a dostęp do nich macie zawsze i od razu.<br>
-  Na przyszłość: gdybyście chcieli wysyłać maile do swojej bazy — na przykład zaproszenia na kolejny zlot — na start wystarczy plan bezpłatny, który pozwala wysłać <b>do 500 wiadomości tygodniowo</b>. Przy większej bazie albo przy wysyłce do wszystkich naraz przechodzi się na plan płatny, około 49 zł miesięcznie — i tylko w tych miesiącach, w których faktycznie wysyłacie. Każdą wysyłkę uruchamiacie ręcznie, dokładnie wtedy, kiedy uznacie, że to dobry moment.</p>
+  Na przyszłość: gdybyście chcieli wysyłać maile do swojej bazy — na przykład zaproszenia na kolejny zlot — na start wystarczy plan bezpłatny. Przy większej bazie przechodzi się na plan płatny — kilkadziesiąt złotych miesięcznie, i tylko w tych miesiącach, w których faktycznie wysyłacie. Każdą wysyłkę uruchamiacie ręcznie, dokładnie wtedy, kiedy uznacie, że to dobry moment.</p>
 </section>
 
 <section id="gwarancja" class="rv">
@@ -1333,41 +1361,41 @@ tr:last-child td{border-bottom:none}
     <div class="glass">
       <h3>90 dni gwarancji</h3>
       <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Jeśli po oddaniu okaże się, że coś działa inaczej, niż ustaliliśmy — poprawiam bezpłatnie. Bez limitu zgłoszeń.</p>
-      <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px"><b>Odpowiadam do 72 godzin.</b> Sprawy pilne, gdy strona nie działa, naprawiam <b>do 3 dni roboczych</b>; pozostałe — <b>do 5 dni roboczych</b>.</p>
+      <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px"><b>Odpowiadam do 48 godzin.</b> Sprawy pilne, gdy strona nie działa, naprawiam <b>do 3 dni roboczych</b>; pozostałe — <b>do 5 dni roboczych</b>.</p>
       <p style="color:var(--dim);font-size:.9rem;margin:0">Gwarancja obejmuje moją pracę. Poza nią zostają rzeczy, na które nikt z nas nie ma wpływu: awaria u dostawcy hostingu, zmiany wprowadzone później po Waszej stronie i zupełnie nowe funkcje — te zawsze chętnie dołożę, wyceniam je tylko osobno.</p>
     </div>
     <div class="glass">
       <h3>Poprawki w trakcie</h3>
       <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">W całym projekcie są <b>trzy rundy poprawek</b> — dokładnie te, które widzicie w harmonogramie. Runda to jedna zbiorcza lista uwag w jednej wiadomości — zbiera je u Was jedna osoba, dzięki czemu żadna uwaga nie zginie po drodze.</p>
-      <p style="color:var(--soft);font-size:.95rem;margin:0">Drobne korekty po wdrożeniu rundy nie są naliczane. <b>Moje błędy poprawiam zawsze bezpłatnie i nie liczą się jako runda.</b> A gdybyście po trzech rundach chcieli dopracować coś jeszcze — chętnie, w stawce 100 zł/h, zawsze z wyceną przed rozpoczęciem, więc nic Was nie zaskoczy.</p>
-      <p style="color:var(--dim);font-size:.9rem;margin:12px 0 0">Teksty przekazuję Wam do akceptacji — ostatnie słowo przy treści zawsze należy do Was. A jeśli w ciągu dwóch tygodni nie dostanę uwag, uznaję etap za przyjęty i ruszam dalej; zawsze przypomnę mailem, zanim ten termin minie.</p>
+      <p style="color:var(--soft);font-size:.95rem;margin:0">Drobne korekty po wdrożeniu rundy nie są naliczane. <b>Moje błędy poprawiam zawsze bezpłatnie i nie liczą się jako runda.</b> A gdybyście po trzech rundach chcieli dopracować coś jeszcze — chętnie, w stawce 150 zł/h, zawsze z wyceną przed rozpoczęciem, więc nic Was nie zaskoczy.</p>
+      <p style="color:var(--dim);font-size:.9rem;margin:12px 0 0">Teksty przekazuję Wam do akceptacji — ostatnie słowo przy treści zawsze należy do Was. Gdy tydzień mija bez uwag, uznaję etap za przyjęty i ruszam dalej — a zanim ten termin minie, zawsze przypomnę mailem.</p>
     </div>
   </div>
 
   <div class="glass" style="margin-top:18px">
-    <h3>Wolna ręka po pierwszym etapie</h3>
+    <h3>Pełna swoboda decyzji po pierwszym etapie</h3>
     <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Decyzja przez cały czas zostaje po Waszej stronie. Po zobaczeniu projektu graficznego — czyli zanim powstanie właściwa strona — możecie spokojnie powiedzieć „to jednak nie nasza droga” i na tym zakończyć. <b style="color:var(--ink)">Wystarczy jedno zdanie — resztę zamykam po swojej stronie.</b></p>
-    <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Zostaje przy mnie pierwsza wpłata — pokrywa pracę, która do tego momentu jest już zrobiona: przetworzone ankiety, plan realizacji i przygotowany projekt. Drugiej i trzeciej części po prostu nie ma.</p>
+    <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px">Zostaje przy mnie pierwsza wpłata — pokrywa pracę, która do tego momentu jest już zrobiona: przetworzone ankiety, plan realizacji i przygotowany projekt. Rozliczenie kończy się na tej jednej wpłacie.</p>
     <p style="color:var(--soft);font-size:.95rem;margin:0"><b style="color:var(--ink)">Plan realizacji zostaje u Was</b> — zapłaciliście za niego i jest Wasz, możecie z nim iść dalej, gdzie zechcecie. Sam projekt graficzny pozostaje mój, bo prawa autorskie przechodzą na Was dopiero z ostatnią płatnością.</p>
   </div>
 
   <div class="glass" style="margin-top:18px">
     <h3>Co dzieje się po gwarancji</h3>
-    <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px"><b style="color:var(--ink)">Nic — i tak to zaprojektowałam.</b> Strona jest zbudowana tak, żeby działała sama: prosta konstrukcja, którą zostawiam w stanie gotowym na lata, bez systemu i dodatków wymagających comiesięcznej opieki. Dla porównania: opieka nad stroną kosztuje na rynku zwykle 150–300 zł miesięcznie, czyli 1 800–3 600 zł rocznie. U Was takiej pozycji po prostu nie ma.</p>
-    <p style="color:var(--soft);font-size:.95rem;margin:0">Gdybyście kiedyś chcieli coś zmienić albo dołożyć — jestem do dyspozycji w stawce 100 zł/h, zawsze z wyceną przed startem. To możliwość, nie zobowiązanie: równie dobrze możecie zrobić to sami albo z kimkolwiek innym.</p>
+    <p style="color:var(--soft);font-size:.95rem;margin:0 0 12px"><b style="color:var(--ink)">Strona działa dalej sama — i tak to zaprojektowałam.</b> Lekka, sprawdzona konstrukcja, którą zostawiam w stanie gotowym na lata, bez systemu i dodatków wymagających comiesięcznej opieki. Dla porównania: opieka nad stroną kosztuje na rynku zwykle 150–300 zł miesięcznie, czyli 1 800–3 600 zł rocznie. Wasza strona jest wolna od tego kosztu.</p>
+    <p style="color:var(--soft);font-size:.95rem;margin:0">Gdybyście kiedyś chcieli coś zmienić albo dołożyć — jestem do dyspozycji w stawce 150 zł/h, zawsze z wyceną przed startem. To możliwość, nie zobowiązanie: równie dobrze możecie zrobić to sami albo z kimkolwiek innym.</p>
   </div>
 
   <div class="glass" style="margin-top:18px">
     <h3>Po odbiorze wszystko jest Wasze</h3>
     <p style="color:var(--soft);margin:0">Dostępy, kody i konta należą do Was. Wraz z ostatnią płatnością przechodzą na Was także pełne prawa autorskie do strony — zapiszemy to wprost w umowie. Możecie rozwijać stronę ze mną, z kimkolwiek innym albo samodzielnie — instrukcja obsługi jest częścią każdego wariantu współpracy. <strong>Buduję Wam dom i oddaję klucze; co dalej z tym domem, decydujecie wyłącznie Wy.</strong></p>
-    <p style="color:var(--dim);font-size:.9rem;margin:12px 0 0">Domena, poczta i hosting stoją na Waszych kontach od samego zakupu, a materiały dostajecie po każdym etapie. Gdyby więc cokolwiek stanęło po mojej stronie, praca zostaje u Was w komplecie i każdy inny wykonawca podejmie ją bez przeszkód.</p>
+    <p style="color:var(--dim);font-size:.9rem;margin:12px 0 0">Domena, poczta i hosting stoją na Waszych kontach od samego zakupu, a materiały dostajecie po każdym etapie — pełna niezależność od pierwszego dnia.</p>
   </div>
 </section>
 
 <section id="rozwoj" class="rv">
   <div class="kicker">Na przyszłość</div>
   <h2>Co dalej,<br>kiedy strona już działa</h2>
-  <p class="sub">Wszystko to sprawy na spokojnie, na później — dzisiaj wystarczy o nich wiedzieć. Piszę o tym z jednego powodu: strona jest budowana tak, żeby każda z tych rzeczy była później kwestią dołożenia, a nie budowania wszystkiego od nowa.</p>
+  <p class="sub">To wszystko sprawy na później, do przemyślenia na spokojnie — dzisiaj wystarczy o nich wiedzieć. Piszę o tym z jednego powodu: strona jest budowana tak, żeby każda z tych rzeczy była później kwestią dołożenia, a nie budowania wszystkiego od nowa.</p>
 
   <div class="grid gsym3">
     <div class="glass">
@@ -1376,7 +1404,7 @@ tr:last-child td{border-bottom:none}
     </div>
     <div class="glass">
       <h4>Archiwum, które przekonuje za Was</h4>
-      <p style="color:var(--soft);font-size:.93rem;margin:0">Po każdym zlocie archiwum rośnie o kolejne zdjęcia i kolejne liczby. To najlepszy argument w rozmowie ze sponsorem — bo zamiast opowiadać, jak było, po prostu podajecie link i pozwalacie mu zobaczyć.</p>
+      <p style="color:var(--soft);font-size:.93rem;margin:0">Po każdym zlocie archiwum rośnie o kolejne zdjęcia i kolejne liczby. To najlepszy argument w rozmowie ze sponsorem — bo zamiast opowiadać, jak było, podajecie link i pozwalacie mu zobaczyć.</p>
     </div>
     <div class="glass">
       <h4>Sprzedaż biletów online</h4>
@@ -1388,15 +1416,15 @@ tr:last-child td{border-bottom:none}
     </div>
     <div class="glass">
       <h4>Miejsca dla firm na zlocie</h4>
-      <p style="color:var(--soft);font-size:.93rem;margin:0">Nie tylko baner, ale własne stoisko. Strona może pokazywać, ile miejsc dla wystawców zostało wolnych, i przyjmować zgłoszenia tak samo jak zapisy uczestników. To osobne źródło przychodu, obok sponsoringu.</p>
+      <p style="color:var(--soft);font-size:.93rem;margin:0">Nie tylko baner, lecz także własne stoisko. Strona może pokazywać, ile miejsc dla wystawców zostało wolnych, i przyjmować zgłoszenia tak samo jak zapisy uczestników. To osobne źródło przychodu, obok sponsoringu.</p>
     </div>
     <div class="glass">
       <h4>Głosowanie na najlepsze auto</h4>
-      <p style="color:var(--soft);font-size:.93rem;margin:0">Uczestnicy głosują ze swoich telefonów jeszcze w trakcie zlotu. Ludzie zostają dłużej, a sama nagroda może mieć swojego sponsora — czyli jedno miejsce w pakiecie więcej do zaoferowania.</p>
+      <p style="color:var(--soft);font-size:.93rem;margin:0">Uczestnicy głosują ze swoich telefonów jeszcze w trakcie zlotu. Ludzie zostają dłużej, a sama nagroda może mieć swojego sponsora — czyli o jedno miejsce więcej w pakiecie sponsorskim.</p>
     </div>
   </div>
 
-  <p class="note" style="margin-top:26px">To tylko kierunki, nie plany. Jeśli któryś Was zaciekawi — powiedzcie, a policzę go osobno. A jeśli żaden, strona spokojnie działa dalej sama.</p>
+  <p class="note" style="margin-top:26px">To tylko kierunki, nie plany. Jeśli któryś Was zaciekawi — napiszcie, a policzę go osobno. A jeśli żaden, strona spokojnie działa dalej sama.</p>
 </section>
 
 <section id="formalnosci" class="rv">
@@ -1404,7 +1432,7 @@ tr:last-child td{border-bottom:none}
   <h2>Formalności</h2>
 
   <div class="glass">
-    <p style="color:var(--soft);margin:0 0 14px">Jestem obywatelką Białorusi i mieszkam w Polsce na stałe — wniosek o pobyt stały jest już złożony. Współpracuję na <strong>umowie o dzieło</strong> — dla Was to najprostsza forma rozliczenia: kwota wchodzi w koszty, bez VAT i bez składek ZUS.</p>
+    <p style="color:var(--soft);margin:0 0 14px">Jestem obywatelką Białorusi i mieszkam w Polsce na stałe — wniosek o pobyt stały jest już złożony. Współpracuję na <strong>umowie o dzieło</strong> — dla Was to najwygodniejsza forma rozliczenia: kwota wchodzi w koszty, bez VAT i bez składek ZUS.</p>
     <p style="color:var(--soft);margin:0 0 14px">Żeby to uruchomić, Wasza firma rejestruje jednorazowe zgłoszenie online — oświadczenie o powierzeniu wykonywania pracy cudzoziemcowi. Opłata urzędowa <strong>400 zł</strong>, urząd rozpatruje je <strong>do 7 dni roboczych</strong>, wszystko przez praca.gov.pl. Przygotuję dla Was instrukcję krok po kroku — po Waszej stronie to <strong>około 15 minut</strong> przy komputerze.</p>
     <p style="color:var(--soft);margin:0">Do przygotowania umowy poproszę tylko o dane firmy: <strong>nazwę, NIP i adres</strong>.</p>
   </div>
@@ -1418,8 +1446,8 @@ tr:last-child td{border-bottom:none}
     <p class="lead" style="margin-inline:auto;text-align:center;margin-bottom:28px">Zaznaczcie, który wariant jest Wam najbliższy, zostawcie kontakt — i to wszystko. Resztą zajmuję się ja.</p>
 
     <ol class="path next3">
-      <li><b>Odpisuję do 72 godzin</b> — potwierdzam, że wiadomość dotarła, i odpowiadam na pytania, jeśli jakieś zostały</li>
-      <li><b>Projekt umowy przygotowuję do dwóch tygodni</b> — wtedy poproszę o nazwę firmy, NIP i adres. Dostajecie go do spokojnego przeczytania i, jeśli chcecie, do sprawdzenia u Waszego prawnika; końcową wersję ustalamy razem. Instrukcję do zgłoszenia w urzędzie wysyłam od razu, więc oba tory idą równolegle</li>
+      <li><b>Odpisuję do 48 godzin</b> — potwierdzam, że wiadomość dotarła, i odpowiadam na pytania, jeśli jakieś zostały</li>
+      <li><b>Przygotowuję projekt umowy</b> — poproszę wtedy o nazwę firmy, NIP i adres. Dostajecie go do spokojnego przeczytania i, jeśli chcecie, do sprawdzenia u Waszego prawnika; warunki omawiamy tak długo, aż wszystko będzie jasne. Instrukcję do zgłoszenia w urzędzie wysyłam od razu, więc oba tory idą równolegle</li>
       <li><b>Po podpisaniu ruszamy z Etapem 1</b> — dostajecie linki do ankiet i listę materiałów, wszystko rozłożone na drobne kroki</li>
     </ol>
 
@@ -1435,7 +1463,7 @@ tr:last-child td{border-bottom:none}
         <div class="copts">
           <label class="copt"><input type="radio" name="Wariant" value="Start — 7 000 zł" required><span><b>Start</b>7 000 zł</span></label>
           <label class="copt"><input type="radio" name="Wariant" value="Pełny — 14 000 zł"><span><b>Pełny</b>14 000 zł</span></label>
-          <label class="copt"><input type="radio" name="Wariant" value="Pełny + Sponsorzy — 22 000 zł"><span><b>Pełny + Sponsorzy</b>22 000 zł</span></label>
+          <label class="copt"><input type="radio" name="Wariant" value="Pełny + Sponsorzy — 22 000 zł"><span><b>Pełny + Sponsorzy</b>22 000 zł · rekomendowany</span></label>
           <label class="copt"><input type="radio" name="Wariant" value="Jeszcze nie wiem — porozmawiajmy"><span><b>Jeszcze nie wiem</b>Porozmawiajmy</span></label>
         </div>
       </div>
@@ -1445,9 +1473,11 @@ tr:last-child td{border-bottom:none}
         <div class="cq"><label for="cf5">E-mail</label><input id="cf5" type="email" name="E-mail" placeholder="Na ten adres odpiszę" required></div>
       </div>
 
+      <div class="cq"><label for="cf6">Chcecie coś dopisać?</label><textarea id="cf6" name="Wiadomość" placeholder="Pytania, uwagi, opcje dodatkowe, które Was interesują — cokolwiek"></textarea></div>
+
       <div class="cq">
         <span class="clab">Zaciekawiło Was coś na przyszłość?</span>
-        <span class="hintx" style="display:block;color:var(--dim);font-size:.86rem;margin:-3px 0 10px;font-weight:400">Pytam na zapas — zaznaczcie, co Was interesuje, a będę wiedziała, o czym warto pomyśleć później. Niczego to nie kosztuje, a wybór pozostaje otwarty do samego końca.</span>
+        <span class="hintx" style="display:block;color:var(--dim);font-size:.86rem;margin:-3px 0 10px;font-weight:400">Pytam na zapas — zaznaczcie, co Was interesuje, a będę wiedziała, o czym warto pomyśleć później. Wybór pozostaje otwarty do samego końca.</span>
         <div class="copts">
           <label class="copt"><input type="checkbox" name="Zainteresowania" value="Sprzedaż biletów online"><span>Sprzedaż biletów online</span></label>
           <label class="copt"><input type="checkbox" name="Zainteresowania" value="Sklep z merchem"><span>Sklep z merchem</span></label>
@@ -1458,13 +1488,11 @@ tr:last-child td{border-bottom:none}
         </div>
       </div>
 
-      <div class="cq"><label for="cf6">Chcecie coś dopisać?</label><textarea id="cf6" name="Wiadomość" placeholder="Pytania, uwagi, opcje dodatkowe, które Was interesują — cokolwiek"></textarea></div>
-
-      <p class="hintx" style="display:block;color:var(--dim);font-size:.87rem;text-align:center;margin:18px 0 2px;font-weight:400">To dopiero początek rozmowy — decyzję podejmujecie spokojnie, w swoim czasie.</p>
+      <p class="hintx" style="display:block;color:var(--dim);font-size:.87rem;text-align:center;margin:18px 0 2px;font-weight:400">Wysłanie formularza otwiera rozmowę — wszystkie decyzje zapadają później, wspólnie z Wami.</p>
       <button class="btn cbtn" type="submit">Wyślij →</button>
     </form>
 
-    <p class="note" style="border:none;padding:0;margin-top:26px;max-width:52ch;margin-inline:auto;text-align:center">Wolicie zwykłego maila? Piszcie na <a href="mailto:marcin.tatsiana@gmail.com?subject=Street-Elite%20%E2%80%94%20wybieramy%20wariant">marcin.tatsiana@gmail.com</a> — jak Wam wygodniej.<br><br>Wszystkie ustalenia i dokumenty prowadzimy mailem: jedna skrzynka, jeden wątek, wszystko w jednym miejscu. <span class="hi">Każde ustalenie zostaje na piśmie i zawsze można do niego wrócić.</span></p>
+    <p class="note" style="border:none;padding:0;margin-top:26px;max-width:52ch;margin-inline:auto;text-align:center">Wolicie zwykłego maila? Piszcie na <a href="mailto:marcin.tatsiana@gmail.com?subject=Street-Elite%20%E2%80%94%20wybieramy%20wariant">marcin.tatsiana@gmail.com</a> — jak Wam wygodniej.<br><br>Wszystkie ustalenia i dokumenty idą mailem: jedna skrzynka, jeden wątek, wszystko w jednym miejscu. <span class="hi">Każde ustalenie zostaje na piśmie i zawsze można do niego wrócić.</span></p>
   </div>
 </section>
 
@@ -1483,19 +1511,20 @@ tr:last-child td{border-bottom:none}
   <a href="#odwas"><i>07</i>Co robimy razem</a>
   <a href="#harmonogram"><i>08</i>Harmonogram</a>
   <a href="#pakiety"><i>09</i>Warianty współpracy</a>
-  <a href="#platnosci"><i>10</i>Płatności</a>
-  <a href="#koszty"><i>11</i>Koszty po Waszej stronie</a>
-  <a href="#gwarancja"><i>12</i>Gwarancja</a>
-  <a href="#rozwoj"><i>13</i>Co dalej, kiedy strona już działa</a>
-  <a href="#formalnosci"><i>14</i>Formalności</a>
-  <a href="#krok"><i>15</i>Następny krok</a>
+  <a href="#dokumenty"><i>10</i>Dokumenty w projekcie</a>
+  <a href="#platnosci"><i>11</i>Płatności</a>
+  <a href="#koszty"><i>12</i>Koszty po Waszej stronie</a>
+  <a href="#gwarancja"><i>13</i>Gwarancja</a>
+  <a href="#rozwoj"><i>14</i>Co dalej, kiedy strona już działa</a>
+  <a href="#formalnosci"><i>15</i>Formalności</a>
+  <a href="#krok"><i>16</i>Następny krok</a>
 </nav>
 
 <footer class="foot">
   <b style="color:var(--ink)">Tatsiana Zhukavets</b> · <a href="mailto:marcin.tatsiana@gmail.com">marcin.tatsiana@gmail.com</a><br>
   Propozycja przygotowana indywidualnie dla MyVision_video / Street-Elite<br>
   Na podstawie briefu wypełnionego 28.07.2026 · Oferta ważna do 15 września 2026<br>
-  Potrzebujecie więcej czasu? Wystarczy jedna wiadomość — przedłużę bez pytań
+  Potrzebujecie więcej czasu? Napiszcie — wspólnie ustalimy nowy termin
 </footer>
 
 </div>
